@@ -1,0 +1,14 @@
+C:\Amir\Project\ShopCenter\ShopCenter\ShopCenter.Infrastructure.IoC\bin\Debug\net6.0\ShopCenter.Infrastructure.IoC.deps.json
+C:\Amir\Project\ShopCenter\ShopCenter\ShopCenter.Infrastructure.IoC\bin\Debug\net6.0\ShopCenter.Infrastructure.IoC.dll
+C:\Amir\Project\ShopCenter\ShopCenter\ShopCenter.Infrastructure.IoC\bin\Debug\net6.0\ShopCenter.Infrastructure.IoC.pdb
+C:\Amir\Project\ShopCenter\ShopCenter\ShopCenter.Infrastructure.IoC\obj\Debug\net6.0\ShopCenter.Infrastructure.IoC.csproj.AssemblyReference.cache
+C:\Amir\Project\ShopCenter\ShopCenter\ShopCenter.Infrastructure.IoC\obj\Debug\net6.0\ShopCenter.Infrastructure.IoC.GeneratedMSBuildEditorConfig.editorconfig
+C:\Amir\Project\ShopCenter\ShopCenter\ShopCenter.Infrastructure.IoC\obj\Debug\net6.0\ShopCenter.Infrastructure.IoC.AssemblyInfoInputs.cache
+C:\Amir\Project\ShopCenter\ShopCenter\ShopCenter.Infrastructure.IoC\obj\Debug\net6.0\ShopCenter.Infrastructure.IoC.AssemblyInfo.cs
+C:\Amir\Project\ShopCenter\ShopCenter\ShopCenter.Infrastructure.IoC\obj\Debug\net6.0\ShopCenter.Infrastructure.IoC.csproj.CoreCompileInputs.cache
+C:\Amir\Project\ShopCenter\ShopCenter\ShopCenter.Infrastructure.IoC\obj\Debug\net6.0\ShopCenter.Infrastructure.IoC.dll
+C:\Amir\Project\ShopCenter\ShopCenter\ShopCenter.Infrastructure.IoC\obj\Debug\net6.0\refint\ShopCenter.Infrastructure.IoC.dll
+C:\Amir\Project\ShopCenter\ShopCenter\ShopCenter.Infrastructure.IoC\obj\Debug\net6.0\ShopCenter.Infrastructure.IoC.pdb
+C:\Amir\Project\ShopCenter\ShopCenter\ShopCenter.Infrastructure.IoC\obj\Debug\net6.0\ref\ShopCenter.Infrastructure.IoC.dll
+C:\Amir\Project\ShopCenter\ShopCenter\ShopCenter.Infrastructure.IoC\bin\Debug\net6.0\ShopCenter.Infrastructure.IoC.runtimeconfig.json
+C:\Amir\Project\ShopCenter\ShopCenter\ShopCenter.Infrastructure.IoC\obj\Debug\net6.0\ShopCenter.Infrastructure.IoC.genruntimeconfig.cache
