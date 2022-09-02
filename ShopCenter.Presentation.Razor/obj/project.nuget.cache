@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "arQx5Jt/AmZCd1hWTlg//zqR0Z4K2pTntMq39EQgVhPaPMlPaQafgJSCY7Elte66/b6bx8hm4qsnc/0w7rbQWg==",
+  "dgSpecHash": "10QT8lUwgl+s5MWI8cZ3jHPTlMiqAM6fzkY+AzNgsYmoSO/3GsGSHLgxp5Gegaqkek9gbRARoiQ+WHrL94mzNg==",
   "success": true,
-  "projectFilePath": "C:\\Amir\\Project\\ShopCenter\\ShopCenter\\ShopCenter.Presentation.Razor\\ShopCenter.Presentation.Razor.csproj",
+  "projectFilePath": "C:\\Users\\user\\Desktop\\New folder\\ShopCenter\\ShopCenter.Presentation.Razor\\ShopCenter.Presentation.Razor.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\6.0.8\\microsoft.aspnetcore.cryptography.internal.6.0.8.nupkg.sha512",
