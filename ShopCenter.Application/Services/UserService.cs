@@ -39,8 +39,19 @@ namespace ShopCenter.Application.Services
         #endregion
 
 
+        public IdentityResult RegisterUser()
+        {
+            throw new NotImplementedException();
+        }
 
+        public async Task<IdentityUser> IsUserNameInUse(string userName)
+        {
+            return await _userManager.FindByNameAsync(userName);
+        }
 
-
+        public async Task<IdentityUser> IsEmailInUse(string email)
+        {
+            return await _userManager.FindByEmailAsync(email);
+        }
     }
 }
