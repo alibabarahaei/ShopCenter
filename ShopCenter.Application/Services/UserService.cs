@@ -15,9 +15,9 @@ namespace ShopCenter.Application.Services
         #region constructor
         private readonly UserManager<IdentityUser> _userManager;
         private readonly RoleManager<IdentityRole> _roleManager;
-        private readonly SignInManager<IdentityRole> _signInManager;
+        private readonly SignInManager<IdentityUser> _signInManager;
 
-        public UserService(UserManager<IdentityUser> userManager, RoleManager<IdentityRole> roleManager, SignInManager<IdentityRole> signInManager)
+        public UserService(UserManager<IdentityUser> userManager, RoleManager<IdentityRole> roleManager, SignInManager<IdentityUser> signInManager)
         {
             _userManager = userManager;
             _roleManager = roleManager;
@@ -30,7 +30,7 @@ namespace ShopCenter.Application.Services
 
         #region dispose
 
-        
+
         public async ValueTask DisposeAsync()
         {
           //  await _userManager.DisposeAsync()

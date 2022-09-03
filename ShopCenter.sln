@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopCenter.Domain", "ShopCe
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopCenter.Infrastructure.EFCore", "ShopCenter.Infrastructure.EFCore\ShopCenter.Infrastructure.EFCore.csproj", "{6B3003B5-22B3-4F71-83BD-D63F2F901F09}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopCenter.Infrastructure.IoC", "ShopCenter.Infrastructure.IoC\ShopCenter.Infrastructure.IoC.csproj", "{F794F192-D555-452F-BF12-2CB89C19129A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopCenter.Infrastructure.IoC", "ShopCenter.Infrastructure.IoC\ShopCenter.Infrastructure.IoC.csproj", "{F794F192-D555-452F-BF12-2CB89C19129A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

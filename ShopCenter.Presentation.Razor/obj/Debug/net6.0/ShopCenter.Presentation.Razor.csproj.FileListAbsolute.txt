@@ -130,9 +130,11 @@ C:\Amir\Project\ShopCenter\ShopCenter.Presentation.Razor\bin\Debug\net6.0\ShopCe
 C:\Amir\Project\ShopCenter\ShopCenter.Presentation.Razor\bin\Debug\net6.0\ShopCenter.Domain.pdb
 C:\Amir\Project\ShopCenter\ShopCenter.Presentation.Razor\obj\Debug\net6.0\staticwebassets.build.json
 C:\Amir\Project\ShopCenter\ShopCenter.Presentation.Razor\obj\Debug\net6.0\staticwebassets.development.json
-C:\Amir\Project\ShopCenter\ShopCenter.Presentation.Razor\obj\Debug\net6.0\scopedcss\Pages\Shared\_Layout.cshtml.rz.scp.css
 C:\Amir\Project\ShopCenter\ShopCenter.Presentation.Razor\obj\Debug\net6.0\scopedcss\bundle\ShopCenter.Presentation.Razor.styles.css
 C:\Amir\Project\ShopCenter\ShopCenter.Presentation.Razor\obj\Debug\net6.0\scopedcss\projectbundle\ShopCenter.Presentation.Razor.bundle.scp.css
 C:\Amir\Project\ShopCenter\ShopCenter.Presentation.Razor\obj\Debug\net6.0\ShopCenter.Presentation.Razor.csproj.CopyComplete
 C:\Amir\Project\ShopCenter\ShopCenter.Presentation.Razor\obj\Debug\net6.0\ShopCenter.Presentation.Razor.genruntimeconfig.cache
 C:\Amir\Project\ShopCenter\ShopCenter.Presentation.Razor\obj\Debug\net6.0\ref\ShopCenter.Presentation.Razor.dll
+C:\Amir\Project\ShopCenter\ShopCenter.Presentation.Razor\bin\Debug\net6.0\ShopCenter.Application.dll
+C:\Amir\Project\ShopCenter\ShopCenter.Presentation.Razor\bin\Debug\net6.0\ShopCenter.Application.pdb
+C:\Amir\Project\ShopCenter\ShopCenter.Presentation.Razor\obj\Debug\net6.0\scopedcss\Pages\Shared\_MainLayout.cshtml.rz.scp.css

@@ -14,7 +14,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ShopCenter.Application\ShopCenter.Application.csproj" />
     <ProjectReference Include="..\ShopCenter.Infrastructure.EFCore\ShopCenter.Infrastructure.EFCore.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\images\menu-main\card\" />
   </ItemGroup>
 
 </Project>

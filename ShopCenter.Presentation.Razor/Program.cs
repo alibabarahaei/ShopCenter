@@ -1,5 +1,10 @@
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using ShopCenter.Application.InterfaceServices;
+using ShopCenter.Application.Services;
+using ShopCenter.Domain.InterfaceRepositories.Base;
 using ShopCenter.Infrastructure.EFCore.Context;
+using ShopCenter.Infrastructure.EFCore.Repository.Base;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,53 +13,41 @@ builder.Services.AddRazorPages();
 
 
 
+
+
+
+
+builder.Services.AddIdentity<IdentityUser, IdentityRole>(options =>
+    {
+        options.Password.RequireNonAlphanumeric = false;
+        options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(15);
+
+    })
+    .AddEntityFrameworkStores<ShopCenterDbContext>()
+    .AddDefaultTokenProviders();
+//    .AddErrorDescriber<PersianIdentityErrorDescriber>();
+
+
+
+
+
+builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+builder.Services.AddScoped<IUserService, UserService>();
+
+
+
+
+
+#region Config Database
 builder.Services.AddDbContext<ShopCenterDbContext>(option =>
 {
     option.UseSqlServer(builder.Configuration.GetConnectionString("SqlServer"));
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#endregion
 
 
 
 var app = builder.Build();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
