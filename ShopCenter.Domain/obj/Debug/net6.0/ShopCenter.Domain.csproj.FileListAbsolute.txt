@@ -10,3 +10,15 @@ C:\Amir\Project\ShopCenter\ShopCenter\ShopCenter.Domain\obj\Debug\net6.0\ShopCen
 C:\Amir\Project\ShopCenter\ShopCenter\ShopCenter.Domain\obj\Debug\net6.0\refint\ShopCenter.Domain.dll
 C:\Amir\Project\ShopCenter\ShopCenter\ShopCenter.Domain\obj\Debug\net6.0\ShopCenter.Domain.pdb
 C:\Amir\Project\ShopCenter\ShopCenter\ShopCenter.Domain\obj\Debug\net6.0\ref\ShopCenter.Domain.dll
+C:\Amir\Project\ShopCenter\ShopCenter.Domain\bin\Debug\net6.0\ShopCenter.Domain.deps.json
+C:\Amir\Project\ShopCenter\ShopCenter.Domain\bin\Debug\net6.0\ShopCenter.Domain.dll
+C:\Amir\Project\ShopCenter\ShopCenter.Domain\bin\Debug\net6.0\ShopCenter.Domain.pdb
+C:\Amir\Project\ShopCenter\ShopCenter.Domain\obj\Debug\net6.0\ShopCenter.Domain.csproj.AssemblyReference.cache
+C:\Amir\Project\ShopCenter\ShopCenter.Domain\obj\Debug\net6.0\ShopCenter.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Amir\Project\ShopCenter\ShopCenter.Domain\obj\Debug\net6.0\ShopCenter.Domain.AssemblyInfoInputs.cache
+C:\Amir\Project\ShopCenter\ShopCenter.Domain\obj\Debug\net6.0\ShopCenter.Domain.AssemblyInfo.cs
+C:\Amir\Project\ShopCenter\ShopCenter.Domain\obj\Debug\net6.0\ShopCenter.Domain.csproj.CoreCompileInputs.cache
+C:\Amir\Project\ShopCenter\ShopCenter.Domain\obj\Debug\net6.0\ShopCenter.Domain.dll
+C:\Amir\Project\ShopCenter\ShopCenter.Domain\obj\Debug\net6.0\refint\ShopCenter.Domain.dll
+C:\Amir\Project\ShopCenter\ShopCenter.Domain\obj\Debug\net6.0\ShopCenter.Domain.pdb
+C:\Amir\Project\ShopCenter\ShopCenter.Domain\obj\Debug\net6.0\ref\ShopCenter.Domain.dll

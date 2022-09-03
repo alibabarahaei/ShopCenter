@@ -484,11 +484,17 @@
           }
         }
       },
+      "ShopCenter.Domain/1.0.0": {
+        "runtime": {
+          "ShopCenter.Domain.dll": {}
+        }
+      },
       "ShopCenter.Infrastructure.EFCore/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.8",
           "Microsoft.EntityFrameworkCore": "6.0.8",
-          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.8"
+          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.8",
+          "ShopCenter.Domain": "1.0.0"
         },
         "runtime": {
           "ShopCenter.Infrastructure.EFCore.dll": {}
@@ -830,6 +836,11 @@
       "sha512": "sha512-CeWTdRNfRaSh0pm2gDTJFwVaXfTq6Xwv/sA887iwPTneW7oMtMlpvDIO+U60+3GWTB7Aom6oQwv5VZVUhQRdPQ==",
       "path": "system.windows.extensions/4.7.0",
       "hashPath": "system.windows.extensions.4.7.0.nupkg.sha512"
+    },
+    "ShopCenter.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "ShopCenter.Infrastructure.EFCore/1.0.0": {
       "type": "project",

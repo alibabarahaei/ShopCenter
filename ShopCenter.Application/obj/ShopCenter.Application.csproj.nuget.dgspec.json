@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\user\\Desktop\\New folder\\ShopCenter\\ShopCenter.Application\\ShopCenter.Application.csproj": {}
+    "C:\\Amir\\Project\\ShopCenter\\ShopCenter.Application\\ShopCenter.Application.csproj": {}
   },
   "projects": {
-    "C:\\Users\\user\\Desktop\\New folder\\ShopCenter\\ShopCenter.Application\\ShopCenter.Application.csproj": {
+    "C:\\Amir\\Project\\ShopCenter\\ShopCenter.Application\\ShopCenter.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user\\Desktop\\New folder\\ShopCenter\\ShopCenter.Application\\ShopCenter.Application.csproj",
+        "projectUniqueName": "C:\\Amir\\Project\\ShopCenter\\ShopCenter.Application\\ShopCenter.Application.csproj",
         "projectName": "ShopCenter.Application",
-        "projectPath": "C:\\Users\\user\\Desktop\\New folder\\ShopCenter\\ShopCenter.Application\\ShopCenter.Application.csproj",
+        "projectPath": "C:\\Amir\\Project\\ShopCenter\\ShopCenter.Application\\ShopCenter.Application.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user\\Desktop\\New folder\\ShopCenter\\ShopCenter.Application\\obj\\",
+        "outputPath": "C:\\Amir\\Project\\ShopCenter\\ShopCenter.Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -43,6 +43,16 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.8, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
