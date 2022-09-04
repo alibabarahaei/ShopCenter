@@ -627,13 +627,17 @@
       "ShopCenter.Application/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Identity": "2.2.0",
-          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.8"
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.8",
+          "ShopCenter.Domain": "1.0.0"
         },
         "runtime": {
           "ShopCenter.Application.dll": {}
         }
       },
       "ShopCenter.Domain/1.0.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.8"
+        },
         "runtime": {
           "ShopCenter.Domain.dll": {}
         }

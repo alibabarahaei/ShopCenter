@@ -22,3 +22,6 @@ C:\Amir\Project\ShopCenter\ShopCenter.Application\obj\Debug\net6.0\ShopCenter.Ap
 C:\Amir\Project\ShopCenter\ShopCenter.Application\obj\Debug\net6.0\refint\ShopCenter.Application.dll
 C:\Amir\Project\ShopCenter\ShopCenter.Application\obj\Debug\net6.0\ShopCenter.Application.pdb
 C:\Amir\Project\ShopCenter\ShopCenter.Application\obj\Debug\net6.0\ref\ShopCenter.Application.dll
+C:\Amir\Project\ShopCenter\ShopCenter.Application\bin\Debug\net6.0\ShopCenter.Domain.dll
+C:\Amir\Project\ShopCenter\ShopCenter.Application\bin\Debug\net6.0\ShopCenter.Domain.pdb
+C:\Amir\Project\ShopCenter\ShopCenter.Application\obj\Debug\net6.0\ShopCenter.Application.csproj.CopyComplete

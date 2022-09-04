@@ -544,6 +544,9 @@
         }
       },
       "ShopCenter.Domain/1.0.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.8"
+        },
         "runtime": {
           "ShopCenter.Domain.dll": {}
         }

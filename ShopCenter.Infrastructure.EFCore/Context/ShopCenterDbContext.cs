@@ -6,10 +6,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
+using ShopCenter.Domain.Models;
 
 namespace ShopCenter.Infrastructure.EFCore.Context
 {
-    public class ShopCenterDbContext : IdentityDbContext
+    public class ShopCenterDbContext : IdentityDbContext<ApplicationUser>
     {
 
         public ShopCenterDbContext(DbContextOptions<ShopCenterDbContext> options) : base(options)
@@ -34,11 +35,12 @@ namespace ShopCenter.Infrastructure.EFCore.Context
             }
 
 
+            base.OnModelCreating(modelBuilder);
 
 
 
             #region ChangeTableName(Identity)
-            modelBuilder.Entity<IdentityUser>().ToTable("Users").Property(p => p.Id).HasColumnName("UserId");
+            modelBuilder.Entity<ApplicationUser>().ToTable("Users").Property(p => p.Id).HasColumnName("UserId");
             modelBuilder.Entity<IdentityUserRole<string>>().ToTable("UserRoles");
             modelBuilder.Entity<IdentityUserLogin<string>>().ToTable("UserLogins");
             modelBuilder.Entity<IdentityUserClaim<string>>().ToTable("UserClaims");
@@ -47,7 +49,6 @@ namespace ShopCenter.Infrastructure.EFCore.Context
             modelBuilder.Entity<IdentityRole>().ToTable("Roles");
             #endregion
 
-            base.OnModelCreating(modelBuilder);
 
         }
 

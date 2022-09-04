@@ -4,7 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
+using ShopCenter.Application.DTOs.Account;
 using ShopCenter.Application.InterfaceServices;
+using ShopCenter.Domain.Models;
 
 namespace ShopCenter.Application.Services
 {
@@ -13,11 +15,11 @@ namespace ShopCenter.Application.Services
 
 
         #region constructor
-        private readonly UserManager<IdentityUser> _userManager;
+        private readonly UserManager<ApplicationUser> _userManager;
         private readonly RoleManager<IdentityRole> _roleManager;
-        private readonly SignInManager<IdentityUser> _signInManager;
+        private readonly SignInManager<ApplicationUser> _signInManager;
 
-        public UserService(UserManager<IdentityUser> userManager, RoleManager<IdentityRole> roleManager, SignInManager<IdentityUser> signInManager)
+        public UserService(UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager, SignInManager<ApplicationUser> signInManager)
         {
             _userManager = userManager;
             _roleManager = roleManager;
@@ -39,9 +41,17 @@ namespace ShopCenter.Application.Services
         #endregion
 
 
-        public IdentityResult RegisterUser()
+        public async Task<IdentityResult> RegisterUserAsync(RegisterUserDTO registerUserDTO)
         {
-            throw new NotImplementedException();
+            var user = new ApplicationUser()
+            {
+                UserName = registerUserDTO.UserName,
+                Email = registerUserDTO.Email,
+            };
+
+            return await _userManager.CreateAsync(user, registerUserDTO.Password);
+
+
         }
 
         public async Task<IdentityUser> IsUserNameInUse(string userName)

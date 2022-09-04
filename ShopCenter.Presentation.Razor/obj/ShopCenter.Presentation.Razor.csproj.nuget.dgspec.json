@@ -31,7 +31,11 @@
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Amir\\Project\\ShopCenter\\ShopCenter.Domain\\ShopCenter.Domain.csproj": {
+                "projectPath": "C:\\Amir\\Project\\ShopCenter\\ShopCenter.Domain\\ShopCenter.Domain.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -112,6 +116,12 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.8, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

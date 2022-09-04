@@ -865,6 +865,19 @@
             "related": ".xml"
           }
         }
+      },
+      "ShopCenter.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.8"
+        },
+        "compile": {
+          "bin/placeholder/ShopCenter.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ShopCenter.Domain.dll": {}
+        }
       }
     }
   },
@@ -1890,12 +1903,18 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "ShopCenter.Domain/1.0.0": {
+      "type": "project",
+      "path": "../ShopCenter.Domain/ShopCenter.Domain.csproj",
+      "msbuildProject": "../ShopCenter.Domain/ShopCenter.Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
       "Microsoft.AspNetCore.Identity >= 2.2.0",
-      "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 6.0.8"
+      "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 6.0.8",
+      "ShopCenter.Domain >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -1929,7 +1948,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Amir\\Project\\ShopCenter\\ShopCenter.Domain\\ShopCenter.Domain.csproj": {
+              "projectPath": "C:\\Amir\\Project\\ShopCenter\\ShopCenter.Domain\\ShopCenter.Domain.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

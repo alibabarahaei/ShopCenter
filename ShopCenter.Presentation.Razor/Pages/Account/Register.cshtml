@@ -28,9 +28,9 @@
     <!-- plugin-------------------------------------->
     <link rel="stylesheet" href="/css/vendor/bootstrap.css">
     <link rel="stylesheet" href="/css/vendor/owl.carousel.min.css">
-    <link rel="stylesheet" href="/css/vendor/noUISlider.min.css">
+    <link rel="stylesheet" href="/css/vendor/noUISlider.min.css" >
     <!-- main-style---------------------------------->
-    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/main.css" asp-append-version="true">
 </head>
 <body>
 
@@ -56,14 +56,21 @@
                                 <div class="Login-to-account mt-4">
                                     <div class="account-box-content">
                                         <h4>ثبت نام در دیجی اسمارت</h4>
-                                        <form action="#" class="form-account text-right">
+                                        <form method="Post" class="form-account text-right">
                                             <div class="form-account-title">
-                                                <label for="email-phone">ایمیل / شماره موبایل</label>
-                                                <input type="text" class="number-email-input" id="email-phone" name="email-account">
+                                                <label for="username" asp-for="UserName" ></label>
+                                                <input type="text" class="username-input" id="username" asp-for="UserName">
+                                                <span asp-validation-for="UserName" class="text-danger"></span>
+                                            </div>
+                                            <div class="form-account-title">
+                                                <label for="email">ایمیل</label>
+                                                <input type="text" class="number-email-input" id="email" asp-for="Email">
+                                                <span asp-validation-for="Email" class="text-danger"></span>
                                             </div>
                                             <div class="form-account-title">
                                                 <label for="password">رمز عبور</label>
-                                                <input type="password" class="password-input" name="password-account">
+                                                <input type="password" class="password-input" asp-for="Password">
+                                                <span asp-validation-for="Password" class="text-danger"></span>
                                             </div>
                                             <div class="form-auth-row">
                                                 <label for="#" class="ui-checkbox mt-1">

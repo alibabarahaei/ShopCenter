@@ -4100,7 +4100,25 @@ span.shipping-destination{
     margin-bottom: 0;
 }
 
-.account-box-content .form-account-title input.number-email-input,.password-input{
+
+
+input.username-input {
+    width: 100%;
+    height: 30px;
+    outline: none;
+    text-align: left;
+    position: relative;
+    padding: 0 15px;
+    border-radius: 20px;
+    background: #f3f3f3;
+    color: #666;
+    font-size: 14px;
+    transition: .2s;
+}
+
+
+
+.account-box-content .form-account-title input.number-email-input , .password-input  {
     width: 100%;
     height: 30px;
     outline: none;
@@ -4120,10 +4138,10 @@ span.shipping-destination{
     border: 1px solid #eee;
 }
 
-.account-box-content .form-account-title input.number-email-input::placeholder{
-    text-align: right;
-    color: #9f9f9f;
-}
+    .account-box-content .form-account-title input.number-email-input input.username-input::placeholder {
+        text-align: right;
+        color: #9f9f9f;
+    }
 
 .account-box-content .form-account-title input.password-input::placeholder{
     text-align: right;

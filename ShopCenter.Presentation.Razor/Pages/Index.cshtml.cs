@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace ShopCenter.Presentation.Razor.Pages
 {
+
     public class IndexModel : PageModel
     {
         private readonly ILogger<IndexModel> _logger;
@@ -12,9 +13,9 @@ namespace ShopCenter.Presentation.Razor.Pages
             _logger = logger;
         }
 
-        public void OnGet()
+        public IActionResult OnGet()
         {
-
+            return RedirectToPage("/Account/Register");
         }
     }
 }

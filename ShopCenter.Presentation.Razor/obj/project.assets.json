@@ -1252,7 +1252,8 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "Microsoft.AspNetCore.Identity": "2.2.0",
-          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.8"
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.8",
+          "ShopCenter.Domain": "1.0.0"
         },
         "compile": {
           "bin/placeholder/ShopCenter.Application.dll": {}
@@ -1264,6 +1265,9 @@
       "ShopCenter.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.8"
+        },
         "compile": {
           "bin/placeholder/ShopCenter.Domain.dll": {}
         },

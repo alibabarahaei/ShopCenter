@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using ShopCenter.Application.InterfaceServices;
 using ShopCenter.Application.Services;
 using ShopCenter.Domain.InterfaceRepositories.Base;
+using ShopCenter.Domain.Models;
 using ShopCenter.Infrastructure.EFCore.Context;
 using ShopCenter.Infrastructure.EFCore.Repository.Base;
 
@@ -17,7 +18,7 @@ builder.Services.AddRazorPages();
 
 
 
-builder.Services.AddIdentity<IdentityUser, IdentityRole>(options =>
+builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options =>
     {
         options.Password.RequireNonAlphanumeric = false;
         options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(15);
