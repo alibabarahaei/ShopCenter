@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "CdZJkRa01RnVJN/AshRkB94OY/auqTjjTj8lS8AlanI=",
+  "Hash": "fDDBA1gR/Aalp6Lz/q4oCrA38mVmoNlvfNXmxDeBQSY=",
   "Source": "ShopCenter.Presentation.Razor",
   "BasePath": "_content/ShopCenter.Presentation.Razor",
   "Mode": "Default",
@@ -66,6 +66,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\main.css"
+    },
+    {
+      "Identity": "C:\\Amir\\Project\\ShopCenter\\ShopCenter.Presentation.Razor\\wwwroot\\css\\notifications.css",
+      "SourceId": "ShopCenter.Presentation.Razor",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Amir\\Project\\ShopCenter\\ShopCenter.Presentation.Razor\\wwwroot\\",
+      "BasePath": "_content/ShopCenter.Presentation.Razor",
+      "RelativePath": "css/notifications.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\notifications.css"
     },
     {
       "Identity": "C:\\Amir\\Project\\ShopCenter\\ShopCenter.Presentation.Razor\\wwwroot\\css\\responsive.css",
@@ -2941,6 +2958,23 @@
       "OriginalItemSpec": "wwwroot\\images\\slider-product\\zenbook.jpg"
     },
     {
+      "Identity": "C:\\Amir\\Project\\ShopCenter\\ShopCenter.Presentation.Razor\\wwwroot\\js\\custom.js",
+      "SourceId": "ShopCenter.Presentation.Razor",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Amir\\Project\\ShopCenter\\ShopCenter.Presentation.Razor\\wwwroot\\",
+      "BasePath": "_content/ShopCenter.Presentation.Razor",
+      "RelativePath": "js/custom.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\custom.js"
+    },
+    {
       "Identity": "C:\\Amir\\Project\\ShopCenter\\ShopCenter.Presentation.Razor\\wwwroot\\js\\main.js",
       "SourceId": "ShopCenter.Presentation.Razor",
       "SourceType": "Discovered",
@@ -2956,6 +2990,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\main.js"
+    },
+    {
+      "Identity": "C:\\Amir\\Project\\ShopCenter\\ShopCenter.Presentation.Razor\\wwwroot\\js\\notifications.js",
+      "SourceId": "ShopCenter.Presentation.Razor",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Amir\\Project\\ShopCenter\\ShopCenter.Presentation.Razor\\wwwroot\\",
+      "BasePath": "_content/ShopCenter.Presentation.Razor",
+      "RelativePath": "js/notifications.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\notifications.js"
     },
     {
       "Identity": "C:\\Amir\\Project\\ShopCenter\\ShopCenter.Presentation.Razor\\wwwroot\\js\\vendor\\bootstrap.js",

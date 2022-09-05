@@ -60,6 +60,7 @@ namespace ShopCenter.Presentation.Razor.Pages.Account
 
         public void OnGet()
         {
+            TempData["ErrorMessage"] = "dffgfghhghjhjh";
         }
 
         public async Task<IActionResult> OnPostAsync()
@@ -72,6 +73,43 @@ namespace ShopCenter.Presentation.Razor.Pages.Account
                     Email = Email,
                     Password = Password
                 });
+                if (!result.Succeeded)
+                {
+                    var error_username = false;
+                    var error_password = false;
+                    var error_email = false;
+                    foreach (var error in result.Errors)
+                    {
+
+                        if (error.Code.Contains("Password") && error_password != true)
+                        {
+                            TempData["ErrorMessage"] = error.Description;
+                            error_password = true;
+                            ModelState.AddModelError("Password", error.Description);
+                        }
+                        else if (error.Code.Contains("UserName") && error_username != true)
+                        {
+                            error_username = true;
+                            ModelState.AddModelError("UserName", error.Description);
+                        }
+                        else if (error.Code.Contains("Email") && error_email != true)
+                        {
+                            ModelState.AddModelError("Email", error.Description);
+                            error_email = true;
+                        }
+                        else
+                        {
+                            ModelState.AddModelError("UserName", error.Description);
+                            error_username = true;
+                        }
+                        return Page();
+
+                    }
+
+
+
+                    return Page();
+                }
                 return RedirectToPage("Login");
             }
             else
