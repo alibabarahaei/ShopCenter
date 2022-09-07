@@ -60,7 +60,7 @@ namespace ShopCenter.Presentation.Razor.Pages.Account
 
         public void OnGet()
         {
-            TempData["ErrorMessage"] = "dffgfghhghjhjh";
+            
         }
 
         public async Task<IActionResult> OnPostAsync()
@@ -75,32 +75,29 @@ namespace ShopCenter.Presentation.Razor.Pages.Account
                 });
                 if (!result.Succeeded)
                 {
-                    var error_username = false;
-                    var error_password = false;
-                    var error_email = false;
+                    
                     foreach (var error in result.Errors)
                     {
 
-                        if (error.Code.Contains("Password") && error_password != true)
+                        if (error.Code.Contains("Password"))
                         {
-                            TempData["ErrorMessage"] = error.Description;
-                            error_password = true;
+                            
                             ModelState.AddModelError("Password", error.Description);
                         }
-                        else if (error.Code.Contains("UserName") && error_username != true)
+                        else if (error.Code.Contains("UserName"))
                         {
-                            error_username = true;
+                            
                             ModelState.AddModelError("UserName", error.Description);
                         }
-                        else if (error.Code.Contains("Email") && error_email != true)
+                        else if (error.Code.Contains("Email") )
                         {
                             ModelState.AddModelError("Email", error.Description);
-                            error_email = true;
+                            
                         }
                         else
                         {
                             ModelState.AddModelError("UserName", error.Description);
-                            error_username = true;
+                            
                         }
                         return Page();
 
@@ -110,6 +107,7 @@ namespace ShopCenter.Presentation.Razor.Pages.Account
 
                     return Page();
                 }
+                TempData["SuccessMessage"] = "با موفقیت ثبت نام شدید";
                 return RedirectToPage("Login");
             }
             else

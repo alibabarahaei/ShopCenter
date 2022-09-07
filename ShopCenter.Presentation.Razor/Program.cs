@@ -1,11 +1,14 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using PersianTranslation.Identity;
 using ShopCenter.Application.InterfaceServices;
 using ShopCenter.Application.Services;
 using ShopCenter.Domain.InterfaceRepositories.Base;
 using ShopCenter.Domain.Models;
 using ShopCenter.Infrastructure.EFCore.Context;
 using ShopCenter.Infrastructure.EFCore.Repository.Base;
+using System.Text.Encodings.Web;
+using System.Text.Unicode;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -25,11 +28,11 @@ builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options =>
 
     })
     .AddEntityFrameworkStores<ShopCenterDbContext>()
-    .AddDefaultTokenProviders();
-//    .AddErrorDescriber<PersianIdentityErrorDescriber>();
+    .AddDefaultTokenProviders()
+    .AddErrorDescriber<PersianIdentityErrorDescriber>();
 
 
-
+builder.Services.AddSingleton<HtmlEncoder>(HtmlEncoder.Create(allowedRanges: new[] { UnicodeRanges.BasicLatin, UnicodeRanges.Arabic }));
 
 
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));

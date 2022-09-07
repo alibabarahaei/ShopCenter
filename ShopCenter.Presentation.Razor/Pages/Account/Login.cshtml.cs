@@ -12,9 +12,7 @@ namespace ShopCenter.Presentation.Razor.Pages.Account
 
         public void OnGet()
         {
-
-
-
+            
         }
 
         [ValidateAntiForgeryToken]
