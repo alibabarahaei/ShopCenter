@@ -138,3 +138,5 @@ C:\Amir\Project\ShopCenter\ShopCenter.Presentation.Razor\obj\Debug\net6.0\ref\Sh
 C:\Amir\Project\ShopCenter\ShopCenter.Presentation.Razor\bin\Debug\net6.0\ShopCenter.Application.dll
 C:\Amir\Project\ShopCenter\ShopCenter.Presentation.Razor\bin\Debug\net6.0\ShopCenter.Application.pdb
 C:\Amir\Project\ShopCenter\ShopCenter.Presentation.Razor\obj\Debug\net6.0\scopedcss\Pages\Shared\_MainLayout.cshtml.rz.scp.css
+C:\Amir\Project\ShopCenter\ShopCenter.Presentation.Razor\bin\Debug\net6.0\GoogleReCaptcha.V3.dll
+C:\Amir\Project\ShopCenter\ShopCenter.Presentation.Razor\bin\Debug\net6.0\Newtonsoft.Json.dll

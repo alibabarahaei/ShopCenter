@@ -54,14 +54,25 @@ namespace ShopCenter.Application.Services
 
         }
 
-        public async Task<IdentityUser> IsUserNameInUse(string userName)
+        public async Task<IdentityUser> IsUserNameInUseAsync(string userName)
         {
             return await _userManager.FindByNameAsync(userName);
         }
 
-        public async Task<IdentityUser> IsEmailInUse(string email)
+        public async Task<IdentityUser> IsEmailInUseAsync(string email)
         {
             return await _userManager.FindByEmailAsync(email);
+        }
+
+        public async Task<SignInResult> LoginUserAsync(LoginUserDTO loginUserDTO)
+        {
+            var result = await _signInManager.PasswordSignInAsync(loginUserDTO.UserName, loginUserDTO.Password, loginUserDTO.RememberMe, true);
+            return result;
+        }
+
+        public async Task LogOutUserAsync()
+        {
+            await _signInManager.SignOutAsync();
         }
     }
 }

@@ -9,6 +9,8 @@ using ShopCenter.Infrastructure.EFCore.Context;
 using ShopCenter.Infrastructure.EFCore.Repository.Base;
 using System.Text.Encodings.Web;
 using System.Text.Unicode;
+using GoogleReCaptcha.V3;
+using GoogleReCaptcha.V3.Interface;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -25,6 +27,7 @@ builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options =>
     {
         options.Password.RequireNonAlphanumeric = false;
         options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(15);
+        
 
     })
     .AddEntityFrameworkStores<ShopCenterDbContext>()
@@ -41,6 +44,8 @@ builder.Services.AddScoped<IUserService, UserService>();
 
 
 
+
+builder.Services.AddHttpClient<ICaptchaValidator, GoogleReCaptchaValidator>();
 
 #region Config Database
 builder.Services.AddDbContext<ShopCenterDbContext>(option =>
@@ -66,6 +71,7 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapRazorPages();

@@ -12,7 +12,9 @@ namespace ShopCenter.Application.InterfaceServices
     {
 
         Task<IdentityResult> RegisterUserAsync(RegisterUserDTO registerUserDTO);
-        Task<IdentityUser> IsUserNameInUse(string userName);
-        Task<IdentityUser> IsEmailInUse(string email);
+        Task<IdentityUser> IsUserNameInUseAsync(string userName);
+        Task<IdentityUser> IsEmailInUseAsync(string email);
+        Task<SignInResult> LoginUserAsync(LoginUserDTO loginUserDTO) ;
+        Task LogOutUserAsync();
     }
 }

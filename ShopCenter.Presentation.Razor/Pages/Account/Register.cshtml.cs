@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using GoogleReCaptcha.V3.Interface;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.Win32;
 using ShopCenter.Application.DTOs.Account;
 using ShopCenter.Application.InterfaceServices;
 using System.ComponentModel.DataAnnotations;
@@ -15,7 +17,7 @@ namespace ShopCenter.Presentation.Razor.Pages.Account
         #region Properties
         [Display(Name = "نام کاربری")]
         [Required(ErrorMessage = "{0} را وارد کنید")]
-        [StringLength(30, ErrorMessage = "طول {0} باید بین {2} و {1} باشد", MinimumLength = 6)]
+        [StringLength(40, ErrorMessage = "طول {0} باید بین {2} و {1} باشد", MinimumLength = 6)]
         [PageRemote(PageHandler = "IsUserNameInUse", HttpMethod = "Get")]
         public string UserName { get; set; }
 
@@ -32,16 +34,22 @@ namespace ShopCenter.Presentation.Razor.Pages.Account
         [StringLength(30, ErrorMessage = "طول {0} باید بین {2} و {1} باشد", MinimumLength = 8)]
         //[Compare()]
         public string Password { get; set; }
+
+        [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
+        public string Captcha { get; set; }
         #endregion
 
 
 
         #region constuctor
         private readonly IUserService _userService;
+        private readonly ICaptchaValidator _captchaValidator;
 
-        public RegisterModel(IUserService userService)
+        public RegisterModel( IUserService userService, ICaptchaValidator captchaValidator)
         {
+            
             _userService = userService;
+            _captchaValidator = captchaValidator;
         }
         #endregion
 
@@ -63,8 +71,20 @@ namespace ShopCenter.Presentation.Razor.Pages.Account
             
         }
 
+
+
+
+
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> OnPostAsync()
         {
+            if (!await _captchaValidator.IsCaptchaPassedAsync(Captcha))
+            {
+                TempData["ErrorMessage"] = "کد کپچای شما تایید نشد";
+                return Page();
+            }
+
+
             if (ModelState.IsValid)
             {
                 var result = await _userService.RegisterUserAsync(new RegisterUserDTO()
@@ -124,7 +144,7 @@ namespace ShopCenter.Presentation.Razor.Pages.Account
         [ValidateAntiForgeryToken]
         public async Task<JsonResult> OnGetIsEmailInUse(string email)
         {
-            var user = await _userService.IsEmailInUse(email);
+            var user = await _userService.IsEmailInUseAsync(email);
             if (user == null) return new JsonResult(true);
             return new JsonResult("ایمیل وارد شده از قبل موجود است");
         }
@@ -132,7 +152,7 @@ namespace ShopCenter.Presentation.Razor.Pages.Account
         [ValidateAntiForgeryToken]
         public async Task<JsonResult> OnGetIsUserNameInUse(string userName)
         {
-            var user = await _userService.IsUserNameInUse(userName);
+            var user = await _userService.IsUserNameInUseAsync(userName);
             if (user == null)
                 return new JsonResult(true);
             return new JsonResult("نام کاربری وارد شده توسط شخص دیگری انتخاب شده است");

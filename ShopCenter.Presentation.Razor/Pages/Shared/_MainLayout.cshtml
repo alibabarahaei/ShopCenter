@@ -4,14 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <partial name="_HeaderReferences"/>
+    @RenderSection("Styles",false)
+    <partial  name="_HeaderReferencesPartial"/>
 </head>
 <body>
 @await Component.InvokeAsync("SiteHeader")
 @RenderBody()
 @await Component.InvokeAsync("SiteFooter")
 </body>
-<partial name="_FooterRefrences"/>
-<partial name="_SiteMessages"/>
+<partial name="_FooterRefrencesPartial"/>
+<partial name="_ValidationScriptsPartial"/>
+@RenderSection("Scripts",false)
+<partial name="_SiteMessagesPartial"/>
 </html>

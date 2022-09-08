@@ -19,6 +19,10 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Amir/Project/ShopCenter/ShopCenter.Presentation.Razor/Pages/Account/LogOut.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxMb2dPdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Amir/Project/ShopCenter/ShopCenter.Presentation.Razor/Pages/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -43,16 +47,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXENvbXBvbmVudHNcU2l0ZUhlYWRlclxTaXRlSGVhZGVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Amir/Project/ShopCenter/ShopCenter.Presentation.Razor/Pages/Shared/_FooterRefrences.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9Gb290ZXJSZWZyZW5jZXMuY3NodG1s
+[C:/Amir/Project/ShopCenter/ShopCenter.Presentation.Razor/Pages/Shared/_CaptchaScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9DYXB0Y2hhU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Amir/Project/ShopCenter/ShopCenter.Presentation.Razor/Pages/Shared/_HeaderReferences.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9IZWFkZXJSZWZlcmVuY2VzLmNzaHRtbA==
+[C:/Amir/Project/ShopCenter/ShopCenter.Presentation.Razor/Pages/Shared/_FooterRefrencesPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9Gb290ZXJSZWZyZW5jZXNQYXJ0aWFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Amir/Project/ShopCenter/ShopCenter.Presentation.Razor/Pages/Shared/_SiteMessages.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9TaXRlTWVzc2FnZXMuY3NodG1s
+[C:/Amir/Project/ShopCenter/ShopCenter.Presentation.Razor/Pages/Shared/_HeaderReferencesPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9IZWFkZXJSZWZlcmVuY2VzUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Amir/Project/ShopCenter/ShopCenter.Presentation.Razor/Pages/Shared/_SiteMessagesPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9TaXRlTWVzc2FnZXNQYXJ0aWFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Amir/Project/ShopCenter/ShopCenter.Presentation.Razor/Pages/Shared/_ValidationScriptsPartial.cshtml]

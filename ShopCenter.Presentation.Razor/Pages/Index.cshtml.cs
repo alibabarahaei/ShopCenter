@@ -13,9 +13,9 @@ namespace ShopCenter.Presentation.Razor.Pages
             _logger = logger;
         }
 
-        public IActionResult OnGet()
+        public void OnGet()
         {
-            return RedirectToPage("/Account/Register");
+            
         }
     }
 }
