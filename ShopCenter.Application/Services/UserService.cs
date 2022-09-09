@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
@@ -18,12 +19,14 @@ namespace ShopCenter.Application.Services
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
+        private readonly IMessageSender _messageSender;
 
-        public UserService(UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager, SignInManager<ApplicationUser> signInManager)
+        public UserService(UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager, SignInManager<ApplicationUser> signInManager, IMessageSender messageSender)
         {
             _userManager = userManager;
             _roleManager = roleManager;
             _signInManager = signInManager;
+            _messageSender = messageSender;
         }
         #endregion
 
@@ -70,9 +73,21 @@ namespace ShopCenter.Application.Services
             return result;
         }
 
+      
+
+
         public async Task LogOutUserAsync()
         {
             await _signInManager.SignOutAsync();
+        }
+
+        public async Task<string> GenerateEmailConfirmationTokenAsync(EmailConfirmationDTO emailConfirmationDTO)
+        {
+            var user = new ApplicationUser()
+            {
+                UserName = emailConfirmationDTO.UserName
+            };
+           return  await _userManager.GenerateEmailConfirmationTokenAsync(user);
         }
     }
 }

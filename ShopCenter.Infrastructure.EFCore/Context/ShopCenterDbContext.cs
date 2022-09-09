@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using ShopCenter.Domain.Models;
+using ShopCenter.Domain.Models.Site;
 
 namespace ShopCenter.Infrastructure.EFCore.Context
 {
@@ -17,6 +18,25 @@ namespace ShopCenter.Infrastructure.EFCore.Context
         {
 
         }
+
+        #region site
+        public DbSet<Slider> Sliders { get; set; }
+        #endregion
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

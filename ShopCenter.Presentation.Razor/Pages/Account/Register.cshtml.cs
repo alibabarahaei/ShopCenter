@@ -1,9 +1,10 @@
 ﻿using GoogleReCaptcha.V3.Interface;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.Win32;
+
 using ShopCenter.Application.DTOs.Account;
 using ShopCenter.Application.InterfaceServices;
+using ShopCenter.Domain.Models;
 using System.ComponentModel.DataAnnotations;
 
 namespace ShopCenter.Presentation.Razor.Pages.Account
@@ -44,12 +45,13 @@ namespace ShopCenter.Presentation.Razor.Pages.Account
         #region constuctor
         private readonly IUserService _userService;
         private readonly ICaptchaValidator _captchaValidator;
-
-        public RegisterModel( IUserService userService, ICaptchaValidator captchaValidator)
+        private readonly IMessageSender _messageSender;
+        public RegisterModel( IUserService userService, ICaptchaValidator captchaValidator, IMessageSender messageSender)
         {
             
             _userService = userService;
             _captchaValidator = captchaValidator;
+            _messageSender = messageSender;
         }
         #endregion
 
@@ -95,7 +97,13 @@ namespace ShopCenter.Presentation.Razor.Pages.Account
                 });
                 if (!result.Succeeded)
                 {
-                    
+                    //var user = new EmailConfirmationDTO()
+                    //{
+                    //    UserName = UserName,
+                    //};
+                    // var emailConfirmationToken = await _userService.GenerateEmailConfirmationTokenAsync(user);
+                    // var emailMessage =  Url.Page("Login",null, values:new { username = UserName, token = emailConfirmationToken }, protocol: Request.Scheme);
+                    // _messageSender.SendEmailAsync(Email, "Email confirmation", emailMessage);
                     foreach (var error in result.Errors)
                     {
 

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using ShopCenter.Application.DTOs.Account;
+using ShopCenter.Domain.Models;
 
 namespace ShopCenter.Application.InterfaceServices
 {
@@ -16,5 +17,6 @@ namespace ShopCenter.Application.InterfaceServices
         Task<IdentityUser> IsEmailInUseAsync(string email);
         Task<SignInResult> LoginUserAsync(LoginUserDTO loginUserDTO) ;
         Task LogOutUserAsync();
+        Task<string> GenerateEmailConfirmationTokenAsync(EmailConfirmationDTO emailConfirmationDTO);
     }
 }

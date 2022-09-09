@@ -15,6 +15,14 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Amir\Project\ShopCenter\ShopCenter.Presentation.Razor
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Amir/Project/ShopCenter/ShopCenter.Presentation.Razor/Pages/Account/ConfirmEmail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxDb25maXJtRW1haWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Amir/Project/ShopCenter/ShopCenter.Presentation.Razor/Pages/Account/ForgotPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxGb3Jnb3RQYXNzd29yZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Amir/Project/ShopCenter/ShopCenter.Presentation.Razor/Pages/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -37,6 +45,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Amir/Project/ShopCenter/ShopCenter.Presentation.Razor/Pages/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Amir/Project/ShopCenter/ShopCenter.Presentation.Razor/Pages/Shared/Components/HomeMainSlider/HomeMainSlider.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXENvbXBvbmVudHNcSG9tZU1haW5TbGlkZXJcSG9tZU1haW5TbGlkZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Amir/Project/ShopCenter/ShopCenter.Presentation.Razor/Pages/Shared/Components/SiteFooter/SiteFooter.cshtml]
