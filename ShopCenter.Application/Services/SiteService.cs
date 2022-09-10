@@ -14,22 +14,24 @@ namespace ShopCenter.Application.Services
 
         
         private readonly IGenericRepository<Slider> _sliderRepository;
-
-        public SiteService(IGenericRepository<Slider> sliderRepository)
+        private readonly IGenericRepository<Banner> _bannerRepository;
+        public SiteService(IGenericRepository<Slider> sliderRepository, IGenericRepository<Banner> bannerRepository)
         {
-            
             _sliderRepository = sliderRepository;
+            _bannerRepository = bannerRepository;
         }
 
         #endregion
 
+        #region site banners
 
+        public async Task<List<Banner>> GetSiteBannersByPlacement(List<BannerPlacement> placements)
+        {
+            return await _bannerRepository.GetQuery().AsQueryable()
+                .Where(s => placements.Contains(s.BannerPlacement)).ToListAsync();
+        }
 
-
-
-
-
-
+        #endregion
 
         #region slider
 
@@ -39,14 +41,16 @@ namespace ShopCenter.Application.Services
                 .Where(s => s.IsActive && !s.IsDelete).ToListAsync();
         }
 
+
         #endregion
 
         #region dispose
 
         public async ValueTask DisposeAsync()
         {
-            
+
             if (_sliderRepository != null) await _sliderRepository.DisposeAsync();
+            if (_bannerRepository != null) await _bannerRepository.DisposeAsync();
         }
 
         #endregion

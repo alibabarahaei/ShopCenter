@@ -1,0 +1,22 @@
+﻿@using ShopCenter.Application.EntitiesExtensions
+@model List<ShopCenter.Domain.Models.Site.Banner>
+
+
+
+
+@if (Model != null )
+{
+
+    
+    <div class="adplacement-container-column">
+                @for (var i =0;i<=1;i++)
+                {
+                    <a href=@Model[i] class="adplacement-item">
+                        <div class="adplacement-sponsored-box">
+                    <img src= @Model[i].GetSliderImageAddress()>
+                        </div>
+                    </a>
+                }
+    </div>
+}
+

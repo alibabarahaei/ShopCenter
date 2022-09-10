@@ -14,5 +14,10 @@ namespace ShopCenter.Application.InterfaceServices
         Task<List<Slider>> GetAllActiveSliders();
 
         #endregion
+        #region site banners
+
+        Task<List<Banner>> GetSiteBannersByPlacement(List<BannerPlacement> placements);
+
+        #endregion
     }
 }

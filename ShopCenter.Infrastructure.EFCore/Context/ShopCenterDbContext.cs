@@ -21,6 +21,7 @@ namespace ShopCenter.Infrastructure.EFCore.Context
 
         #region site
         public DbSet<Slider> Sliders { get; set; }
+        public DbSet<Banner> Banners { get; set; }
         #endregion
 
 
