@@ -6,7 +6,7 @@ namespace ShopCenter.Presentation.Razor.ViewComponents.SiteViewComponents
     {
         public async Task<IViewComponentResult> InvokeAsync()
         {
-            return View("SiteHeader");
+              return View("SiteHeader");
         }
 
     }

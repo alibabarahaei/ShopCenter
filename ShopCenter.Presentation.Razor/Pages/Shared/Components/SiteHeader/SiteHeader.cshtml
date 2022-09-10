@@ -1,5 +1,6 @@
 ﻿ <!-- header-------------------------------->
-<header class="header-main">
+
+ <header class="header-main">
     <div class="container-main">
         <div class="d-block">
             <section class="h-main-row">
@@ -25,6 +26,7 @@
                                                 <div class="form-ui">
                                                     <div class="custom-select-ui">
                                                         <select class="right">
+                                                           
                                                             <option>همه دسته ها</option>
                                                             <option>کالای دیجیتال</option>
                                                             <option>آرایشی بهداشتی</option>
@@ -32,7 +34,7 @@
                                                             <option>مد پوشاک</option>
                                                             <option>خانه آشپز خانه</option>
                                                             <option>لوازم تحریر و هنر</option>
-                                                            <option>کودک و نوزادfffffffffffffffffffffffffffffffffff</option>
+                                                            <option>کودک و نوزاد</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -45,51 +47,51 @@
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-0 col-xs-12 pl">
-                    @if(User.Identity.IsAuthenticated)
+                    @if (User.Identity.IsAuthenticated)
                     {
-                    <div class="header-left">
-                        <div class="header-account text-left">
-                            <div class="d-block">
-                                <div class="account-box">
-                                    <div class="nav-account d-block pl">
-                                        <span class="icon-account">
-                                            <img src="/images/man.png" class="avator">
-                                        </span>
-                                        <span class="title-account">حساب کاربری</span>
-                                        <div class="dropdown-menu">
-                                            <ul class="account-uls mb-0">
-                                                <li class="account-item">
-                                                    <a href="#" class="account-link">پنل کاربری</a>
-                                                </li>
-                                                <li class="account-item">
-                                                    <a href="#" class="account-link">سفارشات من</a>
-                                                </li>
-                                                <li class="account-item">
-                                                    <a href="#" class="account-link">تنظیمات</a>
-                                                </li>
-                                                <li class="account-item">
-                                                    <a asp-page="/Account/LogOut" class="account-link">خروج</a>
-                                                </li>
-                                            </ul>
+                        <div class="header-left">
+                            <div class="header-account text-left">
+                                <div class="d-block">
+                                    <div class="account-box">
+                                        <div class="nav-account d-block pl">
+                                            <span class="icon-account">
+                                                <img src="/images/man.png" class="avator">
+                                            </span>
+                                            <span class="title-account">حساب کاربری</span>
+                                            <div class="dropdown-menu">
+                                                <ul class="account-uls mb-0">
+                                                    <li class="account-item">
+                                                        <a asp-area="User" asp-page="/Dashboard/Profile" class="account-link">پنل کاربری</a>
+                                                    </li>
+                                                    <li class="account-item">
+                                                        <a href="#" class="account-link">سفارشات من</a>
+                                                    </li>
+                                                    <li class="account-item">
+                                                        <a href="#" class="account-link">تنظیمات</a>
+                                                    </li>
+                                                    <li class="account-item">
+                                                        <a asp-page="/Account/LogOut" class="account-link">خروج</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
                     }
                     else
                     {
-                        <div class="user-area text-center" style="margin-top: 15px;">
-                            <div class="logged-out">
-                                <i class="zmdi zmdi-account-o"></i>
-                                <a asp-page="/Account/Login" style="color:Gray;"> ورود </a>/
-                                <a asp-page="/Account/Register" style="color:Gray;"> ثبت نام </a>
+                            <div class="user-area text-center" style="margin-top: 15px;">
+                                <div class="logged-out">
+                                    <i class="zmdi zmdi-account-o"></i>
+                                    <a asp-page="/Account/Login" style="color:Gray;"> ورود </a>/
+                                    <a asp-page="/Account/Register" style="color:Gray;"> ثبت نام </a>
+                                </div>
                             </div>
-                        </div>
                     }
-                    
-                    
+
+
                 </div>
             </section>
             <div>
@@ -780,7 +782,8 @@
                     </div>
                 </nav>
             </div>
-            <!--    responsive-megamenu-mobile----------------->
+        <!--    responsive-megamenu-mobile----------------->
+        
             <nav class="sidebar">
                 <div class="nav-header">
                     <div class="header-cover"></div>
