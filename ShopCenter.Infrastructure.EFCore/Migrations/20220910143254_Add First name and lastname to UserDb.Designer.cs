@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ShopCenter.Infrastructure.EFCore.Context;
 
@@ -11,9 +12,10 @@ using ShopCenter.Infrastructure.EFCore.Context;
 namespace ShopCenter.Infrastructure.EFCore.Migrations
 {
     [DbContext(typeof(ShopCenterDbContext))]
-    partial class ShopCenterDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220910143254_Add First name and lastname to UserDb")]
+    partial class AddFirstnameandlastnametoUserDb
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -176,12 +178,10 @@ namespace ShopCenter.Infrastructure.EFCore.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("FirstName")
-                        .HasMaxLength(200)
-                        .HasColumnType("nvarchar(200)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("LastName")
-                        .HasMaxLength(200)
-                        .HasColumnType("nvarchar(200)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("bit");
