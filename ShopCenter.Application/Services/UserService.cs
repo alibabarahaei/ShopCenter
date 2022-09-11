@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using ShopCenter.Application.DTOs.Account;
+using ShopCenter.Application.DTOs.User;
 using ShopCenter.Application.InterfaceServices;
 using ShopCenter.Domain.Models;
 
@@ -88,6 +89,20 @@ namespace ShopCenter.Application.Services
                 UserName = emailConfirmationDTO.UserName
             };
            return  await _userManager.GenerateEmailConfirmationTokenAsync(user);
+        }
+
+        public async Task<IdentityResult> EditProfileAsync(EditProfileDTO editProfileDTO)
+        {
+            var currentUser = await _userManager.GetUserAsync(editProfileDTO.User);
+            currentUser.FirstName  = editProfileDTO.FirstName;
+            currentUser.LastName = editProfileDTO.LastName;    
+            currentUser.PhoneNumber= editProfileDTO.PhoneNumber;
+            return await _userManager.UpdateAsync(currentUser);
+        }
+
+        public async Task<ApplicationUser> GetUserAsync(GetUserDTO getuserDTO)
+        {
+            return await _userManager.GetUserAsync(getuserDTO.User);
         }
     }
 }

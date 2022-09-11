@@ -27,8 +27,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVXNlclxQYWdlc1xEYXNoYm9hcmRcQ29tbWVudC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Amir/Project/ShopCenter/ShopCenter.Presentation.Razor/Areas/User/Pages/Dashboard/EditPersonalInfo.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVXNlclxQYWdlc1xEYXNoYm9hcmRcRWRpdFBlcnNvbmFsSW5mby5jc2h0bWw=
+[C:/Amir/Project/ShopCenter/ShopCenter.Presentation.Razor/Areas/User/Pages/Dashboard/EditProfile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVXNlclxQYWdlc1xEYXNoYm9hcmRcRWRpdFByb2ZpbGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Amir/Project/ShopCenter/ShopCenter.Presentation.Razor/Areas/User/Pages/Dashboard/Favorite.cshtml]
@@ -61,6 +61,14 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Amir/Project/ShopCenter/ShopCenter.Presentation.Razor/Areas/User/Pages/Shared/_DashboardLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVXNlclxQYWdlc1xTaGFyZWRcX0Rhc2hib2FyZExheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Amir/Project/ShopCenter/ShopCenter.Presentation.Razor/Areas/User/Pages/Shared/_SiteMessagesPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVXNlclxQYWdlc1xTaGFyZWRcX1NpdGVNZXNzYWdlc1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Amir/Project/ShopCenter/ShopCenter.Presentation.Razor/Areas/User/Pages/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVXNlclxQYWdlc1xTaGFyZWRcX1ZhbGlkYXRpb25TY3JpcHRzUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Amir/Project/ShopCenter/ShopCenter.Presentation.Razor/Areas/User/Pages/_FooterRefrencesPartial.cshtml]

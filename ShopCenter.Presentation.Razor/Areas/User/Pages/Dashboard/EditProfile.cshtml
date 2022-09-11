@@ -1,0 +1,29 @@
+﻿@page
+@model ShopCenter.Presentation.Razor.Areas.User.Pages.Dashboard.EditProfileModel
+@{
+}
+<div class="profile-content">
+    <div class="profile-stats">
+        <div class="profile-address">
+            <div class="middle-container">
+                <form method="post" class="form-checkout">
+                    <div class="form-checkout-row">
+                        <label for="namefirst" asp-for="FirstName"> نام<abbr class="required" title="ضروری" style="color:red;">*</abbr></label>
+                        <input type="text" id="namefirst" class=" form-control" asp-for="FirstName" value=@Model.FirstName>
+                        <span asp-validation-for="FirstName" class="text-danger" style="font-size: 15px"></span>
+                        <label for="namelast" asp-for="LastName">نام خانوادگی<abbr class="required" title="ضروری" style="color:red;">*</abbr></label>
+                        <input type="text" id="namelast" class=" form-control" asp-for="LastName" value=@Model.LastName>
+                        <span asp-validation-for="LastName" class="text-danger" style="font-size: 15px"></span>
+                        <label for="mobile" asp-for="PhoneNumber">شَماره موبایل <abbr class="required" title="ضروری" style="color:red;">*</abbr></label>
+                        <input type="text" id="mobile" class=" form-control" asp-for="PhoneNumber" value=@Model.PhoneNumber />
+                        <span asp-validation-for="PhoneNumber" class="text-danger" style="font-size: 15px"></span>
+                        <div class="AR-CR">
+                            <button class="btn-registrar"type="submit" > ثبت تغییرات </button>
+                            <a href="#" class="cancel-edit-address" data-dismiss="modal" aria-label="Close">بازگشت</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

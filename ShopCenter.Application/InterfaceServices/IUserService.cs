@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
 using ShopCenter.Application.DTOs.Account;
+using ShopCenter.Application.DTOs.User;
 using ShopCenter.Domain.Models;
 
 namespace ShopCenter.Application.InterfaceServices
@@ -15,8 +11,10 @@ namespace ShopCenter.Application.InterfaceServices
         Task<IdentityResult> RegisterUserAsync(RegisterUserDTO registerUserDTO);
         Task<IdentityUser> IsUserNameInUseAsync(string userName);
         Task<IdentityUser> IsEmailInUseAsync(string email);
-        Task<SignInResult> LoginUserAsync(LoginUserDTO loginUserDTO) ;
+        Task<SignInResult> LoginUserAsync(LoginUserDTO loginUserDTO);
         Task LogOutUserAsync();
         Task<string> GenerateEmailConfirmationTokenAsync(EmailConfirmationDTO emailConfirmationDTO);
+        Task<IdentityResult> EditProfileAsync(EditProfileDTO editProfileDTO);
+        Task<ApplicationUser> GetUserAsync(GetUserDTO getuserDTO);
     }
 }
