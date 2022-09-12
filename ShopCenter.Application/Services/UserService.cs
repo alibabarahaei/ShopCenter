@@ -104,5 +104,17 @@ namespace ShopCenter.Application.Services
         {
             return await _userManager.GetUserAsync(getuserDTO.User);
         }
+
+        public async Task<IdentityResult> ChangePasswordAsync(ChangepasswordDTO changepasswordDTO)
+        {
+
+            var user =await GetUserAsync(new GetUserDTO()
+            {
+                User = changepasswordDTO.User,
+            });
+
+
+            return await _userManager.ChangePasswordAsync(user, changepasswordDTO.CurrentPassword, changepasswordDTO.NewPassword);
+        }
     }
 }

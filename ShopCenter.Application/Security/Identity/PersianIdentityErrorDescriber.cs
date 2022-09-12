@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using System.Resources;
 
 namespace PersianTranslation.Identity
 {
@@ -108,5 +109,13 @@ namespace PersianTranslation.Identity
                 Code = nameof(DefaultError),
                 Description = $"خطای پیشبینی نشده رخ داد"
             };
+        public override IdentityError PasswordMismatch()
+        {
+            return new IdentityError
+            {
+                Code = nameof(PasswordMismatch),
+                Description = "پسورد را اشتباه وارد کردید"
+            };
+        }
     }
 }
