@@ -2,6 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 
 using Microsoft.AspNetCore.Identity;
+using ShopCenter.Domain.Models.Contacts;
 
 namespace ShopCenter.Domain.Models.User
 {
@@ -24,6 +25,29 @@ namespace ShopCenter.Domain.Models.User
         public string? PathProfileImage { get; set; }
 
         public char? Gender { get; set; } = GenderTypes.Unknown;
+
+
+
+
+
+        #region relations
+
+        public ICollection<Ticket> Tickets { get; set; }
+        public ICollection<TicketMessage> TicketMessages { get; set; }
+
+
+        #endregion
+
+
+
+
+
+
+
+
+
+
+
 
     }
 }

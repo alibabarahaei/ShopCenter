@@ -1,0 +1,50 @@
+﻿@page
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@using ShopCenter.Domain.Models.Contacts
+@model ShopCenter.Presentation.Razor.Areas.User.Pages.Dashboard.AddTicketModel
+@{
+
+
+} 
+
+
+<div class="middle-container">
+<form method="post" class="form-checkout" enctype="multipart/form-data">
+    <div class="form-checkout-row">
+
+
+
+
+
+
+
+            <label for="Title"> عنوان<abbr class="required" title="ضروری" style="color: red;">*</abbr></label>
+            <input type="text" id="Title" class=" form-control" asp-for="Title">
+            <span asp-validation-for="Title" class="text-danger" style="font-size: 15px"></span>
+
+            <label for="TicketSection">بخش مورد نظر<abbr class="required" title="ضروری" style="color: red;">*</abbr></label>
+            <select id="TicketSection" class=" form-control" asp-for="TicketSection" asp-items="Html.GetEnumSelectList<TicketSection>()" >
+            </select>
+            <span asp-validation-for="TicketSection" class="text-danger" style="font-size: 15px"></span>
+
+            <label for="TicketPriority">اولویت<abbr class="required" title="ضروری" style="color: red;">*</abbr></label>
+            <select id="TicketPriority" class=" form-control" asp-for="TicketPriority" asp-items="Html.GetEnumSelectList<TicketPriority>()">
+
+            </select>
+            <span asp-validation-for="TicketPriority" class="text-danger" style="font-size: 15px"></span>
+
+            <label for="Text"> متن پیام<abbr class="required" title="ضروری" style="color: red;">*</abbr></label>
+            <input type="text" id="Text" class=" form-control" asp-for="Text">
+            <span asp-validation-for="Text" class="text-danger" style="font-size: 15px"></span>
+            
+            
+
+            
+            
+            <div class="AR-CR">
+                <button class="btn-registrar"> ثبت تغییرات </button>
+                <a href="#" class="cancel-edit-address" data-dismiss="modal" aria-label="Close">بازگشت</a>
+            </div>
+    </div>
+</form>
+</div>
