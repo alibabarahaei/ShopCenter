@@ -35,7 +35,12 @@ namespace ShopCenter.Presentation.Razor.Areas.User.Pages.Dashboard
         [DataType("Number")]
         public string PhoneNumber { get; set; }
 
+        [Display(Name = "جنسیت")]
+        public char Gender { get; set; }
 
+        
+        [Display(Name = "تصویر پروفایل")]
+        public IFormFile ProfileImage { get; set; }
 
         #endregion
 
@@ -59,7 +64,7 @@ namespace ShopCenter.Presentation.Razor.Areas.User.Pages.Dashboard
         public async Task OnGet()
         {
 
-
+            
             var user = await _userService.GetUserAsync(new GetUserDTO()
             {
                 User = User
@@ -67,8 +72,8 @@ namespace ShopCenter.Presentation.Razor.Areas.User.Pages.Dashboard
             FirstName = user.FirstName;
             LastName = user.LastName;
             PhoneNumber = user.PhoneNumber;
-
-
+            Gender=user.Gender??'U';
+            
         }
 
 
@@ -88,7 +93,9 @@ namespace ShopCenter.Presentation.Razor.Areas.User.Pages.Dashboard
                         FirstName = FirstName,
                         LastName = LastName,
                         PhoneNumber = PhoneNumber,
-                        User = User
+                        User = User,
+                        Gender = Gender,
+                        ProfileImage = ProfileImage
                     };
                     var result = await _userService.EditProfileAsync(newUser);
 

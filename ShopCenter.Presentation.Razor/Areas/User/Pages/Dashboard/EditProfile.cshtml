@@ -2,28 +2,106 @@
 @model ShopCenter.Presentation.Razor.Areas.User.Pages.Dashboard.EditProfileModel
 @{
 }
+
+@section Styles
+{
+    <link rel="stylesheet" href="/css/vendor/imageuploader.css" />
+}
+
+
+
 <div class="profile-content">
     <div class="profile-stats">
         <div class="profile-address">
             <div class="middle-container">
-                <form method="post" class="form-checkout">
+                <form method="post" class="form-checkout" enctype="multipart/form-data">
                     <div class="form-checkout-row">
-                        <label for="namefirst" asp-for="FirstName"> نام<abbr class="required" title="ضروری" style="color:red;">*</abbr></label>
+                        
+                        
+                        
+                        
+                        
+                        
+
+                        <label for="namefirst" asp-for="FirstName"> نام<abbr class="required" title="ضروری" style="color: red;">*</abbr></label>
                         <input type="text" id="namefirst" class=" form-control" asp-for="FirstName" value=@Model.FirstName>
                         <span asp-validation-for="FirstName" class="text-danger" style="font-size: 15px"></span>
-                        <label for="namelast" asp-for="LastName">نام خانوادگی<abbr class="required" title="ضروری" style="color:red;">*</abbr></label>
+                        <label for="namelast" asp-for="LastName">نام خانوادگی<abbr class="required" title="ضروری" style="color: red;">*</abbr></label>
                         <input type="text" id="namelast" class=" form-control" asp-for="LastName" value=@Model.LastName>
                         <span asp-validation-for="LastName" class="text-danger" style="font-size: 15px"></span>
-                        <label for="mobile" asp-for="PhoneNumber">شَماره موبایل <abbr class="required" title="ضروری" style="color:red;">*</abbr></label>
-                        <input type="text" id="mobile" class=" form-control" asp-for="PhoneNumber" value=@Model.PhoneNumber />
+                        <label for="mobile" asp-for="PhoneNumber">شَماره موبایل <abbr class="required" title="ضروری" style="color: red;">*</abbr></label>
+                        <input type="text" id="mobile" class=" form-control" asp-for="PhoneNumber" value=@Model.PhoneNumber/>
                         <span asp-validation-for="PhoneNumber" class="text-danger" style="font-size: 15px"></span>
+                        
+                        
+                        
+                        
+                        
+
+                        <ul >
+                            <li >
+                                <label for="#" class="outline-radio d-block">
+                                    <input type="radio" value='M' asp-for="Gender">
+                                    <span class="outline-radio-check"></span>
+                                </label>
+                                <label for="#">
+                                    <div >آقا</div>
+                                </label>
+                            </li>
+                            <li >
+                                <label for="#" class="outline-radio">
+                                    <input type="radio" value='W' asp-for="Gender">
+                                    <span class="outline-radio-check"></span>
+                                </label>
+                                <label for="#">
+                                    <div >خانم</div>
+                                </label>
+                            </li>
+                            
+                        </ul>
+                        
+                            <span asp-validation-for="Gender" class="text-danger" style="font-size: 15px"></span>
+                        
+                        
+
+                        <main class="main_full">
+                            <div class="container">
+                                <div class="panel">
+                                    <div class="button_outer">
+                                        <div class="btn_upload">
+                                            <input type="file" id="upload_file" asp-for="ProfileImage" >
+                                            Upload Image
+                                        </div>
+                                        <div class="processing_bar"></div>
+                                        <div class="success_box"></div>
+                                    </div>
+                            <span asp-validation-for="ProfileImage" class="text-danger" style="font-size: 15px"></span>
+                                </div>
+                                <div class="error_msg"></div>
+                                <div class="uploaded_file_view" id="uploaded_view">
+                                    <span class="file_remove">X</span>
+                                </div>
+                            </div>
+                        </main>
+                        
+                        
+                        
+
                         <div class="AR-CR">
-                            <button class="btn-registrar"type="submit" > ثبت تغییرات </button>
+                            <button class="btn-registrar"> ثبت تغییرات </button>
                             <a href="#" class="cancel-edit-address" data-dismiss="modal" aria-label="Close">بازگشت</a>
                         </div>
+
                     </div>
                 </form>
             </div>
         </div>
     </div>
 </div>
+
+
+
+    @section Scripts
+    {
+   <script src="/js/vendor/imageuploader.js" ></script>
+}

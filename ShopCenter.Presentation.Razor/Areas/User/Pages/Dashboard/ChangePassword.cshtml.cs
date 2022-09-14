@@ -58,7 +58,7 @@ namespace ShopCenter.Presentation.Razor.Areas.User.Pages.Dashboard
         public void OnGet()
         {
         }
-
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> OnPost()
         {
             if (!ModelState.IsValid)

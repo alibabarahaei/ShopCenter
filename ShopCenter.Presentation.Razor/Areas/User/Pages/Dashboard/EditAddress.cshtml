@@ -1,0 +1,74 @@
+﻿@page
+@model ShopCenter.Presentation.Razor.Areas.User.Pages.Dashboard.EditAddressModel
+@{
+}
+
+
+<div class="profile-content">
+    <div class="profile-stats">
+        <div class="profile-address">
+            <div class="middle-container">
+                <form action="#" class="form-checkout">
+                    <div class="form-checkout-row">
+                        <label for="name">نام تحویل گیرنده <abbr class="required" title="ضروری" style="color:red;">*</abbr></label>
+                        <input type="text" id="name" class="input-name-checkout form-control">
+                        <label for="phone-number">شماره موبایل <abbr class="required" title="ضروری" style="color:red;">*</abbr></label>
+                        <input type="text" id="phone-number" class="input-name-checkout form-control text-left">
+                        <label for="fixed-number">شماره تلفن ثابت <abbr class="required" title="ضروری" style="color:red;">*</abbr></label>
+                        <input type="text" id="fixed-number" class="input-name-checkout form-control text-left">
+
+                        <div class="form-checkout-valid-row">
+                            <label for="province">
+                                استان
+                                <abbr class="required" title="ضروری" style="color:red;">*</abbr>
+                            </label>
+                            <select name="" id="province" class="form-control">
+                                <option value="date-desc" selected="selected">استان مورد نظر خود را انتخاب کنید </option>
+                                <option value="date-asc">تهران</option>
+                                <option value="rate">مشهد</option>
+                                <option value="views">اصفهان</option>
+                                <option value="comments">شیراز</option>
+                            </select>
+                            <label for="bld-num">
+                                پلاک
+                                <abbr class="required" title="ضروری" style="color:red;">*</abbr>
+                            </label>
+                            <input type="text" id="bld-num" class="input-name-checkout js-input-bld-num form-control">
+
+                        </div>
+
+                        <div class="form-checkout-valid-row">
+                            <label for="city">
+                                شهر
+                                <abbr class="required" title="ضروری" style="color:red;">*</abbr>
+                            </label>
+                            <select name="" id="city" class="form-control">
+                                <option value="date-desc" selected="selected">شهر مورد نظر خود را انتخاب کنید</option>
+                                <option value="date-asc">تهران</option>
+                                <option value="rate">اصفهان</option>
+                                <option value="views">مشهد</option>
+                                <option value="comments">اردبیل</option>
+                            </select>
+                            <label for="apt-id">واحد</label>
+                            <input type="text" id="apt-id" class="input-name-checkout js-input-apt-id form-control">
+                        </div>
+
+                        <label for="post-code">کد پستی<abbr class="required" title="ضروری" style="color:red;">*</abbr></label>
+                        <input type="text" id="post-code" class="input-name-checkout form-control" placeholder="کد پستی را بدون خط تیره بنویسید">
+
+                        <label for="address">
+                            آدرس
+                            <abbr class="required" title="ضروری" style="color:red;">*</abbr>
+                        </label>
+                        <textarea rows="5" cols="30" id="address" class="textarea-name-checkout form-control"></textarea>
+
+                        <div class="AR-CR">
+                            <button class="btn-registrar"> ثبت آدرس</button>
+                            <a href="#" class="cancel-edit-address" data-dismiss="modal" aria-label="Close">بازگشت</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

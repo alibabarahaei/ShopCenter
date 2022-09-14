@@ -20,7 +20,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="wwwroot\css\Bootstrap-5.2\" />
     <Folder Include="wwwroot\images\menu-main\card\" />
+    <Folder Include="wwwroot\js\Boostrap-5.2\" />
   </ItemGroup>
 
 </Project>

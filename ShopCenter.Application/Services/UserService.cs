@@ -7,8 +7,10 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using ShopCenter.Application.DTOs.Account;
 using ShopCenter.Application.DTOs.User;
+using ShopCenter.Application.Extensions;
 using ShopCenter.Application.InterfaceServices;
-using ShopCenter.Domain.Models;
+using ShopCenter.Application.Utilities;
+using ShopCenter.Domain.Models.User;
 
 namespace ShopCenter.Application.Services
 {
@@ -97,6 +99,34 @@ namespace ShopCenter.Application.Services
             currentUser.FirstName  = editProfileDTO.FirstName;
             currentUser.LastName = editProfileDTO.LastName;    
             currentUser.PhoneNumber= editProfileDTO.PhoneNumber;
+
+
+            if (editProfileDTO.Gender != null)
+            {
+            currentUser.Gender=editProfileDTO.Gender;
+            }
+            else
+            {
+                currentUser.Gender = GenderTypes.Unknown;
+            }
+
+
+
+
+            if (editProfileDTO.ProfileImage != null && editProfileDTO.ProfileImage.IsImage())
+            {
+                var imageName = Guid.NewGuid().ToString("N") + Path.GetExtension(editProfileDTO.ProfileImage.FileName);
+                editProfileDTO.ProfileImage.AddImageToServer(imageName, SD.UserProfileOriginServer, 64, 64, SD.UserProfileThumbServer, currentUser.PathProfileImage);
+                currentUser.PathProfileImage = imageName;
+            }
+
+
+
+
+
+
+
+
             return await _userManager.UpdateAsync(currentUser);
         }
 

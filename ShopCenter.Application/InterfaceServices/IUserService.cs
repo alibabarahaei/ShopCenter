@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using ShopCenter.Application.DTOs.Account;
 using ShopCenter.Application.DTOs.User;
-using ShopCenter.Domain.Models;
+using ShopCenter.Domain.Models.User;
 
 namespace ShopCenter.Application.InterfaceServices
 {

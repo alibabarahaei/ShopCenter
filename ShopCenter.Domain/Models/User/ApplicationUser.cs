@@ -3,9 +3,9 @@ using System.ComponentModel.DataAnnotations;
 
 using Microsoft.AspNetCore.Identity;
 
-namespace ShopCenter.Domain.Models
+namespace ShopCenter.Domain.Models.User
 {
-    public class ApplicationUser:IdentityUser
+    public class ApplicationUser : IdentityUser
     {
         [Display(Name = "نام")]
         [MaxLength(200, ErrorMessage = "{0} نمی تواند بیشتر از {1} کاراکتر باشد")]
@@ -18,9 +18,12 @@ namespace ShopCenter.Domain.Models
 
 
         [Display(Name = "تاریخ عضویت")]
-        
-        public DateTime CreationDate { get; set; }= DateTime.Now;
+        public DateTime CreationDate { get; set; } = DateTime.Now;
 
+        [Display(Name = "تصویر پروفایل")] 
+        public string? PathProfileImage { get; set; }
+
+        public char? Gender { get; set; } = GenderTypes.Unknown;
 
     }
 }

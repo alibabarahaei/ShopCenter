@@ -6,8 +6,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
-using ShopCenter.Domain.Models;
 using ShopCenter.Domain.Models.Site;
+using ShopCenter.Domain.Models.User;
 
 namespace ShopCenter.Infrastructure.EFCore.Context
 {

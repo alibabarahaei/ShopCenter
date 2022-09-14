@@ -2,8 +2,9 @@
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using ShopCenter.Application.InterfaceServices;
 using System.ComponentModel.DataAnnotations;
-using ShopCenter.Application.Utilities;
+
 using ShopCenter.Application.DTOs.User;
+using ShopCenter.Application.Extensions;
 
 namespace ShopCenter.Presentation.Razor.Areas.User.Pages.Dashboard
 {

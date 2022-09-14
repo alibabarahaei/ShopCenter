@@ -6,6 +6,7 @@ using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
+using Microsoft.AspNetCore.Http;
 
 namespace ShopCenter.Application.DTOs.User
 {
@@ -24,5 +25,12 @@ namespace ShopCenter.Application.DTOs.User
 
         
         public string PhoneNumber { get; set; }
+
+
+
+        public IFormFile? ProfileImage { get; set; }
+
+
+        public char? Gender { get; set; }
     }
 }
