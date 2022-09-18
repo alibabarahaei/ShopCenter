@@ -4,7 +4,9 @@ using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using ShopCenter.Application.DTOs.Contact;
+using ShopCenter.Application.DTOs.Paging;
 using ShopCenter.Application.DTOs.User;
 using ShopCenter.Application.InterfaceServices;
 using ShopCenter.Domain.InterfaceRepositories.Base;
@@ -71,6 +73,64 @@ namespace ShopCenter.Application.Services
             await _ticketMessageRepository.SaveChanges();
 
             return AddTicketResult.Success;
+        }
+
+        public async Task<FilterTicketDTO> FilterTickets(FilterTicketDTO filter)
+        {
+            var query = _ticketRepository.GetQuery().AsQueryable();
+
+            #region state
+
+            switch (filter.FilterTicketState)
+            {
+                case FilterTicketState.All:
+                    break;
+                case FilterTicketState.Deleted:
+                    query = query.Where(s => s.IsDelete);
+                    break;
+                case FilterTicketState.NotDeleted:
+                    query = query.Where(s => !s.IsDelete);
+                    break;
+            }
+
+            switch (filter.OrderBy)
+            {
+                case FilterTicketOrder.CreateDate_ASC:
+                    query = query.OrderBy(s => s.CreateDate);
+                    break;
+                case FilterTicketOrder.CreateDate_DES:
+                    query = query.OrderByDescending(s => s.CreateDate);
+                    break;
+            }
+
+            #endregion
+
+            #region filter
+
+            if (filter.TicketSection != null)
+                query = query.Where(s => s.TicketSection == filter.TicketSection.Value);
+
+            if (filter.TicketPriority != null)
+                query = query.Where(s => s.TicketPriority == filter.TicketPriority.Value);
+
+            if (filter.UserId != null && filter.UserId != null)
+                query = query.Where(s => s.UserId == filter.UserId);
+
+            if (!string.IsNullOrEmpty(filter.Title))
+                query = query.Where(s => EF.Functions.Like(s.Title, $"%{filter.Title}%"));
+
+            #endregion
+
+
+            #region paging
+
+            var pager = Pager.Build(filter.PageId, await query.CountAsync(), filter.TakeEntity, filter.HowManyShowPageAfterAndBefore);
+            var allEntities = await query.Paging(pager).ToListAsync();
+
+            #endregion
+
+
+            return filter.SetPaging(pager).SetTickets(allEntities);
         }
 
         #endregion

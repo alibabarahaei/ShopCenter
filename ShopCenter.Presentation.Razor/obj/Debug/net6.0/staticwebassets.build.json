@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "jGi9sB6lk5RN8x59j6E/hIqm/4nNlz910SlIv7n7Kyc=",
+  "Hash": "lYOtcgx89bf7+M21V9EsJij+uKIIxozs5qeWHTA0Oxg=",
   "Source": "ShopCenter.Presentation.Razor",
   "BasePath": "_content/ShopCenter.Presentation.Razor",
   "Mode": "Default",
@@ -51,6 +51,23 @@
       "OriginalItemSpec": "C:\\Amir\\Project\\ShopCenter\\ShopCenter.Presentation.Razor\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\ShopCenter.Presentation.Razor.bundle.scp.css"
     },
     {
+      "Identity": "C:\\Amir\\Project\\ShopCenter\\ShopCenter.Presentation.Razor\\wwwroot\\content\\images\\profileimage\\origin\\3fa42d6ac09b4bffa4f3903c4793bc6d.jpg",
+      "SourceId": "ShopCenter.Presentation.Razor",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Amir\\Project\\ShopCenter\\ShopCenter.Presentation.Razor\\wwwroot\\",
+      "BasePath": "_content/ShopCenter.Presentation.Razor",
+      "RelativePath": "content/images/profileimage/origin/3fa42d6ac09b4bffa4f3903c4793bc6d.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\content\\images\\profileimage\\origin\\3fa42d6ac09b4bffa4f3903c4793bc6d.jpg"
+    },
+    {
       "Identity": "C:\\Amir\\Project\\ShopCenter\\ShopCenter.Presentation.Razor\\wwwroot\\content\\images\\profileimage\\origin\\d5576a01fdfe420da770aa708ec2f4d7.png",
       "SourceId": "ShopCenter.Presentation.Razor",
       "SourceType": "Discovered",
@@ -66,6 +83,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\content\\images\\profileimage\\origin\\d5576a01fdfe420da770aa708ec2f4d7.png"
+    },
+    {
+      "Identity": "C:\\Amir\\Project\\ShopCenter\\ShopCenter.Presentation.Razor\\wwwroot\\content\\images\\profileimage\\thumb\\3fa42d6ac09b4bffa4f3903c4793bc6d.jpg",
+      "SourceId": "ShopCenter.Presentation.Razor",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Amir\\Project\\ShopCenter\\ShopCenter.Presentation.Razor\\wwwroot\\",
+      "BasePath": "_content/ShopCenter.Presentation.Razor",
+      "RelativePath": "content/images/profileimage/thumb/3fa42d6ac09b4bffa4f3903c4793bc6d.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\content\\images\\profileimage\\thumb\\3fa42d6ac09b4bffa4f3903c4793bc6d.jpg"
     },
     {
       "Identity": "C:\\Amir\\Project\\ShopCenter\\ShopCenter.Presentation.Razor\\wwwroot\\content\\images\\profileimage\\thumb\\d5576a01fdfe420da770aa708ec2f4d7.png",

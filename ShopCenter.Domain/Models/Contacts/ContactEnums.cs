@@ -39,4 +39,6 @@ namespace ShopCenter.Domain.Models.Contacts
         [Display(Name = "بسته شده")]
         Closed
     }
+
+  
 }
