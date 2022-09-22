@@ -34,7 +34,7 @@
             <span asp-validation-for="TicketPriority" class="text-danger" style="font-size: 15px"></span>
 
             <label for="Text"> متن پیام<abbr class="required" title="ضروری" style="color: red;">*</abbr></label>
-            <input type="text" id="Text" class=" form-control" asp-for="Text">
+            <textarea class="ckeditor" asp-for="Text"  ckeditor="1" ></textarea>
             <span asp-validation-for="Text" class="text-danger" style="font-size: 15px"></span>
             
             

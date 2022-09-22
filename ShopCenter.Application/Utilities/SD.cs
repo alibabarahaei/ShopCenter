@@ -11,6 +11,23 @@ namespace ShopCenter.Application.Utilities
 
         #region path
 
+
+
+
+
+
+        #region uploader
+
+        public static string UploadImage = "/img/upload/";
+        public static string UploadImageServer = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/img/upload/");
+
+        #endregion
+
+
+
+
+
+
         #region default images
 
         public static string DefaultProfileman = "/images/defaults/man.png";

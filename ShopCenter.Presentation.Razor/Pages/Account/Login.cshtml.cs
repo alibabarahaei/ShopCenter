@@ -27,8 +27,8 @@ namespace ShopCenter.Presentation.Razor.Pages.Account
         public bool RememberMe { get; set; }
 
 
-        [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
-        public string Captcha { get; set; }
+        ////[Required(ErrorMessage = "لطفا {0} را وارد کنید")]
+        //public string Captcha { get; set; }
         #endregion
 
 
@@ -60,11 +60,11 @@ namespace ShopCenter.Presentation.Razor.Pages.Account
         public async Task<IActionResult> OnPost()
         {
 
-            if (!await _captchaValidator.IsCaptchaPassedAsync(Captcha))
-            {
-                TempData["ErrorMessage"] = "کد کپچای شما تایید نشد";
-                return Page();
-            }
+            //if (!await _captchaValidator.IsCaptchaPassedAsync(Captcha))
+            //{
+            //    TempData["ErrorMessage"] = "کد کپچای شما تایید نشد";
+            //    return Page();
+            //}
 
 
 

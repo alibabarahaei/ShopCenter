@@ -65,7 +65,7 @@ namespace ShopCenter.Presentation.Razor.Areas.User.Pages.Dashboard
             if (ModelState.IsValid)
             {
 
-                var ticket = new AddTicketViewModel()
+                var ticket = new AddTicketDTO()
                 {
                     Title = Title,
                     TicketSection = TicketSection,
@@ -74,7 +74,7 @@ namespace ShopCenter.Presentation.Razor.Areas.User.Pages.Dashboard
 
                 };
                 
-                var result = await _contactService.AddUserTicket(ticket, User);
+                var result = await _contactService.AddUserTicketAsync(ticket, User);
                 switch (result)
                 {
                     case AddTicketResult.Error:

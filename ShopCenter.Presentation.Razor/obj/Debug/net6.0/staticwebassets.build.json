@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "lYOtcgx89bf7+M21V9EsJij+uKIIxozs5qeWHTA0Oxg=",
+  "Hash": "03VR42VKcX3XpT+FGy2nmitn/iCt299mO31N1RuXpTY=",
   "Source": "ShopCenter.Presentation.Razor",
   "BasePath": "_content/ShopCenter.Presentation.Razor",
   "Mode": "Default",
@@ -68,6 +68,23 @@
       "OriginalItemSpec": "wwwroot\\content\\images\\profileimage\\origin\\3fa42d6ac09b4bffa4f3903c4793bc6d.jpg"
     },
     {
+      "Identity": "C:\\Amir\\Project\\ShopCenter\\ShopCenter.Presentation.Razor\\wwwroot\\content\\images\\profileimage\\origin\\72ea0ae331c642c79dd74d055b19d643.jpg",
+      "SourceId": "ShopCenter.Presentation.Razor",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Amir\\Project\\ShopCenter\\ShopCenter.Presentation.Razor\\wwwroot\\",
+      "BasePath": "_content/ShopCenter.Presentation.Razor",
+      "RelativePath": "content/images/profileimage/origin/72ea0ae331c642c79dd74d055b19d643.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\content\\images\\profileimage\\origin\\72ea0ae331c642c79dd74d055b19d643.jpg"
+    },
+    {
       "Identity": "C:\\Amir\\Project\\ShopCenter\\ShopCenter.Presentation.Razor\\wwwroot\\content\\images\\profileimage\\origin\\d5576a01fdfe420da770aa708ec2f4d7.png",
       "SourceId": "ShopCenter.Presentation.Razor",
       "SourceType": "Discovered",
@@ -102,6 +119,23 @@
       "OriginalItemSpec": "wwwroot\\content\\images\\profileimage\\thumb\\3fa42d6ac09b4bffa4f3903c4793bc6d.jpg"
     },
     {
+      "Identity": "C:\\Amir\\Project\\ShopCenter\\ShopCenter.Presentation.Razor\\wwwroot\\content\\images\\profileimage\\thumb\\72ea0ae331c642c79dd74d055b19d643.jpg",
+      "SourceId": "ShopCenter.Presentation.Razor",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Amir\\Project\\ShopCenter\\ShopCenter.Presentation.Razor\\wwwroot\\",
+      "BasePath": "_content/ShopCenter.Presentation.Razor",
+      "RelativePath": "content/images/profileimage/thumb/72ea0ae331c642c79dd74d055b19d643.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\content\\images\\profileimage\\thumb\\72ea0ae331c642c79dd74d055b19d643.jpg"
+    },
+    {
       "Identity": "C:\\Amir\\Project\\ShopCenter\\ShopCenter.Presentation.Razor\\wwwroot\\content\\images\\profileimage\\thumb\\d5576a01fdfe420da770aa708ec2f4d7.png",
       "SourceId": "ShopCenter.Presentation.Razor",
       "SourceType": "Discovered",
@@ -134,6 +168,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\Bootstrap-5.2\\bootstrap.rtl.min.css"
+    },
+    {
+      "Identity": "C:\\Amir\\Project\\ShopCenter\\ShopCenter.Presentation.Razor\\wwwroot\\css\\Custom.css",
+      "SourceId": "ShopCenter.Presentation.Razor",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Amir\\Project\\ShopCenter\\ShopCenter.Presentation.Razor\\wwwroot\\",
+      "BasePath": "_content/ShopCenter.Presentation.Razor",
+      "RelativePath": "css/Custom.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\Custom.css"
     },
     {
       "Identity": "C:\\Amir\\Project\\ShopCenter\\ShopCenter.Presentation.Razor\\wwwroot\\css\\main.css",
@@ -3092,6 +3143,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\Boostrap-5.2\\bootstrap.bundle.min.js"
+    },
+    {
+      "Identity": "C:\\Amir\\Project\\ShopCenter\\ShopCenter.Presentation.Razor\\wwwroot\\js\\CkEditor-5\\ckeditor.js",
+      "SourceId": "ShopCenter.Presentation.Razor",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Amir\\Project\\ShopCenter\\ShopCenter.Presentation.Razor\\wwwroot\\",
+      "BasePath": "_content/ShopCenter.Presentation.Razor",
+      "RelativePath": "js/CkEditor-5/ckeditor.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\CkEditor-5\\ckeditor.js"
+    },
+    {
+      "Identity": "C:\\Amir\\Project\\ShopCenter\\ShopCenter.Presentation.Razor\\wwwroot\\js\\CkEditor-5\\ckeditor.js.map",
+      "SourceId": "ShopCenter.Presentation.Razor",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Amir\\Project\\ShopCenter\\ShopCenter.Presentation.Razor\\wwwroot\\",
+      "BasePath": "_content/ShopCenter.Presentation.Razor",
+      "RelativePath": "js/CkEditor-5/ckeditor.js.map",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\CkEditor-5\\ckeditor.js.map"
     },
     {
       "Identity": "C:\\Amir\\Project\\ShopCenter\\ShopCenter.Presentation.Razor\\wwwroot\\js\\custom.js",

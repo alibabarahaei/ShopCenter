@@ -38,7 +38,7 @@ namespace ShopCenter.Application.Services
 
         #region ticket
 
-        public async Task<AddTicketResult> AddUserTicket(AddTicketViewModel ticket, ClaimsPrincipal userCP)
+        public async Task<AddTicketResult> AddUserTicketAsync(AddTicketDTO ticket, ClaimsPrincipal userCP)
         {
             if (string.IsNullOrEmpty(ticket.Text)) return AddTicketResult.Error;
 
@@ -75,7 +75,7 @@ namespace ShopCenter.Application.Services
             return AddTicketResult.Success;
         }
 
-        public async Task<FilterTicketDTO> FilterTickets(FilterTicketDTO filter)
+        public async Task<FilterTicketDTO> FilterTicketsAsync(FilterTicketDTO filter)
         {
             var query = _ticketRepository.GetQuery().AsQueryable();
 
@@ -113,8 +113,15 @@ namespace ShopCenter.Application.Services
             if (filter.TicketPriority != null)
                 query = query.Where(s => s.TicketPriority == filter.TicketPriority.Value);
 
-            if (filter.UserId != null && filter.UserId != null)
-                query = query.Where(s => s.UserId == filter.UserId);
+            if (filter.User != null )
+            {
+               var user= await _userService.GetUserAsync(new GetUserDTO()
+                {
+                    User = filter.User
+                });
+               query = query.Where(s => s.UserId == user.Id);
+
+            }
 
             if (!string.IsNullOrEmpty(filter.Title))
                 query = query.Where(s => EF.Functions.Like(s.Title, $"%{filter.Title}%"));
@@ -132,6 +139,53 @@ namespace ShopCenter.Application.Services
 
             return filter.SetPaging(pager).SetTickets(allEntities);
         }
+
+        public async Task<TicketDetailDTO> GetTicketForShowAsync(GetTicketDTO getTicket)
+        {
+            var ticket = await _ticketRepository.GetQuery().AsQueryable()
+                .Include(s => s.User)
+                .SingleOrDefaultAsync(s => s.Id == getTicket.ticketId);
+            var user = await _userService.GetUserAsync(new GetUserDTO()
+            {
+                User = getTicket.User
+            });
+            if (ticket == null || ticket.UserId !=user.Id) return null;
+
+            return new TicketDetailDTO
+            {
+                Ticket = ticket,
+                TicketMessages = await _ticketMessageRepository.GetQuery().AsQueryable()
+                    .OrderByDescending(s => s.CreateDate)
+                    .Where(s => s.TicketId == getTicket.ticketId && !s.IsDelete).ToListAsync()
+            };
+        }
+
+        public async Task<AnswerTicketResult> AnswerTicketAsync(AnswerTicketDTO answer)
+        {
+            var user = await _userService.GetUserAsync(new GetUserDTO()
+            {
+                User = answer.User
+            });
+            var ticket = await _ticketRepository.GetEntityById(answer.Id);
+            if (ticket == null) return AnswerTicketResult.NotFound;
+            if (ticket.UserId != user.Id) return AnswerTicketResult.NotForUser;
+
+            var ticketMessage = new TicketMessage
+            {
+                TicketId = ticket.Id,
+                UserId = user.Id,
+                Text = answer.Text
+            };
+
+            await _ticketMessageRepository.AddEntity(ticketMessage);
+            await _ticketMessageRepository.SaveChanges();
+
+            ticket.IsReadByAdmin = false;
+            ticket.IsReadByOwner = true;
+            await _ticketRepository.SaveChanges();
+            return AnswerTicketResult.Success;
+        }
+
 
         #endregion
 

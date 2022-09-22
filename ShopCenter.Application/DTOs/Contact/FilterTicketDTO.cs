@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-
+using System.Security.Claims;
 using ShopCenter.Application.DTOs.Paging;
 using ShopCenter.Domain.Models.Contacts;
 
@@ -11,7 +11,7 @@ namespace ShopCenter.Application.DTOs.Contact
 
         public string Title { get; set; }
 
-        public string? UserId { get; set; }
+        public ClaimsPrincipal User { get; set; }
 
         public FilterTicketState FilterTicketState { get; set; }
 

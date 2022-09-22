@@ -1,0 +1,60 @@
+﻿@page
+
+
+@using ShopCenter.Application.Extensions
+@model ShopCenter.Presentation.Razor.Areas.User.Pages.Dashboard.TicketsModel
+@{
+}
+<div class="container-main">
+    <div class="d-block">
+        <div class="main-row">
+            <div id="breadcrumb">
+                <i class="mdi mdi-home"></i>
+               
+            </div>
+            <section class="cart-home">
+                <div class="post-item-cart d-block order-2">
+                    <div class="content-page">
+                        <div class="cart-form">
+                            <form action="#" class="c-form">
+                                <table class="table-cart cart table table-borderless">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col" class="product-cart-name">کد تیکت</th>
+                                            <th scope="col" class="product-cart-price">عنوان تیکت</th>
+                                            <th scope="col" class="product-cart-quantity">وضعیت</th>
+                                            <th scope="col" class="product-cart-Total">دستورات</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                        @foreach (var x in @Model.FilterTickets.Tickets.Select((ticket, index) => (ticket, index)))
+                                    {
+                                            <tr>
+                                                <th scope="row">
+                                                   <span>@(x.index+1)</span>
+                                                </th>
+                                                <td >
+                                                    <span>@x.ticket.Title</span>
+                                                </td>
+                                                <td >
+                                                    
+                                                    <span>@x.ticket.TicketState.GetEnumName()</span>
+                                                </td>
+                                                <td >
+                                                    <a href="#" >نمایش جزییات</a>
+                                                </td>
+                                            </tr>
+                                    }
+
+                                    </tbody>
+                                </table>
+                            </form>
+                            
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>

@@ -14,8 +14,10 @@ namespace ShopCenter.Application.InterfaceServices
 
         #region ticket
 
-        Task<AddTicketResult> AddUserTicket(AddTicketViewModel ticket, ClaimsPrincipal userCP);
-        Task<FilterTicketDTO> FilterTickets(FilterTicketDTO filter);
+        Task<AddTicketResult> AddUserTicketAsync(AddTicketDTO ticket, ClaimsPrincipal userCP);
+        Task<FilterTicketDTO> FilterTicketsAsync(FilterTicketDTO filter);
+        Task<TicketDetailDTO> GetTicketForShowAsync(GetTicketDTO getTicket );
+        Task<AnswerTicketResult> AnswerTicketAsync(AnswerTicketDTO answer);
         #endregion
     }
 }
