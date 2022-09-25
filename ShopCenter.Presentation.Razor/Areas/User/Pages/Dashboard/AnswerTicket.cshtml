@@ -1,10 +1,12 @@
 ﻿@page
 @using Microsoft.AspNetCore.Mvc.TagHelpers
 @using ShopCenter.Application.DTOs.Contact
+@using ShopCenter.Application.Extensions
+@using ShopCenter.Application.Utilities
+
 @model ShopCenter.Presentation.Razor.Areas.User.Pages.Dashboard.AnswerTicketModel
 @{
-
-    var Id = @Model.Ticketx.Ticket.Id;
+    ViewData["Title"] = "گفت و گو";
 }
 
 
@@ -20,85 +22,51 @@
                         <div class="comments-area">
                             <h2 class="comments-title">
                                 <i class="fa fa-comment-o"></i>
-                                نظرات کاربران
-                                <p class="count-comment">253 نظر</p>
+                                گفت و گو
+                                @if (Model.Ticket != null)
+                                {
+                                   
+                                    <p class="count-comment">@Model.Ticket.TicketMessages.Count پیام</p>
+
+
+                                }
+                                else
+                                {
+
+                                    <p class="count-comment"> پیامی وجود ندارد</p>
+                                }
                             </h2>
                             <ol class="comment-list">
-                                <li class="comment-even">
-                                    <div class="comment-body">
-                                        <header class="comment-meta">
-                                            <div class="comment-author">
-                                                <img src="assets/images/man.png" class="avator">
-                                                توسط حسن شجاعی در تاریخ 14 اردیبهشت ۱۳۹۹
+                                
+                                
+                                @if (Model.Ticket != null)
+                                {
+                                    @foreach (var t in Model.Ticket.TicketMessages)
+                                    {
+                                        <li class="comment-even">
+                                            <div class="comment-body">
+                                                <header class="comment-meta">
+                                                    <div class="comment-author">
+                                                        <img src=@(SD.UserProfileThumb+t.User.PathProfileImage) class="avator">
+                                                        @t.User.FirstName @t.User.LastName در تاریخ @t.CreateDate.ToShamsi()
+                                                    </div>
+                                                </header>
+                                                @Html.Raw(@t.Text)
+                                          
                                             </div>
-                                        </header>
-                                        <p>لوریم ایپسوم به متنی آزمایشی و بی‌معنی در صنعت چاپ، صفحه‌آرایی و طراحی گرافیک گفته می‌شود. طراح گرافیک از این متن به‌عنوان عنصری از ترکیب‌بندی برای پُر کردن صفحه و ارائهٔ اولیهٔ شکل ظاهری و کلیِ طرح سفارش‌گرفته‌شده‌استفاده می‌کند، تا ازنظر گرافیکی نشانگر چگونگی نوع و اندازهٔ قلم و ظاهرِ متن باشد</p>
-                                        <div class="reply text-left">
-                                            <a href="#" class="comment-reply-link">پاسخ دادن</a>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="comment-even">
-                                    <div class="comment-body">
-                                        <header class="comment-meta">
-                                            <div class="comment-author">
-                                                <img src="assets/images/man.png" class="avator">
-                                                توسط حسن شجاعی در تاریخ 14 اردیبهشت ۱۳۹۹
-                                            </div>
-                                        </header>
-                                        <p>لوریم ایپسوم به متنی آزمایشی و بی‌معنی در صنعت چاپ، صفحه‌آرایی و طراحی گرافیک گفته می‌شود. طراح گرافیک از این متن به‌عنوان عنصری از ترکیب‌بندی برای پُر کردن صفحه و ارائهٔ اولیهٔ شکل ظاهری و کلیِ طرح سفارش‌گرفته‌شده‌استفاده می‌کند، تا ازنظر گرافیکی نشانگر چگونگی نوع و اندازهٔ قلم و ظاهرِ متن باشد</p>
-                                        <div class="reply text-left">
-                                            <a href="#" class="comment-reply-link">پاسخ دادن</a>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="comment-even">
-                                    <div class="comment-body">
-                                        <header class="comment-meta">
-                                            <div class="comment-author">
-                                                <img src="assets/images/man.png" class="avator">
-                                                توسط حسن شجاعی در تاریخ 14 اردیبهشت ۱۳۹۹
-                                            </div>
-                                        </header>
-                                        <p>لوریم ایپسوم به متنی آزمایشی و بی‌معنی در صنعت چاپ، صفحه‌آرایی و طراحی گرافیک گفته می‌شود. طراح گرافیک از این متن به‌عنوان عنصری از ترکیب‌بندی برای پُر کردن صفحه و ارائهٔ اولیهٔ شکل ظاهری و کلیِ طرح سفارش‌گرفته‌شده‌استفاده می‌کند، تا ازنظر گرافیکی نشانگر چگونگی نوع و اندازهٔ قلم و ظاهرِ متن باشد</p>
-                                        <div class="reply text-left">
-                                            <a href="#" class="comment-reply-link">پاسخ دادن</a>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="comment-even">
-                                    <div class="comment-body">
-                                        <header class="comment-meta">
-                                            <div class="comment-author">
-                                                <img src="assets/images/man.png" class="avator">
-                                                توسط حسن شجاعی در تاریخ 14 اردیبهشت ۱۳۹۹
-                                            </div>
-                                        </header>
-                                        <p>لوریم ایپسوم به متنی آزمایشی و بی‌معنی در صنعت چاپ، صفحه‌آرایی و طراحی گرافیک گفته می‌شود. طراح گرافیک از این متن به‌عنوان عنصری از ترکیب‌بندی برای پُر کردن صفحه و ارائهٔ اولیهٔ شکل ظاهری و کلیِ طرح سفارش‌گرفته‌شده‌استفاده می‌کند، تا ازنظر گرافیکی نشانگر چگونگی نوع و اندازهٔ قلم و ظاهرِ متن باشد</p>
-                                        <div class="reply text-left">
-                                            <a href="#" class="comment-reply-link">پاسخ دادن</a>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="comment-even">
-                                    <div class="comment-body">
-                                        <header class="comment-meta">
-                                            <div class="comment-author">
-                                                <img src="assets/images/man.png" class="avator">
-                                                توسط حسن شجاعی در تاریخ 14 اردیبهشت ۱۳۹۹
-                                            </div>
-                                        </header>
-                                        <p>لوریم ایپسوم به متنی آزمایشی و بی‌معنی در صنعت چاپ، صفحه‌آرایی و طراحی گرافیک گفته می‌شود. طراح گرافیک از این متن به‌عنوان عنصری از ترکیب‌بندی برای پُر کردن صفحه و ارائهٔ اولیهٔ شکل ظاهری و کلیِ طرح سفارش‌گرفته‌شده‌استفاده می‌کند، تا ازنظر گرافیکی نشانگر چگونگی نوع و اندازهٔ قلم و ظاهرِ متن باشد</p>
-                                        <div class="reply text-left">
-                                            <a href="#" class="comment-reply-link">پاسخ دادن</a>
-                                        </div>
-                                    </div>
-                                </li>
+                                        </li>
+                                    }
+                                }
                             </ol>
-                            <partial name="Shared/_AnswerTicketPartial" model="@(new AnswerTicketDTO{Id = Model.Ticketx.Ticket.Id})" />
-                            <button class="btn comment-submit-button">
-                                ثبت نظر
-                            </button>
+                            @if (Model.Ticket!= null)
+                            {
+                               
+                            <partial name="Shared/_AnswerTicketPartial" model="@(new AnswerTicketDTO{Id = Model.Ticket.Ticket.Id})" />
+                                
+
+                            }
+                            <div asp-validation-summary="ModelOnly" ></div>
+                            
                         </div>
                     </div>
                 </section>

@@ -30,7 +30,7 @@ namespace ShopCenter.Application.Extensions
             }
             else if (subtime >= 24 * 60 * 365)
             {
-                return $"{(int)subtime / (24 * 60*365)} روز";
+                return $"{(int)subtime / (24 * 60*365)} سال";
             }
             else
             {

@@ -4,6 +4,7 @@
 @using ShopCenter.Application.Extensions
 @model ShopCenter.Presentation.Razor.Areas.User.Pages.Dashboard.TicketsModel
 @{
+    ViewData["Title"] = "پشتیبانی";
 }
 <div class="container-main">
     <div class="d-block">
@@ -38,18 +39,18 @@
                                                     <span>@x.ticket.Title</span>
                                                 </td>
                                                 <td >
-                                                    
+                                                
                                                     <span>@x.ticket.TicketState.GetEnumName()</span>
                                                 </td>
                                                 <td >
-                                                    <a href="#" >نمایش جزییات</a>
+                                                    <a asp-page="AnswerTicket" asp-route-ticketId=@x.ticket.Id>نمایش جزییات</a>
                                                 </td>
                                             </tr>
                                     }
-
                                     </tbody>
                                 </table>
                             </form>
+                                        <a  asp-page="AddTicket"> اضافه کردن پیام</a>
                             
                         </div>
                     </div>

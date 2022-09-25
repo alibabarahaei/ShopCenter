@@ -4,6 +4,7 @@
 <form method="post" >
     <input type="hidden" asp-for="Id" />
     <textarea asp-for="Text" ckeditor="1" class="ckeditor"></textarea>
+    <span asp-validation-for="Text"></span>
     <button type="submit" class="btn btn-info">
         ارسال پاسخ
     </button>

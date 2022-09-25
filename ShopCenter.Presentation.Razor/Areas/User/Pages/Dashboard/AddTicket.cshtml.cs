@@ -83,7 +83,7 @@ namespace ShopCenter.Presentation.Razor.Areas.User.Pages.Dashboard
                     case AddTicketResult.Success:
                         TempData["SuccessMessage"] = "تیکت شما با موفقیت ثبت شد";
                         TempData["InfoMessage"] = "پاسخ شما به زودی ارسال خواهد شد";
-                        return RedirectToPage("Profile");
+                        return RedirectToPage("Tickets");
                 }
             }
             else

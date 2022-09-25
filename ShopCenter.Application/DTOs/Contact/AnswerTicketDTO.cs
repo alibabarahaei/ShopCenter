@@ -11,7 +11,7 @@ namespace ShopCenter.Application.DTOs.Contact
         public string Text { get; set; }
 
 
-        public ClaimsPrincipal User { get; set; }
+        public ClaimsPrincipal User { get; set; } = null;
     }
 
     public enum AnswerTicketResult

@@ -15,6 +15,15 @@
 
 
 
+//$(document).ready(function() {
+
+//$(".sidebar-dashboard").click(function (e) {
+//    $(".sidebar-dashboard").removeClass("active");
+//    e.addClass("active")
+//});
+
+//});
+
 
 $(document).ready(function () {
     var editors = $("[ckeditor]");
@@ -67,3 +76,4 @@ $(document).ready(function () {
         });
     }
 });
+

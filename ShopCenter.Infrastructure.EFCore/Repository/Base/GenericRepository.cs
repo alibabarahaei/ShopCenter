@@ -34,7 +34,7 @@ namespace ShopCenter.Infrastructure.EFCore.Repository.Base
 
         public async Task<TEntity> GetEntityById(long entityId)
         {
-            return await _dbSet.SingleOrDefaultAsync();
+            return await _dbSet.SingleOrDefaultAsync(t=>t.Id==entityId);
         }
 
         public void EditEntity(TEntity entity)

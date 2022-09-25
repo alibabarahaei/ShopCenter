@@ -45,40 +45,46 @@
     </section>
     <section class="profile-box">
         <ul class="profile-account-navs">
-            <li class="profile-account-nav-item navigation-link-dashboard">
-                <a asp-page="Profile" class="">
+            <li class="profile-account-nav-item navigation-link-dashboard sidebar-dashboard">
+                <a asp-page="Profile" class=' @( ViewData["Title"] == "پروفایل" ? "active" : "")'>
                     <i class="mdi mdi-account-outline"></i>
                     پروفایل
                 </a>
             </li>
             <li class="profile-account-nav-item navigation-link-dashboard">
-                <a asp-page="ChangePassword" class="active">
+                <a asp-page="ChangePassword" class='@( ViewData["Title"] == "تغییر رمز عبور" ? "active" : "")'>
                     <i class="mdi mdi-tooltip-text-outline"></i>
                     تغییر پسورد
                 </a>
             </li>
             <li class="profile-account-nav-item navigation-link-dashboard">
-                <a asp-page="Order" class="">
+                <a asp-page="Order" class='@( ViewData["Title"] == "همه سفارش ها" ? "active" : "")'>
                     <i class="mdi mdi-cart"></i>
                     همه سفارش ها
                 </a>
             </li>
             <li class="profile-account-nav-item navigation-link-dashboard">
-                <a asp-page ="Favorite" class="">
+                <a asp-page="Favorite" class='@( ViewData["Title"] == "لیست علاقه مندی" ? "active" : "")'>
                     <i class="mdi mdi-heart"></i>
                     لیست علاقه مندی
                 </a>
             </li>
             <li class="profile-account-nav-item navigation-link-dashboard">
-                <a asp-page="Address" class="">
+                <a asp-page="Address" class='@( ViewData["Title"] == "آدرس" ? "active" : "")'>
                     <i class="mdi mdi-map-outline"></i>
-                    آدرس ها
+                    آدرس 
                 </a>
             </li>
             <li class="profile-account-nav-item navigation-link-dashboard">
-                <a asp-page="Comment" class="">
+                <a asp-page="Comment" class='@( ViewData["Title"] == "نظرات" ? "active" : "")'>
                     <i class="mdi mdi-email-open-outline"></i>
                     نظرات
+                </a>
+            </li>
+            <li class="profile-account-nav-item navigation-link-dashboard">
+                <a asp-page="Tickets" class='@( ViewData["Title"] == "پشتیبانی" ? "active" : "")'>
+                    <i class="mdi mdi-email-open-outline"></i>
+                    پشتیبانی
                 </a>
             </li>
         </ul>
