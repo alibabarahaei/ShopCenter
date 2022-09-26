@@ -9,7 +9,7 @@ using ShopCenter.Domain.Models.Contacts;
 
 namespace ShopCenter.Application.InterfaceServices
 {
-    public interface IContactService
+    public interface IContactService:IAsyncDisposable
     {
 
         #region ticket

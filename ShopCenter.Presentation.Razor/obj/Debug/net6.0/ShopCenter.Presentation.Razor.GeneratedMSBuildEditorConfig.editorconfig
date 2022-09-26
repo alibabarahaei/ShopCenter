@@ -59,6 +59,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVXNlclxQYWdlc1xEYXNoYm9hcmRcUHJvZmlsZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Amir/Project/ShopCenter/ShopCenter.Presentation.Razor/Areas/User/Pages/Dashboard/RequestSellerPanel.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVXNlclxQYWdlc1xEYXNoYm9hcmRcUmVxdWVzdFNlbGxlclBhbmVsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Amir/Project/ShopCenter/ShopCenter.Presentation.Razor/Areas/User/Pages/Dashboard/SellerRequests.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVXNlclxQYWdlc1xEYXNoYm9hcmRcU2VsbGVyUmVxdWVzdHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Amir/Project/ShopCenter/ShopCenter.Presentation.Razor/Areas/User/Pages/Dashboard/Tickets.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVXNlclxQYWdlc1xEYXNoYm9hcmRcVGlja2V0cy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

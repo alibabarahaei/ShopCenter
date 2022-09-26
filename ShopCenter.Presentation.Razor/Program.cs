@@ -58,7 +58,7 @@ builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IMessageSender, MessageSender>();
 builder.Services.AddScoped<ISiteService, SiteService>();
 builder.Services.AddScoped<IContactService, ContactService>();
-
+builder.Services.AddScoped<IStoreService, StoreService>();
 
 builder.Services.AddHttpClient<ICaptchaValidator, GoogleReCaptchaValidator>();
 

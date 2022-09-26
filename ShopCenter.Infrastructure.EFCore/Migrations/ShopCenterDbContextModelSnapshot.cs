@@ -315,6 +315,65 @@ namespace ShopCenter.Infrastructure.EFCore.Migrations
                     b.ToTable("Sliders");
                 });
 
+            modelBuilder.Entity("ShopCenter.Domain.Models.Store.Seller", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"), 1L, 1);
+
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("AdminDescription")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDelete")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("LastUpdateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Mobile")
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("Phone")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("StoreAcceptanceDescription")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("StoreAcceptanceState")
+                        .HasColumnType("int");
+
+                    b.Property<string>("StoreName")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Seller");
+                });
+
             modelBuilder.Entity("ShopCenter.Domain.Models.User.ApplicationUser", b =>
                 {
                     b.Property<string>("Id")
@@ -479,6 +538,17 @@ namespace ShopCenter.Infrastructure.EFCore.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("ShopCenter.Domain.Models.Store.Seller", b =>
+                {
+                    b.HasOne("ShopCenter.Domain.Models.User.ApplicationUser", "User")
+                        .WithMany("Sellers")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("ShopCenter.Domain.Models.Contacts.Ticket", b =>
                 {
                     b.Navigation("TicketMessages");
@@ -486,6 +556,8 @@ namespace ShopCenter.Infrastructure.EFCore.Migrations
 
             modelBuilder.Entity("ShopCenter.Domain.Models.User.ApplicationUser", b =>
                 {
+                    b.Navigation("Sellers");
+
                     b.Navigation("TicketMessages");
 
                     b.Navigation("Tickets");

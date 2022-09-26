@@ -3,6 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 using Microsoft.AspNetCore.Identity;
 using ShopCenter.Domain.Models.Contacts;
+using ShopCenter.Domain.Models.Store;
 
 namespace ShopCenter.Domain.Models.User
 {
@@ -34,7 +35,7 @@ namespace ShopCenter.Domain.Models.User
 
         public ICollection<Ticket> Tickets { get; set; }
         public ICollection<TicketMessage> TicketMessages { get; set; }
-
+        public ICollection<Seller>  Sellers { get; set; }
 
         #endregion
 

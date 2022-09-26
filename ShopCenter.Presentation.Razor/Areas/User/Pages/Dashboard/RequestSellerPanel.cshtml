@@ -1,0 +1,31 @@
+﻿@page
+@model ShopCenter.Presentation.Razor.Areas.User.Pages.Dashboard.RequestSellerPanelModel
+@{
+
+    ViewData["Title"] = "درخواست پنل فروشندگی";
+}
+
+
+
+            <div class="middle-container">
+    <form method="Post" class="form-checkout" asp-page="RequestSellerPanel">
+                    <div class="form-checkout-row">
+                        <label for=""  asp-for="StoreName" >نام فروشگاه <abbr class="required" title="ضروری" style="color:red;">*</abbr></label>
+            <input type="text" id="StoreName" class="form-control" asp-for="StoreName">
+            <label for="Phone">تلفن تماس فروشگاه <abbr class="required" title="ضروری" style="color:red;">*</abbr></label>
+            <input type="text" id="Phone" class=" form-control text-left" asp-for="Phone">
+                        
+                        <label for="address">
+                            آدرس
+                            <abbr class="required" title="ضروری" style="color:red;">*</abbr>
+                        </label>
+                        <textarea rows="5" cols="30" id="address" class="textarea-name-checkout form-control" asp-for="Address"></textarea>
+
+                        <div class="AR-CR">
+                            <button class="btn-registrar"> ثبت فروشگاه</button>
+                <a asp-page="ُSellerRequests" class="cancel-edit-address"  >لیست درخواست ها</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+     
