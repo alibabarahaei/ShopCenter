@@ -13,7 +13,7 @@ namespace ShopCenter.Application.InterfaceServices
         #region seller
 
         Task<RequestSellerResult> AddNewSellerRequest(RequestSellerDTO seller, ClaimsPrincipal userCP);
-
+        Task<FilterSellerDTO> FilterSellers(FilterSellerDTO filter);
         #endregion
     }
 }

@@ -2,3 +2,60 @@
 @model ShopCenter.Presentation.Razor.Areas.User.Pages.Dashboard.SellerRequestsModel
 @{
 }
+
+
+
+
+<div class="container-main">
+    <div class="d-block">
+        <div class="main-row">
+            <div id="breadcrumb">
+                <i class="mdi mdi-home"></i>
+
+            </div>
+            <section class="cart-home">
+                <div class="post-item-cart d-block order-2">
+                    <div class="content-page">
+                        <div class="cart-form">
+                            <form action="#" class="c-form">
+                                <table class="table-cart cart table table-borderless">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col" class="product-cart-name">شناسه</th>
+                                            <th scope="col" class="product-cart-price">نام فروشگاه</th>
+                                            <th scope="col" class="product-cart-quantity">تلفن تماس</th>
+                                            <th scope="col" class="product-cart-Total">دستورات</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                        @foreach (var request in Model.filterSeller.Sellers)
+                                        {
+                                            <tr>
+                                                <th scope="row">
+                                                    <span>@request.Id</span>
+                                                </th>
+                                                <td >
+                                                    <span>@request.StoreName</span>
+                                                </td>
+                                                <td >
+
+                                                    <span>@request.Phone</span>
+                                                </td>
+                                                <td >
+                                                    
+                                                </td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </form>
+                           
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
