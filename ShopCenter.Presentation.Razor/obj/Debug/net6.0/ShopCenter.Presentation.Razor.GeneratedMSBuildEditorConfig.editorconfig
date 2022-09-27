@@ -15,6 +15,42 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Amir\Project\ShopCenter\ShopCenter.Presentation.Razor
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Amir/Project/ShopCenter/ShopCenter.Presentation.Razor/Areas/Admin/Pages/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Amir/Project/ShopCenter/ShopCenter.Presentation.Razor/Areas/Admin/Pages/Shared/Components/PanelNavBar/PanelNavBar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcU2hhcmVkXENvbXBvbmVudHNcUGFuZWxOYXZCYXJcUGFuZWxOYXZCYXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Amir/Project/ShopCenter/ShopCenter.Presentation.Razor/Areas/Admin/Pages/Shared/_AdminLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcU2hhcmVkXF9BZG1pbkxheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Amir/Project/ShopCenter/ShopCenter.Presentation.Razor/Areas/Admin/Pages/Shared/_AdminSettingTheme.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcU2hhcmVkXF9BZG1pblNldHRpbmdUaGVtZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Amir/Project/ShopCenter/ShopCenter.Presentation.Razor/Areas/Admin/Pages/Shared/_AdminSideBar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcU2hhcmVkXF9BZG1pblNpZGVCYXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Amir/Project/ShopCenter/ShopCenter.Presentation.Razor/Areas/Admin/Pages/_FooterRefrencesPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcX0Zvb3RlclJlZnJlbmNlc1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Amir/Project/ShopCenter/ShopCenter.Presentation.Razor/Areas/Admin/Pages/_HeaderReferencesPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcX0hlYWRlclJlZmVyZW5jZXNQYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Amir/Project/ShopCenter/ShopCenter.Presentation.Razor/Areas/Admin/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Amir/Project/ShopCenter/ShopCenter.Presentation.Razor/Areas/Admin/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Amir/Project/ShopCenter/ShopCenter.Presentation.Razor/Areas/Uploader/Views/UploadImage/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVXBsb2FkZXJcVmlld3NcVXBsb2FkSW1hZ2VcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

@@ -2,7 +2,7 @@
 
 namespace ShopCenter.Presentation.Razor.Areas.User.ViewComponents.DashboardViewComponents
 {
-    public class DashboardFooterViewComponent:ViewComponent
+    public class DashboardFooterViewComponent : ViewComponent
     {
 
         public async Task<IViewComponentResult> InvokeAsync()

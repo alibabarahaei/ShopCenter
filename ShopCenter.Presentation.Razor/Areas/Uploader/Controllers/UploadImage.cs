@@ -5,6 +5,7 @@ using ShopCenter.Application.Utilities;
 
 namespace ShopCenter.Presentation.Razor.Areas.Uploader.Controllers
 {
+    [Area("Uploader")]
     public class UploadImage : Controller
     {
 
