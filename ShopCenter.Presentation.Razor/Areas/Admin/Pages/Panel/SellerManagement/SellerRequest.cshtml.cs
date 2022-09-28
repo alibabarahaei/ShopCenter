@@ -1,7 +1,9 @@
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using ShopCenter.Application.DTOs.Common;
 using ShopCenter.Application.DTOs.Store;
 using ShopCenter.Application.InterfaceServices;
+using ShopCenter.Presentation.Razor.Http;
 
 namespace ShopCenter.Presentation.Razor.Areas.Admin.Pages.Panel.SellerManagement
 {
@@ -28,10 +30,56 @@ namespace ShopCenter.Presentation.Razor.Areas.Admin.Pages.Panel.SellerManagement
 
 
 
-        public async Task OnGet()
+        public async Task OnGet(FilterSellerDTO filter)
         {
-            FilterSeller = new FilterSellerDTO();
-            FilterSeller = await _storeService.FilterSellers(FilterSeller);
+            filter.TakeEntity = 4;
+            
+            FilterSeller = await _storeService.FilterSellersAsync(filter);
         }
+
+
+
+        public async Task<IActionResult> OnGetAcceptSellerRequest(long requestId)
+        {
+            var result = await _storeService.AcceptSellerRequestAsync(requestId);
+
+            if (result)
+            {
+                return JsonResponseStatus.SendStatus(
+                    JsonResponseStatusType.Success,
+                    "درخواست مورد نظر با موفقیت تایید شد",
+                    null);
+            }
+
+            return JsonResponseStatus.SendStatus(JsonResponseStatusType.Danger,
+                "اطلاعاتی با این مشخصات یافت نشد", null);
+        }
+
+
+
+
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> OnPostRejectSellerRequest(RejectItemDTO reject)
+        {
+            var result = await _storeService.RejectSellerRequestAsync(reject);
+
+            if (result)
+            {
+                return JsonResponseStatus.SendStatus(
+                    JsonResponseStatusType.Success,
+                    "درخواست مورد نظر با موفقیت رد شد شد",
+                    reject);
+            }
+
+            return JsonResponseStatus.SendStatus(JsonResponseStatusType.Danger,
+                "اطلاعاتی با این مشخصات یافت نشد", null);
+        }
+
+
+
+
+
+
+
     }
 }

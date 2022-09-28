@@ -1,8 +1,84 @@
 ﻿@page
 @using ShopCenter.Application.Extensions
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@using ShopCenter.Application.DTOs.Store
 @model ShopCenter.Presentation.Razor.Areas.Admin.Pages.Panel.SellerManagement.SellerRequestModel
 @{
 }
+
+
+<form method="Get" asp-page="SellerRequest" class="mt-3" id="filter-form">
+
+
+    <input type="hidden" name="PageId" id="PageId" />
+
+
+    <div class="row  justify-content-center">
+        <div class="col-lg-6 col-12">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon3">نام فروشگاه</span>
+                </div>
+                <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" name="StoreName">
+            </div>
+        </div>
+        <div class="col-lg-6 col-12">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon3">تلفن تماس</span>
+                </div>
+                <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" name="Phone">
+            </div>
+        </div>
+        <div class="col-lg-6 col-12">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon3">تلفن همراه</span>
+                </div>
+                <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" name="Mobile">
+            </div>
+        </div>
+        <div class="col-lg-6 col-12">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon3">آدرس فروشگاه</span>
+                </div>
+                <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" name="Address">
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <div class="row">
+        <div class="col-lg-6 col-12 ">
+            <div class="btn-group mr-2">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="customSelect">حالات فروشنده</span>
+                </div>
+                <select class="custom-select" id="customSelect" sty asp-items="Html.GetEnumSelectList<FilterSellerState>()" aria-describedby="customSelect" name="State">
+                    <option selected="">این منوی انتخاب را باز کنید</option>
+
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-center mt-3">
+        <div class="col-lg-6 col-12 justify-content-center">
+            <button type="submit" class="btn btn-lg btn-block btn-outline-info mb-2" id="type-info">فیلتر</button>
+        </div>
+    </div>
+
+
+
+
+</form>
+
+
+
+
+
 <section id="extended">
     <div class="row">
         <div class="col-sm-12">
@@ -16,7 +92,7 @@
                     <div class="card-block">
 
 
-                        @if (Model.FilterSeller != null )
+                        @if (Model.FilterSeller != null && Model.FilterSeller.Sellers.Any())
                     {
                         <table class="table table-responsive-md text-center">
 
@@ -36,7 +112,7 @@
                         @foreach (var seller in Model.FilterSeller.Sellers)
                         {
 
-                            <tr>
+                                        <tr id="ajax-url-item-@seller.Id">
                                 <td>@seller.Id</td>
 
                                             <td>@seller.StoreName</td>
@@ -44,13 +120,11 @@
                                             <td> @seller.StoreAcceptanceState.GetEnumName()</td>
                                
                                 <td>
-                                    <a class="success p-0" data-original-title="" title="">
+                                                <a class="success p-0" ajax-url-button="@seller.Id" data-original-title="" title="" asp-page="SellerRequest" asp-page-handler="AcceptSellerRequest" asp-route-requestId="@seller.Id">
                                         <i class="fa fa-pencil font-medium-3 mr-2"></i>
                                     </a>
-                                    <a class="info p-0" data-original-title="" title="">
-                                        <i class="fa fa-check font-medium-3 mr-2"></i>
-                                    </a>
-                                    <a class="danger p-0" data-original-title="" title="">
+                                   
+                                                <a class="danger p-0" data-original-title="" title="" asp-page="SellerRequest" asp-page-handler="RejectSellerRequest">
                                         <i class="fa fa-trash-o font-medium-3 mr-2"></i>
                                     </a>
                                 </td>
@@ -62,7 +136,9 @@
                     }
                     else
                     {
-                        
+                            <div class="alert alert-warning">
+                                <strong>هشدار! </strong>  هیچ ردیفی پیدا نشد
+                            </div>
                     }
                         
                         
@@ -73,5 +149,7 @@
             </div>
         </div>
     </div>
-    <div class="row"><div class="col-sm-12 col-md-5"><div class="dataTables_info" id="DataTables_Table_0_info" role="status" aria-live="polite">نمایش 1 تا 10 از 57 سطرها</div></div><div class="col-sm-12 col-md-7"><div class="dataTables_paginate paging_simple_numbers" id="DataTables_Table_0_paginate"><ul class="pagination"><li class="paginate_button page-item previous disabled" id="DataTables_Table_0_previous"><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="0" tabindex="0" class="page-link">قبلی</a></li><li class="paginate_button page-item active"><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="1" tabindex="0" class="page-link">1</a></li><li class="paginate_button page-item "><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="2" tabindex="0" class="page-link">2</a></li><li class="paginate_button page-item "><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="3" tabindex="0" class="page-link">3</a></li><li class="paginate_button page-item "><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="4" tabindex="0" class="page-link">4</a></li><li class="paginate_button page-item "><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="5" tabindex="0" class="page-link">5</a></li><li class="paginate_button page-item "><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="6" tabindex="0" class="page-link">6</a></li><li class="paginate_button page-item next" id="DataTables_Table_0_next"><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="7" tabindex="0" class="page-link">بعدی</a></li></ul></div></div></div>
+    <div class="row">
+        <partial name="Shared/_AdminPagingPartial" model="@Model.FilterSeller.GetCurrentPaging()"/>
+    </div>
 </section>

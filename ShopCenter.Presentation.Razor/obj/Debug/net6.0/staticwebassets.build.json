@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "DlSd1iEsLr0x0NrvXHyyACsxq+cGXXA1lU5Def/927s=",
+  "Hash": "+akvwqSE3lkLM/mHqEbSejwZVzOZs4zmOc8SoYI0Cwg=",
   "Source": "ShopCenter.Presentation.Razor",
   "BasePath": "_content/ShopCenter.Presentation.Razor",
   "Mode": "Default",
@@ -2990,6 +2990,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\admin\\js\\components-modal.min.js"
+    },
+    {
+      "Identity": "C:\\Amir\\Project\\ShopCenter\\ShopCenter.Presentation.Razor\\wwwroot\\admin\\js\\custom.js",
+      "SourceId": "ShopCenter.Presentation.Razor",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Amir\\Project\\ShopCenter\\ShopCenter.Presentation.Razor\\wwwroot\\",
+      "BasePath": "_content/ShopCenter.Presentation.Razor",
+      "RelativePath": "admin/js/custom.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\admin\\js\\custom.js"
     },
     {
       "Identity": "C:\\Amir\\Project\\ShopCenter\\ShopCenter.Presentation.Razor\\wwwroot\\admin\\js\\customizer.js",

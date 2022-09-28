@@ -31,12 +31,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcU2hhcmVkXF9BZG1pbkxheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Amir/Project/ShopCenter/ShopCenter.Presentation.Razor/Areas/Admin/Pages/Shared/_AdminSettingTheme.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcU2hhcmVkXF9BZG1pblNldHRpbmdUaGVtZS5jc2h0bWw=
+[C:/Amir/Project/ShopCenter/ShopCenter.Presentation.Razor/Areas/Admin/Pages/Shared/_AdminPagingPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcU2hhcmVkXF9BZG1pblBhZ2luZ1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Amir/Project/ShopCenter/ShopCenter.Presentation.Razor/Areas/Admin/Pages/Shared/_AdminSideBar.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcU2hhcmVkXF9BZG1pblNpZGVCYXIuY3NodG1s
+[C:/Amir/Project/ShopCenter/ShopCenter.Presentation.Razor/Areas/Admin/Pages/Shared/_AdminSettingThemePartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcU2hhcmVkXF9BZG1pblNldHRpbmdUaGVtZVBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Amir/Project/ShopCenter/ShopCenter.Presentation.Razor/Areas/Admin/Pages/Shared/_AdminSideBarPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcU2hhcmVkXF9BZG1pblNpZGVCYXJQYXJ0aWFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Amir/Project/ShopCenter/ShopCenter.Presentation.Razor/Areas/Admin/Pages/_FooterRefrencesPartial.cshtml]

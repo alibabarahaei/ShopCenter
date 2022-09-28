@@ -56,7 +56,7 @@ namespace ShopCenter.Presentation.Razor.Areas.User.Pages.Dashboard
         {
             if (ModelState.IsValid)
             {
-                var res = await _storeService.AddNewSellerRequest(seller, User);
+                var res = await _storeService.AddNewSellerRequestAsync(seller, User);
                 switch (res)
                 {
                     case RequestSellerResult.HasNotPermission:

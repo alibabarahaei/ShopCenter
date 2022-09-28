@@ -32,7 +32,7 @@ namespace ShopCenter.Presentation.Razor.Areas.User.Pages.Dashboard
             filter.TakeEntity = 5;
             filter.User = User;
             filter.State = FilterSellerState.All;
-            filterSeller = await _storeService.FilterSellers(filter);
+            filterSeller = await _storeService.FilterSellersAsync(filter);
 
 
         }

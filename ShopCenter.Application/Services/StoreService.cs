@@ -7,6 +7,7 @@ using ShopCenter.Application.InterfaceServices;
 using ShopCenter.Domain.InterfaceRepositories.Base;
 using ShopCenter.Domain.Models.Store;
 using System.Security.Claims;
+using ShopCenter.Application.DTOs.Common;
 
 
 namespace ShopCenter.Application.Services
@@ -28,7 +29,7 @@ namespace ShopCenter.Application.Services
 
         #region seller
 
-        public async Task<RequestSellerResult> AddNewSellerRequest(RequestSellerDTO seller, ClaimsPrincipal userCP)
+        public async Task<RequestSellerResult> AddNewSellerRequestAsync(RequestSellerDTO seller, ClaimsPrincipal userCP)
         {
             var user = await _userService.GetUserAsync(new GetUserDTO()
             {
@@ -57,7 +58,7 @@ namespace ShopCenter.Application.Services
             return RequestSellerResult.Success;
         }
 
-        public async Task<FilterSellerDTO> FilterSellers(FilterSellerDTO filter)
+        public async Task<FilterSellerDTO> FilterSellersAsync(FilterSellerDTO filter)
         {
 
 
@@ -121,6 +122,54 @@ namespace ShopCenter.Application.Services
             #endregion
 
             return filter.SetPaging(pager).SetSellers(allEntities);
+        }
+
+
+
+
+
+
+
+
+
+
+        public async Task<bool> AcceptSellerRequestAsync(long requestId)
+        {
+            var sellerRequest = await _sellerRepository.GetEntityById(requestId);
+            if (sellerRequest != null)
+            {
+                sellerRequest.StoreAcceptanceState = StoreAcceptanceState.Accepted;
+                sellerRequest.StoreAcceptanceDescription = "اطلاعات پنل فروشندگی شما تایید شده است";
+                _sellerRepository.EditEntity(sellerRequest);
+                await _sellerRepository.SaveChanges();
+
+                return true;
+            }
+
+            return false;
+        }
+
+
+
+
+
+
+
+
+
+        public async Task<bool> RejectSellerRequestAsync(RejectItemDTO reject)
+        {
+            var seller = await _sellerRepository.GetEntityById(reject.Id);
+            if (seller != null)
+            {
+                seller.StoreAcceptanceState = StoreAcceptanceState.Rejected;
+                seller.StoreAcceptanceDescription = reject.RejectMessage;
+                _sellerRepository.EditEntity(seller);
+                await _sellerRepository.SaveChanges();
+                return true;
+            }
+
+            return false;
         }
 
         #endregion

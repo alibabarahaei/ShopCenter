@@ -1,0 +1,47 @@
+﻿@model ShopCenter.Application.DTOs.Paging.BasePaging
+
+
+
+
+
+
+<div class="col-sm-12 col-md-5">
+
+    <div class="dataTables_info" id="DataTables_Table_0_info" role="status" aria-live="polite"> @Model.AllEntitiesCount سطر
+
+    </div>
+</div>
+<div class="col-sm-12 col-md-7">
+
+    <div class="dataTables_paginate paging_simple_numbers" id="DataTables_Table_0_paginate">
+      
+
+
+        <ul class="pagination">
+            @if (Model.StartPage < Model.PageId)
+            {
+                <li class="paginate_button page-item previous " id="DataTables_Table_0_previous">
+                    <a onclick="FillPageId(@(Model.PageId - 1))" aria-controls="DataTables_Table_0" data-dt-idx="0" tabindex="0" class="page-link">قبلی</a>
+                </li>
+            }
+            @for (int i = Model.StartPage; i <= Model.EndPage; i++)
+            {
+                <li class="paginate_button page-item @(Model.PageId == i ? "active":"")">
+                    <a onclick="FillPageId(@i)" aria-controls="DataTables_Table_0" data-dt-idx="@i" tabindex="0" class="page-link">@i</a>
+                </li>
+            }
+            @if (Model.EndPage > Model.PageId)
+            {
+                <li class="paginate_button page-item next" id="DataTables_Table_0_next">
+                    <a onclick="FillPageId(@(Model.PageId + 1))" aria-controls="DataTables_Table_0"  tabindex="0" class="page-link">بعدی</a>
+                </li>
+            }
+
+        </ul>
+
+    </div>
+</div>
+
+
+
+
