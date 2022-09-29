@@ -14,6 +14,7 @@
     <meta name="apple-touch-fullscreen" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <partial name="_HeaderReferencesPartial"/>
+    @RenderSection("styles", false)
 </head>
 <body data-col="2-columns" class=" 2-columns ">
     <!-- ////////////////////////////////////////////////////////////////////////////-->
@@ -202,7 +203,8 @@
     </aside>
 <partial name="_AdminSettingThemePartial" />
     <!-- BEGIN VENDOR JS-->
-   <partial name="_FooterRefrencesPartial" />
+<partial name="_FooterRefrencesPartial" />
+    @RenderSection("scripts", false)
 </body>
 
 <!-- Mirrored from pixinvent.com/demo/convex-bootstrap-admin-dashboard-template/demo-1/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 20 Sep 2018 14:54:18 GMT -->

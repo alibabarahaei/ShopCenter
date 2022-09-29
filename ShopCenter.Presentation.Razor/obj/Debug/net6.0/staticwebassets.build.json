@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "+akvwqSE3lkLM/mHqEbSejwZVzOZs4zmOc8SoYI0Cwg=",
+  "Hash": "ahHpG4z3U0ECpDI+6P7ahqsWXVpF7XPGPNRjoGBYIaQ=",
   "Source": "ShopCenter.Presentation.Razor",
   "BasePath": "_content/ShopCenter.Presentation.Razor",
   "Mode": "Default",
@@ -10130,6 +10130,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Identity": "C:\\Amir\\Project\\ShopCenter\\ShopCenter.Presentation.Razor\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.ajax.min.js",
+      "SourceId": "ShopCenter.Presentation.Razor",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Amir\\Project\\ShopCenter\\ShopCenter.Presentation.Razor\\wwwroot\\",
+      "BasePath": "_content/ShopCenter.Presentation.Razor",
+      "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.ajax.min.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.ajax.min.js"
     },
     {
       "Identity": "C:\\Amir\\Project\\ShopCenter\\ShopCenter.Presentation.Razor\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",

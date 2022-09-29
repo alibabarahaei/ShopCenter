@@ -43,6 +43,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcU2hhcmVkXF9BZG1pblNpZGVCYXJQYXJ0aWFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Amir/Project/ShopCenter/ShopCenter.Presentation.Razor/Areas/Admin/Pages/Shared/_RejectItemPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcU2hhcmVkXF9SZWplY3RJdGVtUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Amir/Project/ShopCenter/ShopCenter.Presentation.Razor/Areas/Admin/Pages/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Amir/Project/ShopCenter/ShopCenter.Presentation.Razor/Areas/Admin/Pages/_FooterRefrencesPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcX0Zvb3RlclJlZnJlbmNlc1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

@@ -61,6 +61,8 @@ namespace ShopCenter.Presentation.Razor.Areas.Admin.Pages.Panel.SellerManagement
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> OnPostRejectSellerRequest(RejectItemDTO reject)
         {
+            if (ModelState.IsValid)
+            {
             var result = await _storeService.RejectSellerRequestAsync(reject);
 
             if (result)
@@ -71,6 +73,12 @@ namespace ShopCenter.Presentation.Razor.Areas.Admin.Pages.Panel.SellerManagement
                     reject);
             }
 
+            return JsonResponseStatus.SendStatus(JsonResponseStatusType.Danger,
+                "اطلاعاتی با این مشخصات یافت نشد", null);
+
+            }
+
+            return Page();
             return JsonResponseStatus.SendStatus(JsonResponseStatusType.Danger,
                 "اطلاعاتی با این مشخصات یافت نشد", null);
         }

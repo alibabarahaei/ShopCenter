@@ -1,10 +1,20 @@
 ﻿@page
 @using ShopCenter.Application.Extensions
 @using Microsoft.AspNetCore.Mvc.TagHelpers
+@using ShopCenter.Application.DTOs.Common
 @using ShopCenter.Application.DTOs.Store
+@using ShopCenter.Domain.Models.Store
 @model ShopCenter.Presentation.Razor.Areas.Admin.Pages.Panel.SellerManagement.SellerRequestModel
-@{
-}
+
+
+
+
+
+
+
+
+
+
 
 
 <form method="Get" asp-page="SellerRequest" class="mt-3" id="filter-form">
@@ -93,53 +103,62 @@
 
 
                         @if (Model.FilterSeller != null && Model.FilterSeller.Sellers.Any())
-                    {
-                        <table class="table table-responsive-md text-center">
-
-                            <thead>
-                            <tr>
-                                
-                                <th>شناسه</th>
-                                <th>نام فروشگاه</th>
-                                <th>تلفن</th>
-                                <th>وضعیت</th>
-                                <th>اقدامات</th>
-                            </tr>
-                            </thead>
-
-                            <tbody>
-
-                        @foreach (var seller in Model.FilterSeller.Sellers)
                         {
+                            <table class="table table-responsive-md text-center">
 
-                                        <tr id="ajax-url-item-@seller.Id">
-                                <td>@seller.Id</td>
+                                <thead>
+                                <tr>
+                                
+                                    <th>شناسه</th>
+                                    <th>نام فروشگاه</th>
+                                    <th>تلفن</th>
+                                    <th>وضعیت</th>
+                                    <th>اقدامات</th>
+                                </tr>
+                                </thead>
 
-                                            <td>@seller.StoreName</td>
-                                            <td> @seller.Phone</td>
-                                            <td> @seller.StoreAcceptanceState.GetEnumName()</td>
+                                <tbody>
+
+                                @foreach (var seller in Model.FilterSeller.Sellers)
+                                {
+
+                                    <tr id="ajax-url-item-@seller.Id">
+                                        <td>@seller.Id</td>
+
+                                        <td>@seller.StoreName</td>
+                                        <td> @seller.Phone</td>
+                                        <td> @seller.StoreAcceptanceState.GetEnumName()</td>
                                
-                                <td>
-                                                <a class="success p-0" ajax-url-button="@seller.Id" data-original-title="" title="" asp-page="SellerRequest" asp-page-handler="AcceptSellerRequest" asp-route-requestId="@seller.Id">
-                                        <i class="fa fa-pencil font-medium-3 mr-2"></i>
-                                    </a>
-                                   
-                                                <a class="danger p-0" data-original-title="" title="" asp-page="SellerRequest" asp-page-handler="RejectSellerRequest">
-                                        <i class="fa fa-trash-o font-medium-3 mr-2"></i>
-                                    </a>
-                                </td>
-                            </tr>
+                                        <td>
+                                            @if (seller.StoreAcceptanceState != StoreAcceptanceState.Accepted)
+                                            {
+                                              
+                                            <a class="success p-0" ajax-url-button="@seller.Id" data-original-title="" title="" asp-page="SellerRequest" asp-page-handler="AcceptSellerRequest" asp-route-requestId="@seller.Id">
+                                                <i class="fa fa-pencil font-medium-3 mr-2"></i>
+                                            </a>
 
+                                            }
+
+                                            @if (seller.StoreAcceptanceState != StoreAcceptanceState.Rejected)
+                                            {
+                                                    <a class="danger p-0" data-toggle="modal" data-target=".reject-modal-@seller.Id" data-backdrop="false">
+                                                <i class="fa fa-trash-o font-medium-3 mr-2"></i>
+                                            </a>
+                                               
+                                            }
+                                        </td>
+                                    </tr>
+
+                                }
+                                </tbody>
+                            </table>
                         }
-                            </tbody>
-                        </table>
-                    }
-                    else
-                    {
+                        else
+                        {
                             <div class="alert alert-warning">
                                 <strong>هشدار! </strong>  هیچ ردیفی پیدا نشد
                             </div>
-                    }
+                        }
                         
                         
                         
@@ -150,6 +169,55 @@
         </div>
     </div>
     <div class="row">
+        @if (Model.FilterSeller != null && Model.FilterSeller.Sellers.Any())
+        {
         <partial name="Shared/_AdminPagingPartial" model="@Model.FilterSeller.GetCurrentPaging()"/>
+
+        }
     </div>
+    
 </section>
+    
+    @if (Model.FilterSeller.Sellers != null && Model.FilterSeller.Sellers.Any())
+    {
+        foreach (var seller in Model.FilterSeller.Sellers)
+        {
+
+
+            <div class="mt-5 modal fade text-left reject-modal-@seller.Id" id="danger" tabindex="-1" role="dialog" aria-labelledby="myModalLabel10" style="display: none;" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header bg-danger white">
+                            <h4 class="modal-title" id="myModalLabel10">@seller.StoreName</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                        </div>
+
+                    <form  asp-page="SellerRequest" asp-page-handler="RejectSellerRequest" asp-antiforgery="true" data-ajax="true" data-method="post" data-ajax-success="OnSuccessRejectItem">
+                        <div class="modal-body">
+                            <partial name="Shared/_RejectItemPartial" model="new RejectItemDTO(){Id = @seller.Id}"/>
+                            <br>
+
+                        </div>
+                        
+                        <div class="modal-footer">
+                            <input type="reset" class="btn btn-outline-secondary btn-lg" data-dismiss="modal" value="بستن">
+                            <input type="submit" class="btn btn-outline-primary btn-lg" value="ثبت">
+                        </div>
+
+                        </form>
+                        
+                       
+                    </div>
+                </div>
+            </div>
+        
+        }
+
+
+    }
+    
+                        @section scripts{
+    <partial name="Shared/_ValidationScriptsPartial" />
+                        }
