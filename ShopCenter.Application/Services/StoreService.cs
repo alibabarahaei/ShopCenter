@@ -172,6 +172,18 @@ namespace ShopCenter.Application.Services
             return false;
         }
 
+        public async Task<Seller> GetLastActiveSellerByUserId(ClaimsPrincipal userCP)
+        {
+            var user = await _userService.GetUserAsync(new GetUserDTO()
+            {
+                User = userCP
+            });
+            return await _sellerRepository.GetQuery()
+                .OrderByDescending(s => s.CreateDate)
+                .FirstOrDefaultAsync(s =>
+                    s.UserId == user.Id && s.StoreAcceptanceState == StoreAcceptanceState.Accepted);
+        }
+
         #endregion
 
         #region dispose

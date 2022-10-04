@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using ShopCenter.Domain.Models.Site;
 using ShopCenter.Domain.Models.User;
+using ShopCenter.Domain.Models.Products;
+using ShopCenter.Domain.Models.Store;
+using ShopCenter.Domain.Models.Contacts;
 
 namespace ShopCenter.Infrastructure.EFCore.Context
 {
@@ -23,21 +26,27 @@ namespace ShopCenter.Infrastructure.EFCore.Context
         public DbSet<Slider> Sliders { get; set; }
         public DbSet<Banner> Banners { get; set; }
         #endregion
+        #region contacts
 
+        public DbSet<Ticket> Tickets { get; set; }
+        public DbSet<TicketMessage> TicketMessages { get; set; }
 
+        #endregion
+        #region store
 
+        public DbSet<Seller> Sellers { get; set; }
 
+        #endregion
+        #region products
 
+        public DbSet<ProductCategory> ProductCategories { get; set; }
 
+        public DbSet<Product> Products { get; set; }
 
+        public DbSet<ProductSelectedCategory> ProductSelectedCategories { get; set; }
 
-
-
-
-
-
-
-
+        #endregion
+        #region on model creating
 
 
 
@@ -73,7 +82,7 @@ namespace ShopCenter.Infrastructure.EFCore.Context
 
         }
 
-
+        #endregion
 
     }
 }

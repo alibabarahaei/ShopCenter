@@ -200,7 +200,7 @@ namespace ShopCenter.Infrastructure.EFCore.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Ticket");
+                    b.ToTable("Tickets", (string)null);
                 });
 
             modelBuilder.Entity("ShopCenter.Domain.Models.Contacts.TicketMessage", b =>
@@ -237,7 +237,138 @@ namespace ShopCenter.Infrastructure.EFCore.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("TicketMessage");
+                    b.ToTable("TicketMessages", (string)null);
+                });
+
+            modelBuilder.Entity("ShopCenter.Domain.Models.Products.Product", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"), 1L, 1);
+
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ImageName")
+                        .IsRequired()
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDelete")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("LastUpdateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("Price")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ProductAcceptOrRejectDescription")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ProductAcceptanceState")
+                        .HasColumnType("int");
+
+                    b.Property<long>("SellerId")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("ShortDescription")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("SellerId");
+
+                    b.ToTable("Products", (string)null);
+                });
+
+            modelBuilder.Entity("ShopCenter.Domain.Models.Products.ProductCategory", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"), 1L, 1);
+
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDelete")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("LastUpdateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<long?>("ParentId")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<string>("UrlName")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ParentId");
+
+                    b.ToTable("ProductCategories", (string)null);
+                });
+
+            modelBuilder.Entity("ShopCenter.Domain.Models.Products.ProductSelectedCategory", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"), 1L, 1);
+
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsDelete")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("LastUpdateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<long>("ProductCategoryId")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("ProductId")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductCategoryId");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("ProductSelectedCategories", (string)null);
                 });
 
             modelBuilder.Entity("ShopCenter.Domain.Models.Site.Banner", b =>
@@ -277,7 +408,7 @@ namespace ShopCenter.Infrastructure.EFCore.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Banners");
+                    b.ToTable("Banners", (string)null);
                 });
 
             modelBuilder.Entity("ShopCenter.Domain.Models.Site.Slider", b =>
@@ -312,7 +443,7 @@ namespace ShopCenter.Infrastructure.EFCore.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Sliders");
+                    b.ToTable("Sliders", (string)null);
                 });
 
             modelBuilder.Entity("ShopCenter.Domain.Models.Store.Seller", b =>
@@ -371,7 +502,7 @@ namespace ShopCenter.Infrastructure.EFCore.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Seller");
+                    b.ToTable("Sellers", (string)null);
                 });
 
             modelBuilder.Entity("ShopCenter.Domain.Models.User.ApplicationUser", b =>
@@ -538,6 +669,46 @@ namespace ShopCenter.Infrastructure.EFCore.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("ShopCenter.Domain.Models.Products.Product", b =>
+                {
+                    b.HasOne("ShopCenter.Domain.Models.Store.Seller", "Seller")
+                        .WithMany()
+                        .HasForeignKey("SellerId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Seller");
+                });
+
+            modelBuilder.Entity("ShopCenter.Domain.Models.Products.ProductCategory", b =>
+                {
+                    b.HasOne("ShopCenter.Domain.Models.Products.ProductCategory", "Parent")
+                        .WithMany()
+                        .HasForeignKey("ParentId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.Navigation("Parent");
+                });
+
+            modelBuilder.Entity("ShopCenter.Domain.Models.Products.ProductSelectedCategory", b =>
+                {
+                    b.HasOne("ShopCenter.Domain.Models.Products.ProductCategory", "ProductCategory")
+                        .WithMany("ProductSelectedCategories")
+                        .HasForeignKey("ProductCategoryId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("ShopCenter.Domain.Models.Products.Product", "Product")
+                        .WithMany("ProductSelectedCategories")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Product");
+
+                    b.Navigation("ProductCategory");
+                });
+
             modelBuilder.Entity("ShopCenter.Domain.Models.Store.Seller", b =>
                 {
                     b.HasOne("ShopCenter.Domain.Models.User.ApplicationUser", "User")
@@ -552,6 +723,16 @@ namespace ShopCenter.Infrastructure.EFCore.Migrations
             modelBuilder.Entity("ShopCenter.Domain.Models.Contacts.Ticket", b =>
                 {
                     b.Navigation("TicketMessages");
+                });
+
+            modelBuilder.Entity("ShopCenter.Domain.Models.Products.Product", b =>
+                {
+                    b.Navigation("ProductSelectedCategories");
+                });
+
+            modelBuilder.Entity("ShopCenter.Domain.Models.Products.ProductCategory", b =>
+                {
+                    b.Navigation("ProductSelectedCategories");
                 });
 
             modelBuilder.Entity("ShopCenter.Domain.Models.User.ApplicationUser", b =>

@@ -1,0 +1,13 @@
+﻿@page
+@model ShopCenter.Presentation.Razor.Areas.Seller.Pages.Panel.Product.IndexModel
+@{
+}
+
+
+
+
+
+@foreach (var product in Model.Filter.Products)
+{
+    <p>@product.Title</p>
+}

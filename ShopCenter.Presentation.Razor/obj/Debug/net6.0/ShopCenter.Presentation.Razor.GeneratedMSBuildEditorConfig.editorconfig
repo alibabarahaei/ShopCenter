@@ -67,6 +67,58 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Amir/Project/ShopCenter/ShopCenter.Presentation.Razor/Areas/Seller/Pages/Panel/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU2VsbGVyXFBhZ2VzXFBhbmVsXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Amir/Project/ShopCenter/ShopCenter.Presentation.Razor/Areas/Seller/Pages/Panel/Product/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU2VsbGVyXFBhZ2VzXFBhbmVsXFByb2R1Y3RcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Amir/Project/ShopCenter/ShopCenter.Presentation.Razor/Areas/Seller/Pages/Shared/Components/SellerPanelNavBar/SellerPanelNavBar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU2VsbGVyXFBhZ2VzXFNoYXJlZFxDb21wb25lbnRzXFNlbGxlclBhbmVsTmF2QmFyXFNlbGxlclBhbmVsTmF2QmFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Amir/Project/ShopCenter/ShopCenter.Presentation.Razor/Areas/Seller/Pages/Shared/_RejectItemPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU2VsbGVyXFBhZ2VzXFNoYXJlZFxfUmVqZWN0SXRlbVBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Amir/Project/ShopCenter/ShopCenter.Presentation.Razor/Areas/Seller/Pages/Shared/_SellerLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU2VsbGVyXFBhZ2VzXFNoYXJlZFxfU2VsbGVyTGF5b3V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Amir/Project/ShopCenter/ShopCenter.Presentation.Razor/Areas/Seller/Pages/Shared/_SellerPagingPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU2VsbGVyXFBhZ2VzXFNoYXJlZFxfU2VsbGVyUGFnaW5nUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Amir/Project/ShopCenter/ShopCenter.Presentation.Razor/Areas/Seller/Pages/Shared/_SellerSettingThemePartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU2VsbGVyXFBhZ2VzXFNoYXJlZFxfU2VsbGVyU2V0dGluZ1RoZW1lUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Amir/Project/ShopCenter/ShopCenter.Presentation.Razor/Areas/Seller/Pages/Shared/_SellerSideBarPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU2VsbGVyXFBhZ2VzXFNoYXJlZFxfU2VsbGVyU2lkZUJhclBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Amir/Project/ShopCenter/ShopCenter.Presentation.Razor/Areas/Seller/Pages/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU2VsbGVyXFBhZ2VzXFNoYXJlZFxfVmFsaWRhdGlvblNjcmlwdHNQYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Amir/Project/ShopCenter/ShopCenter.Presentation.Razor/Areas/Seller/Pages/_FooterRefrencesPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU2VsbGVyXFBhZ2VzXF9Gb290ZXJSZWZyZW5jZXNQYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Amir/Project/ShopCenter/ShopCenter.Presentation.Razor/Areas/Seller/Pages/_HeaderReferencesPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU2VsbGVyXFBhZ2VzXF9IZWFkZXJSZWZlcmVuY2VzUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Amir/Project/ShopCenter/ShopCenter.Presentation.Razor/Areas/Seller/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU2VsbGVyXFBhZ2VzXF9WaWV3SW1wb3J0cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Amir/Project/ShopCenter/ShopCenter.Presentation.Razor/Areas/Seller/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU2VsbGVyXFBhZ2VzXF9WaWV3U3RhcnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Amir/Project/ShopCenter/ShopCenter.Presentation.Razor/Areas/Uploader/Views/UploadImage/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVXBsb2FkZXJcVmlld3NcVXBsb2FkSW1hZ2VcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

@@ -59,7 +59,7 @@ builder.Services.AddScoped<IMessageSender, MessageSender>();
 builder.Services.AddScoped<ISiteService, SiteService>();
 builder.Services.AddScoped<IContactService, ContactService>();
 builder.Services.AddScoped<IStoreService, StoreService>();
-
+builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddHttpClient<ICaptchaValidator, GoogleReCaptchaValidator>();
 
 #region Config Database

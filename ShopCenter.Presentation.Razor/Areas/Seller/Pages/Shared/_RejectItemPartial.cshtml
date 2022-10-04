@@ -1,0 +1,7 @@
+﻿@model ShopCenter.Application.DTOs.Common.RejectItemDTO
+<input type="hidden" asp-for="Id" value="@Model.Id" />
+<fieldset class="form-group floating-label-form-group">
+    <label for="email">علت نپذیرفتن فروشگاه</label>
+    <input type="text" class="form-control" id="email" placeholder="..."  asp-for="RejectMessage">
+    <span asp-validation-for="RejectMessage" ></span>
+</fieldset>
