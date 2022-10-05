@@ -1,4 +1,5 @@
 ﻿using ShopCenter.Application.DTOs.Products;
+using ShopCenter.Domain.Models.Products;
 
 namespace ShopCenter.Application.InterfaceServices
 {
@@ -7,6 +8,11 @@ namespace ShopCenter.Application.InterfaceServices
         #region products
 
         Task<FilterProductDTO> FilterProductsAsync(FilterProductDTO filter);
+
+        #endregion
+        #region product categories
+
+        Task<List<ProductCategory>> GetAllProductCategoriesByParentId(long? parentId);
 
         #endregion
     }

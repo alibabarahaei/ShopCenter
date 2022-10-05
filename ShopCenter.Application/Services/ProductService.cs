@@ -76,6 +76,27 @@ namespace ShopCenter.Application.Services
         #endregion
 
 
+
+        #region product categories
+
+        public async Task<List<ProductCategory>> GetAllProductCategoriesByParentId(long? parentId)
+        {
+            if (parentId == null || parentId == 0)
+            {
+                return await _productCategoryRepository.GetQuery()
+                    .AsQueryable()
+                    .Where(s => !s.IsDelete && s.IsActive)
+                    .ToListAsync();
+            }
+
+            return await _productCategoryRepository.GetQuery()
+                .AsQueryable()
+                .Where(s => !s.IsDelete && s.IsActive && s.ParentId == parentId)
+                .ToListAsync();
+        }
+
+        #endregion
+
         #region dispose
 
         public async ValueTask DisposeAsync()

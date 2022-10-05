@@ -25,7 +25,19 @@ namespace ShopCenter.Application.Utilities
 
 
 
+        #region products
 
+        public static string ProductImage = "/content/images/product/origin/";
+
+        public static string ProductImageImageServer =
+            Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/content/images/product/origin/");
+
+        public static string ProductThumbnailImage = "/content/images/product/thumb/";
+
+        public static string ProductThumbnailImageImageServer =
+            Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/content/images/product/thumb/");
+
+        #endregion
 
 
         #region default images

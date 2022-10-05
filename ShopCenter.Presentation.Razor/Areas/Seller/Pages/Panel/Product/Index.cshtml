@@ -1,13 +1,56 @@
 ﻿@page
+@using ShopCenter.Application.Utilities
 @model ShopCenter.Presentation.Razor.Areas.Seller.Pages.Panel.Product.IndexModel
 @{
 }
 
+<div class="row">
+    <div class="col-12">
+        <div class="card-deck">
+            <div class="col-4 card">
+                <img class="card-img-top" src=@(SD.ProductThumbnailImage+@Model.Filter.Products[0].ImageName ) alt="Card image cap">
+                <div class="card-body">
+                    <div class="card-block">
+                        <h5 class="card-title">@Model.Filter.Products[0].Title</h5>
+                        <p class="card-text">وضعیت</p><p class="textalign">
+                            @Model.Filter.Products[0].Description
+                        </p><p></p>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">@Model.Filter.Products[0].ProductAcceptanceState</small>
+                </div>
+            </div>
+            <div class="col-4 card">
+                <img class="card-img-top" src="../app-assets/img/photos/14.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <div class="card-block">
+                        <h5 class="card-title">عنوان کارت</h5>
+                        <p class="card-text"></p><p class="textalign">
+                            این کارت دارای متن زیر است به عنوان یک منبع طبیعی برای محتوای اضافی.
+                        </p><p></p>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">آخرین به روز رسانی 3 دقیقه پیش</small>
+                </div>
+            </div>
+            <div class="col-4 card">
+                <img class="card-img-top" src="../app-assets/img/photos/17.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <div class="card-block">
+                        <h5 class="card-title">عنوان کارت</h5>
+                        <p class="card-text"></p><p class="textalign">
+                            این یک کارت گسترده تر با متن زیر است که به عنوان یک منبع طبیعی
+                            برای محتوای اضافی به کار می رود. این کارت دارای محتوای حتی طولانی تر از اولین بار است که نشان می دهد که عملکرد برابر با ارتفاع.
+                        </p><p></p>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">آخرین به روز رسانی 3 دقیقه پیش</small>
+                </div>
+            </div>
 
-
-
-
-@foreach (var product in Model.Filter.Products)
-{
-    <p>@product.Title</p>
-}
+        </div>
+    </div>
+</div>

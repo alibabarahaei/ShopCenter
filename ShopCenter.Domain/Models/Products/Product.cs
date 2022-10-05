@@ -22,7 +22,7 @@ namespace ShopCenter.Domain.Models.Products
 
         [Display(Name = "قیمت محصول")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
-        public int Price { get; set; }
+        public long Price { get; set; }
 
         [Display(Name = "توضیحات کوتاه")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
@@ -55,8 +55,11 @@ namespace ShopCenter.Domain.Models.Products
 
     public enum ProductAcceptanceState
     {
+        [Display(Name = "در حال بررسی")]
         UnderProgress,
+        [Display(Name = "تایید شده")]
         Accepted,
+        [Display(Name = "رد شده")]
         Rejected
     }
 }

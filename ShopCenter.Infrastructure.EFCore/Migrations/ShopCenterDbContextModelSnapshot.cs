@@ -200,7 +200,7 @@ namespace ShopCenter.Infrastructure.EFCore.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Tickets", (string)null);
+                    b.ToTable("Tickets");
                 });
 
             modelBuilder.Entity("ShopCenter.Domain.Models.Contacts.TicketMessage", b =>
@@ -237,7 +237,7 @@ namespace ShopCenter.Infrastructure.EFCore.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("TicketMessages", (string)null);
+                    b.ToTable("TicketMessages");
                 });
 
             modelBuilder.Entity("ShopCenter.Domain.Models.Products.Product", b =>
@@ -269,8 +269,8 @@ namespace ShopCenter.Infrastructure.EFCore.Migrations
                     b.Property<DateTime>("LastUpdateDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("Price")
-                        .HasColumnType("int");
+                    b.Property<long>("Price")
+                        .HasColumnType("bigint");
 
                     b.Property<string>("ProductAcceptOrRejectDescription")
                         .IsRequired()
@@ -296,7 +296,7 @@ namespace ShopCenter.Infrastructure.EFCore.Migrations
 
                     b.HasIndex("SellerId");
 
-                    b.ToTable("Products", (string)null);
+                    b.ToTable("Products");
                 });
 
             modelBuilder.Entity("ShopCenter.Domain.Models.Products.ProductCategory", b =>
@@ -336,7 +336,42 @@ namespace ShopCenter.Infrastructure.EFCore.Migrations
 
                     b.HasIndex("ParentId");
 
-                    b.ToTable("ProductCategories", (string)null);
+                    b.ToTable("ProductCategories");
+                });
+
+            modelBuilder.Entity("ShopCenter.Domain.Models.Products.ProductColor", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"), 1L, 1);
+
+                    b.Property<string>("ColorName")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsDelete")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("LastUpdateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<long>("Price")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("ProductId")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("ProductColors");
                 });
 
             modelBuilder.Entity("ShopCenter.Domain.Models.Products.ProductSelectedCategory", b =>
@@ -368,7 +403,7 @@ namespace ShopCenter.Infrastructure.EFCore.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("ProductSelectedCategories", (string)null);
+                    b.ToTable("ProductSelectedCategories");
                 });
 
             modelBuilder.Entity("ShopCenter.Domain.Models.Site.Banner", b =>
@@ -408,7 +443,7 @@ namespace ShopCenter.Infrastructure.EFCore.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Banners", (string)null);
+                    b.ToTable("Banners");
                 });
 
             modelBuilder.Entity("ShopCenter.Domain.Models.Site.Slider", b =>
@@ -443,7 +478,7 @@ namespace ShopCenter.Infrastructure.EFCore.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Sliders", (string)null);
+                    b.ToTable("Sliders");
                 });
 
             modelBuilder.Entity("ShopCenter.Domain.Models.Store.Seller", b =>
@@ -502,7 +537,7 @@ namespace ShopCenter.Infrastructure.EFCore.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Sellers", (string)null);
+                    b.ToTable("Sellers");
                 });
 
             modelBuilder.Entity("ShopCenter.Domain.Models.User.ApplicationUser", b =>
@@ -688,6 +723,17 @@ namespace ShopCenter.Infrastructure.EFCore.Migrations
                         .OnDelete(DeleteBehavior.Restrict);
 
                     b.Navigation("Parent");
+                });
+
+            modelBuilder.Entity("ShopCenter.Domain.Models.Products.ProductColor", b =>
+                {
+                    b.HasOne("ShopCenter.Domain.Models.Products.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Product");
                 });
 
             modelBuilder.Entity("ShopCenter.Domain.Models.Products.ProductSelectedCategory", b =>
