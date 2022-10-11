@@ -30,24 +30,24 @@ namespace ShopCenter.Presentation.Razor.Areas.Seller.Pages.Panel.Product
 
         #endregion
 
-        public async Task<IActionResult> CreateProduct()
-        {
-            ViewBag.MainCategories = await _productService.GetAllProductCategoriesByParentId(null);
+        //public async Task<IActionResult> CreateProduct()
+        //{
+        //    ViewBag.MainCategories = await _productService.GetAllProductCategoriesByParentId(null);
 
-            return View();
-        }
+        //    return View();
+        //}
 
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> CreateProduct(CreateProductDTO product)
-        {
-            if (ModelState.IsValid)
-            {
-                // todo: create product
-            }
+        //[ValidateAntiForgeryToken]
+        //public async Task<IActionResult> CreateProduct(CreateProductDTO product)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        // todo: create product
+        //    }
 
-            ViewBag.MainCategories = await _productService.GetAllProductCategoriesByParentId(null);
-            return View(product);
-        }
+        //    ViewBag.MainCategories = await _productService.GetAllProductCategoriesByParentId(null);
+        //    return View(product);
+        //}
 
    
     }
