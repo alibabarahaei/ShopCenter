@@ -26,4 +26,9 @@ namespace ShopCenter.Application.DTOs.Products
 
         public List<CreateProductColorDto> ProductColors { get; set; }
     }
+    public enum CreateProductResult
+    {
+        Success,
+        Error
+    }
 }

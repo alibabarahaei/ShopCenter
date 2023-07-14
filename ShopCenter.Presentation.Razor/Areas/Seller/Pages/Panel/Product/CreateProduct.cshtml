@@ -1,4 +1,114 @@
 ﻿@page
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@using ShopCenter.Domain.Models.Products
 @model ShopCenter.Presentation.Razor.Areas.Seller.Pages.Panel.Product.CreateProductModel
-@{
-}
+
+    @{
+        ViewData["Title"] = "ثبت محصول";
+    var categories = ViewData["MainCategories"] as List<ProductCategory>;
+    }
+
+
+
+
+<section class="basic-elements">
+	<div class="row">
+		<div class="col-sm-12">
+			<h2 class="content-header">ورودی فرم</h2>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<div class="card">
+				<div class="card-header">
+					<div class="card-title-wrap bar-success">
+						<h4 class="card-title mb-0">ورودی متن</h4>
+					</div>
+				</div>
+				<div class="card-body">
+					<div class="px-3">
+                        <form class="form" method="post" enctype=" multipart /form-data">
+							<div class="form-body">
+								<div class="row">
+									
+									<div class="col-xl-6 col-lg-6 col-md-12 mb-1">
+                                        <fieldset class="form-group">
+											
+                                            <input asp-for="Title" class="form-control" id="placeholderInput" placeholder="نام محصول  ">
+                                        </fieldset>
+                                        <span asp-validation-for="Title" class="text-danger" style="font-size: 15px"></span>
+									</div>
+                                    <div class="col-xl-6 col-lg-6 col-md-12 mb-1">
+                                        <fieldset class="form-group">
+                                            
+                                            <input asp-for="Price" class="form-control" id="placeholderInput" >
+                                        </fieldset>
+                                        <span asp-validation-for="Price" class="text-danger" style="font-size: 15px"></span>
+                                    </div>
+                                  
+                                    <div class="col-12">
+                                        <fieldset class="form-group">
+                                            <label for="descTextarea"> توضیحات کوتاه محصول</label>
+                                            <textarea asp-for="ShortDescription" class="form-control" id="descTextarea" rows="3" ></textarea>
+                                        </fieldset>			
+                                        <span asp-validation-for="ShortDescription" class="text-danger" style="font-size: 15px"></span>
+                                    </div>
+                                    <div class="col-12">
+                                        <fieldset class="form-group">
+                                            <label for="descTextarea"> توضیحات بلند محصول</label>
+                                            <textarea asp-for="Description" class="form-control" id="descTextarea" rows="7" ></textarea>
+                                        </fieldset>			
+                                        <span asp-validation-for="Description" class="text-danger" style="font-size: 15px"></span>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="custom-control custom-checkbox mb-2 mr-sm-2 mb-sm-0 ml-5">
+                                                <input asp-for="IsActive" type="checkbox" class="custom-control-input" checked="" id="rememberme">
+                                                <label class="custom-control-label float-left" for="rememberme">فعال / غیر فعال</label>
+                                            </div>
+                                            <span asp-validation-for="IsActive" class="text-danger" style="font-size: 15px"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <fieldset class="form-group">
+                                            <label for="basicInputFile">تصویر</label>
+                                            <input type="file" class="form-control-file"  name="productImage" accept=".png,.jpeg" id="basicInputFile">
+                                        </fieldset>
+                                        <span  class="text-danger" style="font-size: 15px"></span>
+                                        @if (categories != null && categories.Any())
+                                        {
+                                            @foreach (var category in categories.Where(s => s.ParentId == null))
+                                            {
+                                                <ul>
+                                                    <li>
+                                                        <label>
+                                                            <input type="checkbox" name="@nameof(Model.SelectedCategories)" value="@category.Id" /> @category.Title
+                                                        </label>
+                                                        @if (categories.Any(s => s.ParentId == category.Id))
+                                                        {
+                                                            <div>
+
+                                                                @foreach (var subCategory in categories.Where(s => s.ParentId == category.Id))
+                                                                {
+                                                                    <label>
+                                                                        <input type="checkbox" name="@nameof(Model.SelectedCategories)" value="@subCategory.Id" /> @subCategory.Title
+                                                                    </label>
+                                                                }
+                                                            </div>
+                                                        }
+                                                    </li>
+
+                                                </ul>
+                                                
+                                            }
+                                        }
+                                    </div>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

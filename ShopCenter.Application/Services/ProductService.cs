@@ -24,7 +24,7 @@ namespace ShopCenter.Application.Services
 
         #endregion
 
-        #region products
+        #region filters
 
         public async Task<FilterProductDTO> FilterProductsAsync(FilterProductDTO filter)
         {
@@ -75,6 +75,34 @@ namespace ShopCenter.Application.Services
 
         #endregion
 
+        #region products
+
+        public async Task<CreateProductResult> CreateProduct(CreateProductDTO product, string imageName, long sellerId)
+        {
+            // create product
+            var newProduct = new Product
+            {
+                Title = product.Title,
+                Price = product.Price,
+                ShortDescription = product.ShortDescription,
+                Description = product.Description,
+                IsActive = product.IsActive,
+                SellerId = sellerId,
+                ImageName = imageName,
+            };
+
+            await _productRepository.AddEntity(newProduct);
+            await _productRepository.SaveChanges();
+
+            // create product categories
+
+
+            // create product colors
+
+            return CreateProductResult.Success;
+        }
+
+        #endregion
 
 
         #region product categories
@@ -85,7 +113,7 @@ namespace ShopCenter.Application.Services
             {
                 return await _productCategoryRepository.GetQuery()
                     .AsQueryable()
-                    .Where(s => !s.IsDelete && s.IsActive)
+                    .Where(s => !s.IsDelete && s.IsActive && s.ParentId == null)
                     .ToListAsync();
             }
 
@@ -94,6 +122,14 @@ namespace ShopCenter.Application.Services
                 .Where(s => !s.IsDelete && s.IsActive && s.ParentId == parentId)
                 .ToListAsync();
         }
+
+        public async Task<List<ProductCategory>> GetAllActiveProductCategories()
+        {
+            return await _productCategoryRepository.GetQuery().AsQueryable()
+                .Where(s => s.IsActive && !s.IsDelete).ToListAsync();
+        }
+
+
 
         #endregion
 

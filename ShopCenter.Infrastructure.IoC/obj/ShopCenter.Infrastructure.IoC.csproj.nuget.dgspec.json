@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Amir\\Project\\ShopCenter\\ShopCenter.Infrastructure.IoC\\ShopCenter.Infrastructure.IoC.csproj": {}
+    "C:\\Amir\\Document_DesignWeb\\ShopCenter\\ShopCenter.Infrastructure.IoC\\ShopCenter.Infrastructure.IoC.csproj": {}
   },
   "projects": {
-    "C:\\Amir\\Project\\ShopCenter\\ShopCenter.Infrastructure.IoC\\ShopCenter.Infrastructure.IoC.csproj": {
+    "C:\\Amir\\Document_DesignWeb\\ShopCenter\\ShopCenter.Infrastructure.IoC\\ShopCenter.Infrastructure.IoC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Amir\\Project\\ShopCenter\\ShopCenter.Infrastructure.IoC\\ShopCenter.Infrastructure.IoC.csproj",
+        "projectUniqueName": "C:\\Amir\\Document_DesignWeb\\ShopCenter\\ShopCenter.Infrastructure.IoC\\ShopCenter.Infrastructure.IoC.csproj",
         "projectName": "ShopCenter.Infrastructure.IoC",
-        "projectPath": "C:\\Amir\\Project\\ShopCenter\\ShopCenter.Infrastructure.IoC\\ShopCenter.Infrastructure.IoC.csproj",
+        "projectPath": "C:\\Amir\\Document_DesignWeb\\ShopCenter\\ShopCenter.Infrastructure.IoC\\ShopCenter.Infrastructure.IoC.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Amir\\Project\\ShopCenter\\ShopCenter.Infrastructure.IoC\\obj\\",
+        "outputPath": "C:\\Amir\\Document_DesignWeb\\ShopCenter\\ShopCenter.Infrastructure.IoC\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

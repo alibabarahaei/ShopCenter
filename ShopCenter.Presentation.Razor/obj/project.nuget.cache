@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/RGGCaXmMbAcr555S+1ivO0wd5KKAId+L9PP4BihTuL2v/vaovjZxKuuHjNNekLf/g5Kwbr6W93+cQInswugXA==",
+  "dgSpecHash": "DzL+e2aw5JQLzA3uCBukT2evHnnJG/PQDN4uEwBVJrAQhCoX3D9e/Ju1EWiA2GK6JJbBDVBEM28yNqePKdwm4Q==",
   "success": true,
-  "projectFilePath": "C:\\Amir\\Project\\ShopCenter\\ShopCenter.Presentation.Razor\\ShopCenter.Presentation.Razor.csproj",
+  "projectFilePath": "C:\\Amir\\Document_DesignWeb\\ShopCenter\\ShopCenter.Presentation.Razor\\ShopCenter.Presentation.Razor.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user\\.nuget\\packages\\googlerecaptcha.v3\\1.3.1\\googlerecaptcha.v3.1.3.1.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
