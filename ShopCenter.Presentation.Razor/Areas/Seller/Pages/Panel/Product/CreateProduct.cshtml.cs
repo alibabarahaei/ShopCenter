@@ -7,6 +7,7 @@ using System.Xml.Linq;
 
 namespace ShopCenter.Presentation.Razor.Areas.Seller.Pages.Panel.Product
 {
+    [BindProperties]
     public class CreateProductModel : PageModel
     {
 
@@ -39,8 +40,6 @@ namespace ShopCenter.Presentation.Razor.Areas.Seller.Pages.Panel.Product
 
 
 
-
-
         #region constructor
 
         private readonly IProductService _productService;
@@ -61,6 +60,21 @@ namespace ShopCenter.Presentation.Razor.Areas.Seller.Pages.Panel.Product
             return Page();
             
         }
+
+
+
+        public async Task<IActionResult> OnPost( IFormFile image)
+        {
+            if (ModelState.IsValid)
+            {
+                // todo: create product
+            }
+
+            
+            return Page();
+        }
+
+
 
         //[ValidateAntiForgeryToken]
         //public async Task<IActionResult> CreateProduct(CreateProductDTO product)

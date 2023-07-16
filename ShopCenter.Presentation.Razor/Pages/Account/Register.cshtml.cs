@@ -160,7 +160,9 @@ namespace ShopCenter.Presentation.Razor.Pages.Account
         [ValidateAntiForgeryToken]
         public async Task<JsonResult> OnGetIsUserNameInUse(string userName)
         {
-            var user = await _userService.IsUserNameInUseAsync(userName);
+           
+            var user =  _userService.IsUserNameInUseAsync(userName);
+            
             if (user == null)
                 return new JsonResult(true);
             return new JsonResult("نام کاربری وارد شده توسط شخص دیگری انتخاب شده است");

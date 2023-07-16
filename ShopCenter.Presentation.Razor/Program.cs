@@ -11,6 +11,7 @@ using System.Text.Unicode;
 using GoogleReCaptcha.V3;
 using GoogleReCaptcha.V3.Interface;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.DataProtection;
 using Microsoft.Extensions.Options;
 using ShopCenter.Domain.Models.User;
 
@@ -61,7 +62,14 @@ builder.Services.AddScoped<IContactService, ContactService>();
 builder.Services.AddScoped<IStoreService, StoreService>();
 builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddHttpClient<ICaptchaValidator, GoogleReCaptchaValidator>();
+#region data protection
 
+builder.Services.AddDataProtection()
+    .PersistKeysToFileSystem(new DirectoryInfo(Directory.GetCurrentDirectory() + "\\wwwroot\\Auth\\"))
+    .SetApplicationName("ShopCenterProject")
+    .SetDefaultKeyLifetime(TimeSpan.FromDays(30));
+
+#endregion
 #region Config Database
 builder.Services.AddDbContext<ShopCenterDbContext>(option =>
 {

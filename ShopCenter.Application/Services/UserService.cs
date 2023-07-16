@@ -63,7 +63,10 @@ namespace ShopCenter.Application.Services
 
         public async Task<IdentityUser> IsUserNameInUseAsync(string userName)
         {
+         
+       
             return await _userManager.FindByNameAsync(userName);
+          
         }
 
         public async Task<IdentityUser> IsEmailInUseAsync(string email)

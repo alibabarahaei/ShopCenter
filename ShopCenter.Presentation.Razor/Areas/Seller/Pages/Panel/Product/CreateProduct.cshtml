@@ -27,17 +27,17 @@
 				</div>
 				<div class="card-body">
 					<div class="px-3">
-                        <form class="form" method="post" enctype=" multipart /form-data">
-							<div class="form-body">
-								<div class="row">
+                        <form class="form" method="post" enctype="multipart/form-data">
+                            <div class="form-body">
+                                <div class="row">
 									
-									<div class="col-xl-6 col-lg-6 col-md-12 mb-1">
+                                    <div class="col-xl-6 col-lg-6 col-md-12 mb-1">
                                         <fieldset class="form-group">
 											
                                             <input asp-for="Title" class="form-control" id="placeholderInput" placeholder="نام محصول  ">
                                         </fieldset>
                                         <span asp-validation-for="Title" class="text-danger" style="font-size: 15px"></span>
-									</div>
+                                    </div>
                                     <div class="col-xl-6 col-lg-6 col-md-12 mb-1">
                                         <fieldset class="form-group">
                                             
@@ -72,7 +72,7 @@
                                     <div class="col-12">
                                         <fieldset class="form-group">
                                             <label for="basicInputFile">تصویر</label>
-                                            <input type="file" class="form-control-file"  name="productImage" accept=".png,.jpeg" id="basicInputFile">
+                                            <input name="image" type="file" multiple class="form-control-file" accept=".png,.jpeg" id="basicInputFile">
                                         </fieldset>
                                         <span  class="text-danger" style="font-size: 15px"></span>
                                         @if (categories != null && categories.Any())
@@ -103,8 +103,22 @@
                                             }
                                         }
                                     </div>
-								</div>
-							</div>
+                                </div>
+                            </div>
+                            <div class="col-12" >
+                               
+                                    
+                                    <div class="card-body" >
+                                        <div class="card-block">
+                                            <div class="block-button">
+                                              
+                                                <button class="btn btn-danger btn-block" type="submit">ثبت نهایی</button>
+                                                
+                                            </div>
+                                        </div>
+                                  
+                                </div>
+                            </div>
 						</form>
 					</div>
 				</div>

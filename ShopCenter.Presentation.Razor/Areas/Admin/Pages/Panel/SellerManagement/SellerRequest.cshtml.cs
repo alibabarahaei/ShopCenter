@@ -32,7 +32,7 @@ namespace ShopCenter.Presentation.Razor.Areas.Admin.Pages.Panel.SellerManagement
 
         public async Task OnGet(FilterSellerDTO filter)
         {
-            filter.TakeEntity = 4;
+            filter.TakeEntity = 30;
             
             FilterSeller = await _storeService.FilterSellersAsync(filter);
         }

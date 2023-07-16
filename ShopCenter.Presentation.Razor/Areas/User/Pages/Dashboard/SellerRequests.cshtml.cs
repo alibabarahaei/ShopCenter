@@ -29,7 +29,7 @@ namespace ShopCenter.Presentation.Razor.Areas.User.Pages.Dashboard
 
         public async Task OnGet(FilterSellerDTO filter)
         {
-            filter.TakeEntity = 5;
+            filter.TakeEntity = 1;
             filter.User = User;
             filter.State = FilterSellerState.All;
             filterSeller = await _storeService.FilterSellersAsync(filter);

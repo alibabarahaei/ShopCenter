@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "27bKDKIcPY98+l9qT9KMjLfa0QMSL9MclAeg6X+D2kM=",
+  "Hash": "gv5Hx58OnTB6nhhEFm8mz3rwi6cEqgLekLI+BomSIQU=",
   "Source": "ShopCenter.Presentation.Razor",
   "BasePath": "_content/ShopCenter.Presentation.Razor",
   "Mode": "Default",
@@ -5778,6 +5778,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\admin\\vendors\\js\\typeahead\\typeahead.bundle.min.js"
+    },
+    {
+      "Identity": "C:\\Amir\\Document_DesignWeb\\ShopCenter\\ShopCenter.Presentation.Razor\\wwwroot\\Auth\\key-2da748da-b229-4a2a-857d-690ca56b9232.xml",
+      "SourceId": "ShopCenter.Presentation.Razor",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Amir\\Document_DesignWeb\\ShopCenter\\ShopCenter.Presentation.Razor\\wwwroot\\",
+      "BasePath": "_content/ShopCenter.Presentation.Razor",
+      "RelativePath": "Auth/key-2da748da-b229-4a2a-857d-690ca56b9232.xml",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Auth\\key-2da748da-b229-4a2a-857d-690ca56b9232.xml"
     },
     {
       "Identity": "C:\\Amir\\Document_DesignWeb\\ShopCenter\\ShopCenter.Presentation.Razor\\wwwroot\\content\\images\\product\\thumb\\3fa42d6ac09b4bffa4f3903c4793bc6d.jpg",

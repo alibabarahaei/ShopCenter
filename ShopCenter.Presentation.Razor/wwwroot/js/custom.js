@@ -77,3 +77,8 @@ $(document).ready(function () {
     }
 });
 
+
+function FillPageId(pageId) {
+    $('#filterSeller_PageId').val(pageId);
+    $('#filter-form').submit();
+}
