@@ -1,7 +1,10 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 using ShopCenter.Application.DTOs.Paging;
 using ShopCenter.Application.DTOs.Products;
+using ShopCenter.Application.Extensions;
 using ShopCenter.Application.InterfaceServices;
+using ShopCenter.Application.Utilities;
 using ShopCenter.Domain.InterfaceRepositories.Base;
 using ShopCenter.Domain.Models.Products;
 
@@ -14,12 +17,14 @@ namespace ShopCenter.Application.Services
         private readonly IGenericRepository<Product> _productRepository;
         private readonly IGenericRepository<ProductCategory> _productCategoryRepository;
         private readonly IGenericRepository<ProductSelectedCategory> _productSelectedCategoryRepository;
+        private readonly IGenericRepository<ProductColor> _productColorRepository;
 
-        public ProductService(IGenericRepository<Product> productRepository, IGenericRepository<ProductCategory> productCategoryRepository, IGenericRepository<ProductSelectedCategory> productSelectedCategoryRepository)
+        public ProductService(IGenericRepository<Product> productRepository, IGenericRepository<ProductCategory> productCategoryRepository, IGenericRepository<ProductSelectedCategory> productSelectedCategoryRepository, IGenericRepository<ProductColor> productColorRepository)
         {
             _productRepository = productRepository;
             _productCategoryRepository = productCategoryRepository;
             _productSelectedCategoryRepository = productSelectedCategoryRepository;
+            _productColorRepository= productColorRepository;
         }
 
         #endregion
@@ -34,6 +39,8 @@ namespace ShopCenter.Application.Services
 
             switch (filter.FilterProductState)
             {
+                case FilterProductState.All:
+                    break;
                 case FilterProductState.Active:
                     query = query.Where(s => s.IsActive && s.ProductAcceptanceState == ProductAcceptanceState.Accepted);
                     break;
@@ -77,29 +84,69 @@ namespace ShopCenter.Application.Services
 
         #region products
 
-        public async Task<CreateProductResult> CreateProduct(CreateProductDTO product, string imageName, long sellerId)
+        public async Task<CreateProductResult> CreateProduct(CreateProductDTO product, IFormFile productImage, long sellerId)
         {
-            // create product
-            var newProduct = new Product
+            if (productImage == null) return CreateProductResult.HasNoImage;
+
+            var imageName = Guid.NewGuid().ToString("N") + Path.GetExtension(productImage.FileName);
+
+            var res = productImage.AddImageToServer(imageName, SD.ProductImageImageServer, 150, 150, SD.ProductThumbnailImageImageServer);
+
+            if (res)
             {
-                Title = product.Title,
-                Price = product.Price,
-                ShortDescription = product.ShortDescription,
-                Description = product.Description,
-                IsActive = product.IsActive,
-                SellerId = sellerId,
-                ImageName = imageName,
-            };
+                // create product
+                var newProduct = new Product
+                {
+                    Title = product.Title,
+                    Price = product.Price,
+                    ShortDescription = product.ShortDescription,
+                    Description = product.Description,
+                    IsActive = product.IsActive,
+                    SellerId = sellerId,
+                    ImageName = imageName,
+                    ProductAcceptOrRejectDescription = "اطلاعاتی وارد نشده است"
+                    
+                    
+                };
 
-            await _productRepository.AddEntity(newProduct);
-            await _productRepository.SaveChanges();
+                await _productRepository.AddEntity(newProduct);
+                await _productRepository.SaveChanges();
 
-            // create product categories
+                // create product categories
+                var productSelectedCategories = new List<ProductSelectedCategory>();
 
+                foreach (var categoryId in product.SelectedCategories)
+                {
+                    productSelectedCategories.Add(new ProductSelectedCategory
+                    {
+                        ProductCategoryId = categoryId,
+                        ProductId = newProduct.Id
+                    });
+                }
 
-            // create product colors
+                await _productSelectedCategoryRepository.AddRangeEntities(productSelectedCategories);
+                await _productSelectedCategoryRepository.SaveChanges();
 
-            return CreateProductResult.Success;
+                // create product colors
+                var productSelectedColors = new List<ProductColor>();
+
+                foreach (var productColor in product.ProductColors)
+                {
+                    productSelectedColors.Add(new ProductColor
+                    {
+                        ColorName = productColor.ColorName,
+                        Price = productColor.Price,
+                        ProductId = newProduct.Id
+                    });
+                }
+
+                await _productColorRepository.AddRangeEntities(productSelectedColors);
+                await _productSelectedCategoryRepository.SaveChanges();
+
+                return CreateProductResult.Success;
+            }
+
+            return CreateProductResult.Error;
         }
 
         #endregion

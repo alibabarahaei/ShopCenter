@@ -1,9 +1,11 @@
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using ShopCenter.Application.DTOs.Store;
 using ShopCenter.Application.InterfaceServices;
 
 namespace ShopCenter.Presentation.Razor.Areas.User.Pages.Dashboard
 {
+ 
     public class SellerRequestsModel : PageModel
     {
 
@@ -11,7 +13,9 @@ namespace ShopCenter.Presentation.Razor.Areas.User.Pages.Dashboard
 
         #region properties
         public FilterSellerDTO filterSeller { get; set; }
-
+        [BindProperty(SupportsGet = true)]
+        public int PageId { get; set; }
+        
 
         #endregion
 
@@ -27,8 +31,14 @@ namespace ShopCenter.Presentation.Razor.Areas.User.Pages.Dashboard
         #endregion
 
 
-        public async Task OnGet(FilterSellerDTO filter)
+        public async Task OnGet()
         {
+            FilterSellerDTO filter = new FilterSellerDTO();
+            if (PageId != 0)
+            {
+                filter.PageId = PageId;
+            }
+    
             filter.TakeEntity = 1;
             filter.User = User;
             filter.State = FilterSellerState.All;

@@ -43,6 +43,7 @@ namespace ShopCenter.Application.DTOs.Products
 
     public enum FilterProductState
     {
+        All,
         UnderProgress,
         Accepted,
         Rejected,

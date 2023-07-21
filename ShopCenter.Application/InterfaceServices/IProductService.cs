@@ -1,4 +1,5 @@
-﻿using ShopCenter.Application.DTOs.Products;
+﻿using Microsoft.AspNetCore.Http;
+using ShopCenter.Application.DTOs.Products;
 using ShopCenter.Domain.Models.Products;
 
 namespace ShopCenter.Application.InterfaceServices
@@ -12,7 +13,7 @@ namespace ShopCenter.Application.InterfaceServices
         #endregion
 
         #region product 
-        Task<CreateProductResult> CreateProduct(CreateProductDTO product, string imageName, long sellerId);
+        Task<CreateProductResult> CreateProduct(CreateProductDTO product, IFormFile productImage, long sellerId);
         #endregion
         #region product categories
 

@@ -2,7 +2,7 @@
 
 namespace ShopCenter.Application.DTOs.Products
 {
-    public class CreateProductColorDto
+    public class CreateProductColorDtO
     {
         [Display(Name = "رنگ")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنید")]

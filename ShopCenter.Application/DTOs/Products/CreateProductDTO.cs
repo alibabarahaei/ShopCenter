@@ -24,10 +24,12 @@ namespace ShopCenter.Application.DTOs.Products
         [Display(Name = "فعال / غیرفعال")]
         public bool IsActive { get; set; }
 
-        public List<CreateProductColorDto> ProductColors { get; set; }
+        public List<CreateProductColorDtO> ProductColors { get; set; }
+        public List<long> SelectedCategories { get; set; }
     }
     public enum CreateProductResult
     {
+        HasNoImage,
         Success,
         Error
     }

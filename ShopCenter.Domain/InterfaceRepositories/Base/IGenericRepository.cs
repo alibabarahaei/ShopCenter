@@ -6,6 +6,7 @@ namespace ShopCenter.Domain.InterfaceRepositories.Base
     {
         IQueryable<TEntity> GetQuery();
         Task AddEntity(TEntity entity);
+        Task AddRangeEntities(List<TEntity> entities);
         Task<TEntity> GetEntityById(long entityId);
         void EditEntity(TEntity entity);
         void DeleteEntity(TEntity entity);

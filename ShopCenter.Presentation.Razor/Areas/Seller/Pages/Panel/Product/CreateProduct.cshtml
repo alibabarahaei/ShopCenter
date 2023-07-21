@@ -12,22 +12,22 @@
 
 
 <section class="basic-elements">
-	<div class="row">
-		<div class="col-sm-12">
-			<h2 class="content-header">ورودی فرم</h2>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-md-12">
-			<div class="card">
-				<div class="card-header">
-					<div class="card-title-wrap bar-success">
-						<h4 class="card-title mb-0">ورودی متن</h4>
-					</div>
-				</div>
-				<div class="card-body">
-					<div class="px-3">
-                        <form class="form" method="post" enctype="multipart/form-data">
+    <div class="row">
+        <div class="col-sm-12">
+            <h2 class="content-header">ورودی فرم</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title-wrap bar-success">
+                        <h4 class="card-title mb-0">ورودی متن</h4>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="px-3">
+                        <form class="form" method="post" enctype="multipart/form-data" id="create_product_form">
                             <div class="form-body">
                                 <div class="row">
 									
@@ -82,47 +82,89 @@
                                                 <ul>
                                                     <li>
                                                         <label>
-                                                            <input type="checkbox" name="@nameof(Model.SelectedCategories)" value="@category.Id" /> @category.Title
+                                                            <input type="checkbox" name="@nameof(Model.SelectedCategories)" value="@category.Id" main_category_checkbox="@category.Id" /> @category.Title
                                                         </label>
-                                                        @if (categories.Any(s => s.ParentId == category.Id))
-                                                        {
-                                                            <div>
 
-                                                                @foreach (var subCategory in categories.Where(s => s.ParentId == category.Id))
-                                                                {
-                                                                    <label>
-                                                                        <input type="checkbox" name="@nameof(Model.SelectedCategories)" value="@subCategory.Id" /> @subCategory.Title
-                                                                    </label>
-                                                                }
-                                                            </div>
-                                                        }
+                                                        <div id="sub_categories_@category.Id" style="display: none">
+
+                                                            @foreach (var subCategory in categories.Where(s => s.ParentId == category.Id))
+                                                            {
+                                                                <label>
+                                                                    <input type="checkbox" name="@nameof(Model.SelectedCategories)" value="@subCategory.Id" main_category_checkbox="@subCategory.Id" parent-category-id="@category.Id" /> @subCategory.Title
+                                                                </label>
+                                                                <div id="sub_categories_@subCategory.Id" style="display: none">
+
+                                                                    @foreach (var secondSubCategory in categories.Where(s => s.ParentId == subCategory.Id))
+                                                                    {
+                                                                        <label>
+                                                                            <input type="checkbox" name="@nameof(Model.SelectedCategories)" value="@secondSubCategory.Id" parent-category-id="@subCategory.Id" /> @secondSubCategory.Title
+                                                                        </label>
+                                                                    }
+                                                                </div>
+                                                            }
+                                                        </div>
                                                     </li>
 
                                                 </ul>
-                                                
+                                                <hr />
                                             }
                                         }
+                                        
+                                        <hr />
+                                        <div class="row" style="margin-bottom: 25px">
+                                        <label>رنگ محصول</label>
+                                        <input type="text" placeholder="رنگ محصول" id="product_color_name_input">
+                                        </div>
+                                        
+                                        <div class="row" style="margin-bottom: 25px">
+                                            <label>قیمت مضاف رنگ محصول</label>
+                                            <input type="number" placeholder="قیمت مضاف رنگ محصول" id="product_color_price_input">
+                                        </div>
+                                
+                                        <div class="row">
+                                        <button class="btn btn-success" id="add_color_button">افزودن رنگ</button>
+
+                                        </div>
+
+                                        <br />
+                                        <div class="table-responsive">
+                                            <table class="table">
+                                                <thead>
+                                                <tr>
+                                                    <th>نام رنگ</th>
+                                                    <th>قیمت</th>
+                                                    <th>دستورات</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody id="list_of_product_colors">
+                                                </tbody>
+                                            </table>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-12" >
                                
                                     
-                                    <div class="card-body" >
-                                        <div class="card-block">
-                                            <div class="block-button">
+                                <div class="card-body" >
+                                    <div class="card-block">
+                                        <div class="block-button">
                                               
-                                                <button class="btn btn-danger btn-block" type="submit">ثبت نهایی</button>
+                                            <button class="btn btn-danger btn-block" type="submit">ثبت نهایی</button>
                                                 
-                                            </div>
                                         </div>
+                                    </div>
                                   
                                 </div>
                             </div>
-						</form>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
+
+@section scripts {
+    <partial name="_ValidationScriptsPartial"/>
+}

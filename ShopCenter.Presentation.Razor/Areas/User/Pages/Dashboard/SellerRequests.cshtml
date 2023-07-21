@@ -19,10 +19,8 @@
                         <div class="cart-form">
                             
                             <form  id="filter-form" method="get">
-                                <input type="hidden" asp-for="filterSeller.PageId" />
-                                <input type="hidden" asp-for="filterSeller.Mobile" />
-                                <input type="hidden" asp-for="filterSeller.Address" />
-                                <input type="hidden" asp-for="filterSeller.Phone" />
+                                <input  asp-for="@Model.PageId" type="hidden"/>
+                                
                             </form>
                             <table class="table-cart cart table table-borderless">
                                     <thead>

@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using ShopCenter.Application.DTOs.Products;
 using ShopCenter.Application.InterfaceServices;
+using ShopCenter.Domain.Models.Products;
 using System.ComponentModel.DataAnnotations;
 using System.Xml.Linq;
 
@@ -31,7 +32,8 @@ namespace ShopCenter.Presentation.Razor.Areas.Seller.Pages.Panel.Product
         [Display(Name = "فعال / غیرفعال")]
         public bool IsActive { get; set; }
 
-        //public List<CreateProductColorDTO> ProductColors { get; set; }
+        public List<CreateProductColorDtO> ProductColors { get; set; }
+
 
         public List<long> SelectedCategories { get; set; }
 
@@ -55,7 +57,7 @@ namespace ShopCenter.Presentation.Razor.Areas.Seller.Pages.Panel.Product
 
         public async Task<IActionResult> OnGet()
         {
-            ViewData["MainCategories"] = await _productService.GetAllProductCategoriesByParentId(null);
+            ViewData["MainCategories"] = await _productService.GetAllActiveProductCategories();
 
             return Page();
             
@@ -67,10 +69,39 @@ namespace ShopCenter.Presentation.Razor.Areas.Seller.Pages.Panel.Product
         {
             if (ModelState.IsValid)
             {
-                // todo: create product
+                var seller = await _storeService.GetLastActiveSellerByUserId(User);
+                var product = new CreateProductDTO()
+                {
+                    Description = Description,
+                    IsActive = IsActive,
+                    Price = Price,
+                    ProductColors = ProductColors,
+                    ShortDescription = ShortDescription,
+                    Title = Title,
+                    SelectedCategories = SelectedCategories
+                    
+                };
+                var res = await _productService.CreateProduct(product, image,seller.Id);
+
+
+
+                switch (res)
+                {
+                    case CreateProductResult.HasNoImage:
+                        TempData["WarningMessage"] = "لطفا تصویر محصول را وارد نمایید";
+                        break;
+                    case CreateProductResult.Error:
+                        TempData["ErrorMessage"] = "عملیات ثبت محصول با خطا مواجه شد";
+                        break;
+                    case CreateProductResult.Success:
+                        TempData["SuccessMessage"] = $"محصول مورد نظر با عنوان {product.Title} با موفقیت ثبت شد";
+                        return RedirectToPage("Index");
+                }
             }
 
             
+
+
             return Page();
         }
 

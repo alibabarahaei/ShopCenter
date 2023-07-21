@@ -32,6 +32,14 @@ namespace ShopCenter.Infrastructure.EFCore.Repository.Base
             await _dbSet.AddAsync(entity);
         }
 
+        public async Task AddRangeEntities(List<TEntity> entities)
+        {
+            foreach (var entity in entities)
+            {
+                await AddEntity(entity);
+            }
+        }    
+
         public async Task<TEntity> GetEntityById(long entityId)
         {
             return await _dbSet.SingleOrDefaultAsync(t=>t.Id==entityId);
