@@ -1,5 +1,7 @@
 ﻿using ShopCenter.Application.DTOs.Paging;
 using ShopCenter.Domain.Models.Products;
+using System.ComponentModel.DataAnnotations;
+using System.Xml.Linq;
 
 namespace ShopCenter.Application.DTOs.Products
 {
@@ -43,11 +45,17 @@ namespace ShopCenter.Application.DTOs.Products
 
     public enum FilterProductState
     {
+        [Display(Name = "همه")]
         All,
+        [Display(Name = "در حال بررسی")]
         UnderProgress,
+        [Display(Name = "تایید شده")]
         Accepted,
+        [Display(Name = "رد شده")]
         Rejected,
+        [Display(Name = "فعال")]
         Active,
+        [Display(Name = "غیر فعال")]
         NotActive
     }
 }

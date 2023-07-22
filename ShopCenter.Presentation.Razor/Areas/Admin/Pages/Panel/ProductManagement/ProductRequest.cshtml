@@ -1,0 +1,204 @@
+﻿@page
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@using ShopCenter.Application.DTOs.Common
+@using ShopCenter.Application.DTOs.Products
+@using ShopCenter.Application.Extensions
+@using ShopCenter.Application.Utilities
+@using ShopCenter.Domain.Models.Products
+@using ShopCenter.Domain.Models.Store
+@model ShopCenter.Presentation.Razor.Areas.Admin.Pages.Panel.ProductManagement.ProductRequestModel
+@{
+
+
+    var filterproduct = ViewData["filterproduct"] as FilterProductDTO;
+}
+
+
+
+
+
+
+
+
+<form method="Get" asp-page="ProductRequest" class="mt-3" id="filter-form">
+
+
+    <input type="hidden" name="PageId" id="PageId" />
+
+
+    <div class="row  justify-content-center">
+        <div class="col-6 ">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon3">نام محصول</span>
+                </div>
+                <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" name="ProductTitle">
+            </div>
+        </div>
+       
+
+  
+
+
+
+    
+        <div class="col-6  ">
+            <div class="btn-group mr-2">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="customSelect">حالات فروشنده</span>
+                </div>
+                <select class="custom-select" id="customSelect" sty asp-items="Html.GetEnumSelectList<FilterProductState>()" aria-describedby="customSelect" name="FilterProductState">
+                    <option selected="">این منوی انتخاب را باز کنید</option>
+
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-center mt-3">
+        <div class="col-lg-6 col-12 justify-content-center">
+            <button type="submit" class="btn btn-lg btn-block btn-outline-info mb-2" id="type-info">فیلتر</button>
+        </div>
+    </div>
+
+
+
+
+</form>
+
+
+
+
+
+<section id="extended">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title-wrap bar-success">
+                        <h4 class="card-title">دکمه های عمل</h4>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="card-block">
+
+
+                        @if (filterproduct != null && filterproduct.Products.Any())
+                        {
+                            <table class="table table-responsive-md text-center">
+
+                                <thead>
+                                    <tr>
+
+                                        <th>                            تصویر محصول
+                                        </th>
+                                        <th>    نام محصول</th>
+                                        <th>قیمت پایه</th>
+                                        <th>وضعیت</th>
+                                        <th>دستورات</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+
+                                    @foreach (var product in filterproduct.Products)
+                                    {
+
+                                        <tr id="ajax-url-item-@product.Id">
+                                            <td>   <img src="@(SD.ProductThumbnailImage + product.ImageName)" width="100" /></td>
+
+                                            <td>         @product.Title</td>
+                                            <td>    @product.Price</td>
+                                            <td>     @product.ProductAcceptanceState.GetEnumName()</td>
+
+                                            <td>
+                                                @if (product.ProductAcceptanceState != ProductAcceptanceState.Accepted)
+                                                {
+
+                                                    <a class="success p-0" ajax-url-button="@product.Id" data-original-title="" title="" asp-page="ProductRequest" asp-page-handler="AcceptProductRequest" asp-route-id="@product.Id">
+                                                        <i class="fa fa-pencil font-medium-3 mr-2"></i>
+                                                    </a>
+
+                                                }
+
+                                                @if (product.ProductAcceptanceState != ProductAcceptanceState.Rejected)
+                                                {
+                                                    <a class="danger p-0" data-toggle="modal" data-target=".reject-modal-@product.Id" data-backdrop="false">
+                                                        <i class="fa fa-trash-o font-medium-3 mr-2"></i>
+                                                    </a>
+
+                                                }
+                                            </td>
+                                        </tr>
+
+                                    }
+                                </tbody>
+                            </table>
+                        }
+                        else
+                        {
+                            <div class="alert alert-warning">
+                                <strong>هشدار! </strong>  هیچ ردیفی پیدا نشد
+                            </div>
+                        }
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        @if (filterproduct != null && filterproduct.Products.Any())
+        {
+            <partial name="Shared/_AdminPagingPartial" model="filterproduct.GetCurrentPaging()" />
+
+        }
+    </div>
+
+</section>
+
+@if (filterproduct != null && filterproduct.Products.Any())
+{
+    foreach (var product in filterproduct.Products)
+    {
+
+
+        <div class="mt-5 modal fade text-left reject-modal-@product.Id" id="danger" tabindex="-1" role="dialog" aria-labelledby="myModalLabel10" style="display: none;" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header bg-danger white">
+                        <h4 class="modal-title" id="myModalLabel10">@product.Title</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+
+                    <form asp-page="ProductRequest" asp-page-handler="RejectProductRequest" asp-antiforgery="true" data-ajax="true" data-method="post" data-ajax-success="OnSuccessRejectItem">
+                        <div class="modal-body">
+                            <partial name="Shared/_RejectItemPartial" model="new RejectItemDTO(){Id = @product.Id}"/>
+                            <br>
+
+                        </div>
+
+                        <div class="modal-footer">
+                            <input type="reset" class="btn btn-outline-secondary btn-lg" data-dismiss="modal" value="بستن">
+                            <input type="submit" class="btn btn-outline-primary btn-lg" value="ثبت">
+                        </div>
+
+                    </form>
+
+
+                </div>
+            </div>
+        </div>
+
+}
+
+
+    }
+
+@section scripts{
+    <partial name="Shared/_ValidationScriptsPartial" />
+                        }

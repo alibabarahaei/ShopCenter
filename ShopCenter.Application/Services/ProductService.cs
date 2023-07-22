@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
+using ShopCenter.Application.DTOs.Common;
 using ShopCenter.Application.DTOs.Paging;
 using ShopCenter.Application.DTOs.Products;
 using ShopCenter.Application.Extensions;
@@ -176,6 +177,36 @@ namespace ShopCenter.Application.Services
                 .Where(s => s.IsActive && !s.IsDelete).ToListAsync();
         }
 
+        public async Task<bool> AcceptSellerProduct(long productId)
+        {
+            var product = await _productRepository.GetEntityById(productId);
+            if (product != null)
+            {
+                product.ProductAcceptanceState = ProductAcceptanceState.Accepted;
+                product.ProductAcceptOrRejectDescription = $"محصول مورد نظر در تاریخ {DateTime.Now.ToShamsi()} مورد تایید سایت قرار گرفت";
+                _productRepository.EditEntity(product);
+                await _productRepository.SaveChanges();
+                return true;
+            }
+
+            return false;
+        }
+
+        public async Task<bool> RejectSellerProduct(RejectItemDTO reject)
+        {
+            var product = await _productRepository.GetEntityById(reject.Id);
+            if (product != null)
+            {
+                product.ProductAcceptanceState = ProductAcceptanceState.Rejected;
+                product.ProductAcceptOrRejectDescription = reject.RejectMessage;
+                _productRepository.EditEntity(product);
+                await _productRepository.SaveChanges();
+
+                return true;
+            }
+
+            return false;
+        }
 
 
         #endregion

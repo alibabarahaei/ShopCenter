@@ -19,6 +19,10 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Amir/Document_DesignWeb/ShopCenter/ShopCenter.Presentation.Razor/Areas/Admin/Pages/Panel/ProductManagement/ProductRequest.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcUGFuZWxcUHJvZHVjdE1hbmFnZW1lbnRcUHJvZHVjdFJlcXVlc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Amir/Document_DesignWeb/ShopCenter/ShopCenter.Presentation.Razor/Areas/Admin/Pages/Panel/SellerManagement/SellerRequest.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcUGFuZWxcU2VsbGVyTWFuYWdlbWVudFxTZWxsZXJSZXF1ZXN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

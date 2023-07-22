@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
+using ShopCenter.Application.DTOs.Common;
 using ShopCenter.Application.DTOs.Products;
 using ShopCenter.Domain.Models.Products;
 
@@ -21,5 +22,9 @@ namespace ShopCenter.Application.InterfaceServices
         Task<List<ProductCategory>> GetAllActiveProductCategories();
 
         #endregion
+
+
+        Task<bool> AcceptSellerProduct(long productId);
+        Task<bool> RejectSellerProduct(RejectItemDTO reject);
     }
 }

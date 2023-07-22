@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "8b+42y1WzAUeW6oZbv7ui87XGBa8yGCXugYRA6X16yA=",
+  "Hash": "jQJ1O0Jk1Ws28oyFwWZTTa0WuCsTW8yBG+0hNyeeLu4=",
   "Source": "ShopCenter.Presentation.Razor",
   "BasePath": "_content/ShopCenter.Presentation.Razor",
   "Mode": "Default",
@@ -5865,6 +5865,23 @@
       "OriginalItemSpec": "wwwroot\\content\\images\\product\\origin\\715919a039f24cb396772fd8eb50d758.png"
     },
     {
+      "Identity": "C:\\Amir\\Document_DesignWeb\\ShopCenter\\ShopCenter.Presentation.Razor\\wwwroot\\content\\images\\product\\origin\\8a26e5e4bd154cd39897aa52a585df48.png",
+      "SourceId": "ShopCenter.Presentation.Razor",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Amir\\Document_DesignWeb\\ShopCenter\\ShopCenter.Presentation.Razor\\wwwroot\\",
+      "BasePath": "_content/ShopCenter.Presentation.Razor",
+      "RelativePath": "content/images/product/origin/8a26e5e4bd154cd39897aa52a585df48.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\content\\images\\product\\origin\\8a26e5e4bd154cd39897aa52a585df48.png"
+    },
+    {
       "Identity": "C:\\Amir\\Document_DesignWeb\\ShopCenter\\ShopCenter.Presentation.Razor\\wwwroot\\content\\images\\product\\origin\\8a763269d709407e87b07dec4d5a04c9.png",
       "SourceId": "ShopCenter.Presentation.Razor",
       "SourceType": "Discovered",
@@ -5982,6 +5999,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\content\\images\\product\\thumb\\72ea0ae331c642c79dd74d055b19d643.jpg"
+    },
+    {
+      "Identity": "C:\\Amir\\Document_DesignWeb\\ShopCenter\\ShopCenter.Presentation.Razor\\wwwroot\\content\\images\\product\\thumb\\8a26e5e4bd154cd39897aa52a585df48.png",
+      "SourceId": "ShopCenter.Presentation.Razor",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Amir\\Document_DesignWeb\\ShopCenter\\ShopCenter.Presentation.Razor\\wwwroot\\",
+      "BasePath": "_content/ShopCenter.Presentation.Razor",
+      "RelativePath": "content/images/product/thumb/8a26e5e4bd154cd39897aa52a585df48.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\content\\images\\product\\thumb\\8a26e5e4bd154cd39897aa52a585df48.png"
     },
     {
       "Identity": "C:\\Amir\\Document_DesignWeb\\ShopCenter\\ShopCenter.Presentation.Razor\\wwwroot\\content\\images\\product\\thumb\\8a763269d709407e87b07dec4d5a04c9.png",
