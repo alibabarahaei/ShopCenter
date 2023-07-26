@@ -10,7 +10,7 @@ namespace ShopCenter.Application.DTOs.Products
         public string Title { get; set; }
 
         [Display(Name = "قیمت محصول")]
-        public int Price { get; set; }
+        public long Price { get; set; }
 
         [Display(Name = "توضیحات کوتاه")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
@@ -24,7 +24,7 @@ namespace ShopCenter.Application.DTOs.Products
         [Display(Name = "فعال / غیرفعال")]
         public bool IsActive { get; set; }
 
-        public List<CreateProductColorDtO> ProductColors { get; set; }
+        public List<CreateProductColorDTO> ProductColors { get; set; }
         public List<long> SelectedCategories { get; set; }
     }
     public enum CreateProductResult

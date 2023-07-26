@@ -26,5 +26,10 @@ namespace ShopCenter.Application.InterfaceServices
 
         Task<bool> AcceptSellerProduct(long productId);
         Task<bool> RejectSellerProduct(RejectItemDTO reject);
+
+
+        Task<EditProductDTO> GetProductForEdit(long productId);
+
+
     }
 }

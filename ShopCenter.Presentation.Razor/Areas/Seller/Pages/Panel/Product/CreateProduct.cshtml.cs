@@ -32,7 +32,7 @@ namespace ShopCenter.Presentation.Razor.Areas.Seller.Pages.Panel.Product
         [Display(Name = "فعال / غیرفعال")]
         public bool IsActive { get; set; }
 
-        public List<CreateProductColorDtO> ProductColors { get; set; }
+        public List<CreateProductColorDTO> ProductColors { get; set; }
 
 
         public List<long> SelectedCategories { get; set; }

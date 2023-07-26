@@ -40,7 +40,7 @@ namespace ShopCenter.Presentation.Razor.Areas.Seller.Pages.Panel.Product
         {
             var seller = await _storeService.GetLastActiveSellerByUserId(User);
             filter.SellerId = seller.Id;
-            filter.FilterProductState = FilterProductState.Active;
+            filter.FilterProductState = FilterProductState.All;
             filter=await _productService.FilterProductsAsync(filter);
             Filter = filter;
             return Page();
