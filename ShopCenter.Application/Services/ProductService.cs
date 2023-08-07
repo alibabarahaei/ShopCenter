@@ -231,6 +231,86 @@ namespace ShopCenter.Application.Services
             };
         }
 
+        public async Task<EditProductResult> EditSellerProduct(EditProductDTO product, string userId, IFormFile productImage)
+        {
+            var mainProduct = await _productRepository.GetQuery().AsQueryable()
+                .Include(s => s.Seller)
+                .SingleOrDefaultAsync(s => s.Id == product.Id);
+            if (mainProduct == null) return EditProductResult.NotFound;
+            if (mainProduct.Seller.UserId != userId) return EditProductResult.NotForUser;
+
+            mainProduct.Title = product.Title;
+            mainProduct.ShortDescription = product.ShortDescription;
+            mainProduct.Description = product.Description;
+            mainProduct.IsActive = product.IsActive;
+            mainProduct.Price = product.Price;
+
+            if (productImage != null)
+            {
+                var imageName = Guid.NewGuid().ToString("N") + Path.GetExtension(productImage.FileName);
+
+                var res = productImage.AddImageToServer(imageName, SD.ProductImageImageServer, 150, 150,
+                    SD.ProductThumbnailImageImageServer, mainProduct.ImageName);
+
+                if (res)
+                {
+                    mainProduct.ImageName = imageName;
+                }
+            }
+
+            await RemoveAllProductSelectedCategories(product.Id);
+            await AddProductSelectedCategories(product.Id, product.SelectedCategories);
+            await _productSelectedCategoryRepository.SaveChanges();
+            await RemoveAllProductSelectedColors(product.Id);
+            await AddProductSelectedColors(product.Id, product.ProductColors);
+            await _productColorRepository.SaveChanges();
+
+            return EditProductResult.Success;
+        }
+
+        public async Task RemoveAllProductSelectedCategories(long productId)
+        {
+            _productSelectedCategoryRepository.DeletePermanentEntities(await _productSelectedCategoryRepository.GetQuery().AsQueryable().Where(s => s.ProductId == productId).ToListAsync());
+        }
+
+        public async Task RemoveAllProductSelectedColors(long productId)
+        {
+            _productColorRepository.DeletePermanentEntities(await _productColorRepository.GetQuery().AsQueryable().Where(s => s.ProductId == productId).ToListAsync());
+        }
+
+        public async Task AddProductSelectedColors(long productId, List<CreateProductColorDTO> colors)
+        {
+            var productSelectedColors = new List<ProductColor>();
+
+            foreach (var productColor in colors)
+            {
+                productSelectedColors.Add(new ProductColor
+                {
+                    ColorName = productColor.ColorName,
+                    Price = productColor.Price,
+                    ProductId = productId
+                });
+            }
+
+            await _productColorRepository.AddRangeEntities(productSelectedColors);
+        }
+
+        public async Task AddProductSelectedCategories(long productId, List<long> selectedCategories)
+        {
+            var productSelectedCategories = new List<ProductSelectedCategory>();
+
+            foreach (var categoryId in selectedCategories)
+            {
+                productSelectedCategories.Add(new ProductSelectedCategory
+                {
+                    ProductCategoryId = categoryId,
+                    ProductId = productId
+                });
+            }
+            await _productSelectedCategoryRepository.AddRangeEntities(productSelectedCategories);
+        }
+
+
         #endregion
 
         #region dispose

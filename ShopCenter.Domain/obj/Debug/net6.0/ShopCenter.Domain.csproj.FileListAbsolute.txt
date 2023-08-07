@@ -34,3 +34,15 @@ C:\Amir\Document_DesignWeb\ShopCenter\ShopCenter.Domain\obj\Debug\net6.0\ShopCen
 C:\Amir\Document_DesignWeb\ShopCenter\ShopCenter.Domain\obj\Debug\net6.0\refint\ShopCenter.Domain.dll
 C:\Amir\Document_DesignWeb\ShopCenter\ShopCenter.Domain\obj\Debug\net6.0\ShopCenter.Domain.pdb
 C:\Amir\Document_DesignWeb\ShopCenter\ShopCenter.Domain\obj\Debug\net6.0\ref\ShopCenter.Domain.dll
+C:\Amir\Document_DesignWeb\ShopCenter2\ShopCenter\ShopCenter.Domain\bin\Debug\net6.0\ShopCenter.Domain.deps.json
+C:\Amir\Document_DesignWeb\ShopCenter2\ShopCenter\ShopCenter.Domain\bin\Debug\net6.0\ShopCenter.Domain.dll
+C:\Amir\Document_DesignWeb\ShopCenter2\ShopCenter\ShopCenter.Domain\bin\Debug\net6.0\ShopCenter.Domain.pdb
+C:\Amir\Document_DesignWeb\ShopCenter2\ShopCenter\ShopCenter.Domain\obj\Debug\net6.0\ShopCenter.Domain.csproj.AssemblyReference.cache
+C:\Amir\Document_DesignWeb\ShopCenter2\ShopCenter\ShopCenter.Domain\obj\Debug\net6.0\ShopCenter.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Amir\Document_DesignWeb\ShopCenter2\ShopCenter\ShopCenter.Domain\obj\Debug\net6.0\ShopCenter.Domain.AssemblyInfoInputs.cache
+C:\Amir\Document_DesignWeb\ShopCenter2\ShopCenter\ShopCenter.Domain\obj\Debug\net6.0\ShopCenter.Domain.AssemblyInfo.cs
+C:\Amir\Document_DesignWeb\ShopCenter2\ShopCenter\ShopCenter.Domain\obj\Debug\net6.0\ShopCenter.Domain.csproj.CoreCompileInputs.cache
+C:\Amir\Document_DesignWeb\ShopCenter2\ShopCenter\ShopCenter.Domain\obj\Debug\net6.0\ShopCenter.Domain.dll
+C:\Amir\Document_DesignWeb\ShopCenter2\ShopCenter\ShopCenter.Domain\obj\Debug\net6.0\refint\ShopCenter.Domain.dll
+C:\Amir\Document_DesignWeb\ShopCenter2\ShopCenter\ShopCenter.Domain\obj\Debug\net6.0\ShopCenter.Domain.pdb
+C:\Amir\Document_DesignWeb\ShopCenter2\ShopCenter\ShopCenter.Domain\obj\Debug\net6.0\ref\ShopCenter.Domain.dll

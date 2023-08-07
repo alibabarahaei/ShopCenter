@@ -161,7 +161,7 @@ namespace ShopCenter.Presentation.Razor.Pages.Account
         public async Task<JsonResult> OnGetIsUserNameInUse(string userName)
         {
            
-            var user =  _userService.IsUserNameInUseAsync(userName);
+            var user = await _userService.IsUserNameInUseAsync(userName);
             
             if (user == null)
                 return new JsonResult(true);

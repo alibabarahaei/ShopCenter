@@ -12,6 +12,7 @@ namespace ShopCenter.Domain.InterfaceRepositories.Base
         void DeleteEntity(TEntity entity);
         Task DeleteEntity(long entityId);
         void DeletePermanent(TEntity entity);
+        void DeletePermanentEntities(List<TEntity> entities);
         Task DeletePermanent(long entityId);
         Task SaveChanges();
     }

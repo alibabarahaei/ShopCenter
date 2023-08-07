@@ -4,6 +4,7 @@ using ShopCenter.Application.DTOs.Products;
 using ShopCenter.Application.InterfaceServices;
 using System.ComponentModel.DataAnnotations;
 using System.Xml.Linq;
+using ShopCenter.Application.DTOs.User;
 
 namespace ShopCenter.Presentation.Razor.Areas.Seller.Pages.Panel.Product
 {
@@ -40,12 +41,14 @@ namespace ShopCenter.Presentation.Razor.Areas.Seller.Pages.Panel.Product
 
         public string ImageName { get; set; }
 
+        
+
         public List<CreateProductColorDTO> ProductColors { get; set; }
 
 
         public List<long> SelectedCategories { get; set; }
 
-        public CreateProductDTO Product { get; set; }
+        
 #endregion
 
 
@@ -63,13 +66,15 @@ namespace ShopCenter.Presentation.Razor.Areas.Seller.Pages.Panel.Product
 
         #region constructor
 
+        private readonly IUserService _userService;
         private readonly IProductService _productService;
         private readonly IStoreService _storeService;
 
-        public EditProductModel(IProductService productService, IStoreService storeService)
+        public EditProductModel(IProductService productService, IStoreService storeService ,IUserService userService)
         {
             _productService = productService;
             _storeService = storeService;
+            _userService = userService;
         }
 
         #endregion
@@ -85,18 +90,49 @@ namespace ShopCenter.Presentation.Razor.Areas.Seller.Pages.Panel.Product
         public async Task<PageResult> OnGet(long productId)
         {
             var product = await _productService.GetProductForEdit(productId);
-            Title=product.Title;
+            Title = product.Title;
             Price = product.Price;
-            ShortDescription=product.ShortDescription;
+            ShortDescription = product.ShortDescription;
             Description = product.Description;
             IsActive = product.IsActive;
-            Id=product.Id;
+            SelectedCategories = product.SelectedCategories;
             ImageName = product.ImageName;
             ProductColors = product.ProductColors;
-            SelectedCategories = product.SelectedCategories;
-            //if (product == null) return NotFound();
+            Id=product.Id;
+            
+           // if (product == null) 
+                //return NotFound();
             ViewData["Categories"] = await _productService.GetAllActiveProductCategories();
             return Page();
         }
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> OnPost(EditProductDTO product, IFormFile? productImage)
+        {
+            if (ModelState.IsValid)
+            {
+                var user = await _userService.GetUserAsync(new GetUserDTO()
+                {
+                    User = User
+                });
+                var res = await _productService.EditSellerProduct(product, user.Id, productImage);
+
+                switch (res)
+                {
+                    case EditProductResult.NotForUser:
+                        TempData["ErrorMessage"] = "در ویرایش اطلاعات خطایی رخ داد";
+                        break;
+                    case EditProductResult.NotFound:
+                        TempData["WarningMessage"] = "اطلاعات وارد شده یافت نشد";
+                        break;
+                    case EditProductResult.Success:
+                        TempData["SuccessMessage"] = "عملیات با موفقیت انجام شد";
+                        break;
+                        
+                }
+            }
+
+            return RedirectToPage("Index");
+        }
+
     }
 }

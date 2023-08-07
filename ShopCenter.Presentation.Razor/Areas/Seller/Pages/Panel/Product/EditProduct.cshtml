@@ -7,8 +7,8 @@
 
 @{
     ViewData["Title"] = "ویرایش " + Model.Title;
-    var categories = ViewData["Categories"] as List<ProductCategory>;
-    var v = "hello";
+    var Categories = ViewData["Categories"] as List<ProductCategory>;
+    var x = 2;
 }
 
 
@@ -17,7 +17,7 @@
 <section class="basic-elements">
     <div class="row">
         <div class="col-sm-12">
-            <h2 class="content-header">ورودی فرم</h2>
+            <h2 class="content-header">تغییر محصول</h2>
         </div>
     </div>
     <div class="row">
@@ -25,7 +25,7 @@
             <div class="card">
                 <div class="card-header">
                     <div class="card-title-wrap bar-success">
-                        <h4 class="card-title mb-0">ورودی متن</h4>
+                        <h4 class="card-title mb-0">تغییر متن</h4>
                     </div>
                 </div>
                 <div class="card-body">
@@ -89,13 +89,13 @@
                                     </div>
                                     <div class="col-12">
                                         <fieldset class="form-group">
-                                            <label for="basicInputFile">تصویر</label>
-                                            <input name="image" type="file" multiple class="form-control-file" accept=".png,.jpeg" id="basicInputFile">
+                                            <label for="productImage">تصویر</label>
+                                            <input name="productImage" type="file" class="form-control-file" accept=".png,.jpeg" id="productImage">
                                         </fieldset>
                                         <span class="text-danger" style="font-size: 15px"></span>
-                                        @if (categories != null && categories.Any())
+                                        @if (Categories != null && Categories.Any())
                                         {
-                                            @foreach (var category in categories.Where(s => s.ParentId == null))
+                                            @foreach (var category in Categories.Where(s => s.ParentId == null))
                                             {
                                                 var isParentCategorySelected = Model.SelectedCategories.Any(s => s == category.Id);
                                                 <ul>
@@ -106,7 +106,7 @@
 
                                                         <div id="sub_categories_@category.Id" style="display: @(isParentCategorySelected ?"block":"none")">
 
-                                                            @foreach (var subCategory in categories.Where(s => s.ParentId == category.Id))
+                                                            @foreach (var subCategory in Categories.Where(s => s.ParentId == category.Id))
                                                             {
                                                                 var isSubCategorySelected = Model.SelectedCategories.Any(s => s == subCategory.Id);
                                                                 <label>
@@ -114,7 +114,7 @@
                                                                 </label>
                                                                 <div id="sub_categories_@subCategory.Id" style="display: @(isSubCategorySelected ?"block":"none")">
 
-                                                                    @foreach (var secondSubCategory in categories.Where(s => s.ParentId == subCategory.Id))
+                                                                    @foreach (var secondSubCategory in Categories.Where(s => s.ParentId == subCategory.Id))
                                                                     {
                                                                         var isSecondSubCategorySelected = Model.SelectedCategories.Any(s => s == secondSubCategory.Id);
                                                                         <label>
