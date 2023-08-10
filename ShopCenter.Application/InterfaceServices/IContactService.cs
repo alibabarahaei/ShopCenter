@@ -1,22 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using ShopCenter.Application.DTOs.Contact;
 using System.Security.Claims;
-using System.Text;
-using System.Threading.Tasks;
-using ShopCenter.Application.DTOs.Contact;
-using ShopCenter.Domain.Models.Contacts;
 
 namespace ShopCenter.Application.InterfaceServices
 {
-    public interface IContactService:IAsyncDisposable
+    public interface IContactService : IAsyncDisposable
     {
 
         #region ticket
 
         Task<AddTicketResult> AddUserTicketAsync(AddTicketDTO ticket, ClaimsPrincipal userCP);
         Task<FilterTicketDTO> FilterTicketsAsync(FilterTicketDTO filter);
-        Task<TicketDetailDTO> GetTicketForShowAsync(GetTicketDTO getTicket );
+        Task<TicketDetailDTO> GetTicketForShowAsync(GetTicketDTO getTicket);
         Task<AnswerTicketResult> AnswerTicketAsync(AnswerTicketDTO answer);
         #endregion
     }

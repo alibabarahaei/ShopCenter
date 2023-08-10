@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using ShopCenter.Application.DTOs.Store;
 using ShopCenter.Application.InterfaceServices;
 using System.ComponentModel.DataAnnotations;
-using System.Xml.Linq;
 
 namespace ShopCenter.Presentation.Razor.Areas.User.Pages.Dashboard
 {
@@ -45,10 +44,10 @@ namespace ShopCenter.Presentation.Razor.Areas.User.Pages.Dashboard
 
         #region request seller
 
-      
+
         public void OnGet()
         {
-           
+
         }
 
         [ValidateAntiForgeryToken]
@@ -71,7 +70,7 @@ namespace ShopCenter.Presentation.Razor.Areas.User.Pages.Dashboard
                         TempData["InfoMessage"] = "فرایند تایید اطلاعات شما در حال پیگیری می باشد";
                         RedirectToPage("SellerRequests");
                         break;
-                        
+
                 }
             }
 

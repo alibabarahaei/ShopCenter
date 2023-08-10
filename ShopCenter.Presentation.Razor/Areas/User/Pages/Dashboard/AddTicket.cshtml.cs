@@ -4,7 +4,6 @@ using ShopCenter.Application.DTOs.Contact;
 using ShopCenter.Application.InterfaceServices;
 using ShopCenter.Domain.Models.Contacts;
 using System.ComponentModel.DataAnnotations;
-using System.Xml.Linq;
 
 namespace ShopCenter.Presentation.Razor.Areas.User.Pages.Dashboard
 {
@@ -73,7 +72,7 @@ namespace ShopCenter.Presentation.Razor.Areas.User.Pages.Dashboard
                     Text = Text
 
                 };
-                
+
                 var result = await _contactService.AddUserTicketAsync(ticket, User);
                 switch (result)
                 {
@@ -93,7 +92,7 @@ namespace ShopCenter.Presentation.Razor.Areas.User.Pages.Dashboard
 
             return Page();
         }
-            
+
 
 
 

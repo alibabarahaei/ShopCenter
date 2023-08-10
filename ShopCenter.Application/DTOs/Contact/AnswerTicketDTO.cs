@@ -1,5 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.Security.Claims;
+﻿using System.Security.Claims;
 
 namespace ShopCenter.Application.DTOs.Contact
 {
@@ -7,7 +6,7 @@ namespace ShopCenter.Application.DTOs.Contact
     {
         public long Id { get; set; }
 
-        
+
         public string Text { get; set; }
 
 

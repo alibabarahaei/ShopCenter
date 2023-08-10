@@ -1,16 +1,11 @@
-﻿using ShopCenter.Application.DTOs.Store;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Claims;
-using System.Text;
-using System.Threading.Tasks;
-using ShopCenter.Application.DTOs.Common;
+﻿using ShopCenter.Application.DTOs.Common;
+using ShopCenter.Application.DTOs.Store;
 using ShopCenter.Domain.Models.Store;
+using System.Security.Claims;
 
 namespace ShopCenter.Application.InterfaceServices
 {
-    public interface IStoreService:IAsyncDisposable
+    public interface IStoreService : IAsyncDisposable
     {
         #region seller
 

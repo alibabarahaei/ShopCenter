@@ -2,7 +2,7 @@
 
 namespace ShopCenter.Presentation.Razor.ViewComponents.SiteViewComponents
 {
-    public class HomeSliderAmazingViewComponent:ViewComponent
+    public class HomeSliderAmazingViewComponent : ViewComponent
     {
         public async Task<IViewComponentResult> InvokeAsync()
         {

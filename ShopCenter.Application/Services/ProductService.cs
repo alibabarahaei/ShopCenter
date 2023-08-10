@@ -25,7 +25,7 @@ namespace ShopCenter.Application.Services
             _productRepository = productRepository;
             _productCategoryRepository = productCategoryRepository;
             _productSelectedCategoryRepository = productSelectedCategoryRepository;
-            _productColorRepository= productColorRepository;
+            _productColorRepository = productColorRepository;
         }
 
         #endregion
@@ -106,8 +106,8 @@ namespace ShopCenter.Application.Services
                     SellerId = sellerId,
                     ImageName = imageName,
                     ProductAcceptOrRejectDescription = "اطلاعاتی وارد نشده است"
-                    
-                    
+
+
                 };
 
                 await _productRepository.AddEntity(newProduct);
@@ -244,7 +244,7 @@ namespace ShopCenter.Application.Services
             mainProduct.Description = product.Description;
             mainProduct.IsActive = product.IsActive;
             mainProduct.Price = product.Price;
-
+            mainProduct.ProductAcceptanceState = ProductAcceptanceState.UnderProgress;
             if (productImage != null)
             {
                 var imageName = Guid.NewGuid().ToString("N") + Path.GetExtension(productImage.FileName);

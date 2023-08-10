@@ -4,7 +4,6 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 using ShopCenter.Application.DTOs.Account;
 using ShopCenter.Application.InterfaceServices;
-using ShopCenter.Domain.Models;
 using System.ComponentModel.DataAnnotations;
 
 namespace ShopCenter.Presentation.Razor.Pages.Account
@@ -46,9 +45,9 @@ namespace ShopCenter.Presentation.Razor.Pages.Account
         private readonly IUserService _userService;
         private readonly ICaptchaValidator _captchaValidator;
         private readonly IMessageSender _messageSender;
-        public RegisterModel( IUserService userService, ICaptchaValidator captchaValidator, IMessageSender messageSender)
+        public RegisterModel(IUserService userService, ICaptchaValidator captchaValidator, IMessageSender messageSender)
         {
-            
+
             _userService = userService;
             _captchaValidator = captchaValidator;
             _messageSender = messageSender;
@@ -70,7 +69,7 @@ namespace ShopCenter.Presentation.Razor.Pages.Account
 
         public void OnGet()
         {
-            
+
         }
 
 
@@ -109,23 +108,23 @@ namespace ShopCenter.Presentation.Razor.Pages.Account
 
                         if (error.Code.Contains("Password"))
                         {
-                            
+
                             ModelState.AddModelError("Password", error.Description);
                         }
                         else if (error.Code.Contains("UserName"))
                         {
-                            
+
                             ModelState.AddModelError("UserName", error.Description);
                         }
-                        else if (error.Code.Contains("Email") )
+                        else if (error.Code.Contains("Email"))
                         {
                             ModelState.AddModelError("Email", error.Description);
-                            
+
                         }
                         else
                         {
                             ModelState.AddModelError("UserName", error.Description);
-                            
+
                         }
                         return Page();
 
@@ -160,9 +159,9 @@ namespace ShopCenter.Presentation.Razor.Pages.Account
         [ValidateAntiForgeryToken]
         public async Task<JsonResult> OnGetIsUserNameInUse(string userName)
         {
-           
+
             var user = await _userService.IsUserNameInUseAsync(userName);
-            
+
             if (user == null)
                 return new JsonResult(true);
             return new JsonResult("نام کاربری وارد شده توسط شخص دیگری انتخاب شده است");

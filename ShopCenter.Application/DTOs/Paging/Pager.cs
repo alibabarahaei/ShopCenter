@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace ShopCenter.Application.DTOs.Paging
+﻿namespace ShopCenter.Application.DTOs.Paging
 {
     public class Pager
     {

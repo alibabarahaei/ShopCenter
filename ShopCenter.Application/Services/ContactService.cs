@@ -1,27 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Claims;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using ShopCenter.Application.DTOs.Contact;
 using ShopCenter.Application.DTOs.Paging;
 using ShopCenter.Application.DTOs.User;
 using ShopCenter.Application.InterfaceServices;
 using ShopCenter.Domain.InterfaceRepositories.Base;
 using ShopCenter.Domain.Models.Contacts;
+using System.Security.Claims;
 
 namespace ShopCenter.Application.Services
 {
-    public class ContactService:IContactService
+    public class ContactService : IContactService
     {
 
 
 
         #region constructor
 
-        
+
         private readonly IGenericRepository<Ticket> _ticketRepository;
         private readonly IGenericRepository<TicketMessage> _ticketMessageRepository;
         private readonly IUserService _userService;
@@ -113,13 +108,13 @@ namespace ShopCenter.Application.Services
             if (filter.TicketPriority != null)
                 query = query.Where(s => s.TicketPriority == filter.TicketPriority.Value);
 
-            if (filter.User != null )
+            if (filter.User != null)
             {
-               var user= await _userService.GetUserAsync(new GetUserDTO()
+                var user = await _userService.GetUserAsync(new GetUserDTO()
                 {
                     User = filter.User
                 });
-               query = query.Where(s => s.UserId == user.Id);
+                query = query.Where(s => s.UserId == user.Id);
 
             }
 
@@ -149,7 +144,7 @@ namespace ShopCenter.Application.Services
             {
                 User = getTicket.User
             });
-            if (ticket == null || ticket.UserId !=user.Id) return null;
+            if (ticket == null || ticket.UserId != user.Id) return null;
 
             return new TicketDetailDTO
             {
@@ -193,7 +188,7 @@ namespace ShopCenter.Application.Services
 
         public async ValueTask DisposeAsync()
         {
-          
+
         }
 
         #endregion

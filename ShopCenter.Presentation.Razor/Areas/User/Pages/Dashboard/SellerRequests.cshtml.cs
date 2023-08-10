@@ -5,7 +5,7 @@ using ShopCenter.Application.InterfaceServices;
 
 namespace ShopCenter.Presentation.Razor.Areas.User.Pages.Dashboard
 {
- 
+
     public class SellerRequestsModel : PageModel
     {
 
@@ -15,7 +15,7 @@ namespace ShopCenter.Presentation.Razor.Areas.User.Pages.Dashboard
         public FilterSellerDTO filterSeller { get; set; }
         [BindProperty(SupportsGet = true)]
         public int PageId { get; set; }
-        
+
 
         #endregion
 
@@ -38,7 +38,7 @@ namespace ShopCenter.Presentation.Razor.Areas.User.Pages.Dashboard
             {
                 filter.PageId = PageId;
             }
-    
+
             filter.TakeEntity = 1;
             filter.User = User;
             filter.State = FilterSellerState.All;

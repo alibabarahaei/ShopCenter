@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ShopCenter.Application.DTOs.Paging
+﻿namespace ShopCenter.Application.DTOs.Paging
 {
     public static class PagingExtension
     {

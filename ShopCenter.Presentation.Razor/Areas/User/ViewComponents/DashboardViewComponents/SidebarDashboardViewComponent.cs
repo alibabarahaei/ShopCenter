@@ -6,7 +6,7 @@ using System.Security.Claims;
 
 namespace ShopCenter.Presentation.Razor.Areas.User.ViewComponents.DashboardViewComponents
 {
-    public class SidebarDashboardViewComponent:ViewComponent
+    public class SidebarDashboardViewComponent : ViewComponent
     {
         private readonly IUserService _userService;
         public ClaimsPrincipal UserClaimsPrincipal { get; }
@@ -17,8 +17,8 @@ namespace ShopCenter.Presentation.Razor.Areas.User.ViewComponents.DashboardViewC
 
         public async Task<IViewComponentResult> InvokeAsync()
         {
-            
-            var user=await _userService.GetUserAsync(new GetUserDTO()
+
+            var user = await _userService.GetUserAsync(new GetUserDTO()
             {
                 User = this.HttpContext.User
             });
@@ -31,8 +31,8 @@ namespace ShopCenter.Presentation.Razor.Areas.User.ViewComponents.DashboardViewC
                 PathProfileImage = user.PathProfileImage,
                 CreationDate = user.CreationDate
             };
-            
-            
+
+
             return View("SidebarDashboard", userviewmodel);
         }
     }

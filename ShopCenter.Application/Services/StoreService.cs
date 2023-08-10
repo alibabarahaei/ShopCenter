@@ -1,5 +1,6 @@
 ﻿
 using Microsoft.EntityFrameworkCore;
+using ShopCenter.Application.DTOs.Common;
 using ShopCenter.Application.DTOs.Paging;
 using ShopCenter.Application.DTOs.Store;
 using ShopCenter.Application.DTOs.User;
@@ -7,7 +8,6 @@ using ShopCenter.Application.InterfaceServices;
 using ShopCenter.Domain.InterfaceRepositories.Base;
 using ShopCenter.Domain.Models.Store;
 using System.Security.Claims;
-using ShopCenter.Application.DTOs.Common;
 
 
 namespace ShopCenter.Application.Services

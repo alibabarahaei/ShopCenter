@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Globalization;
 
 namespace ShopCenter.Application.Extensions
 {
@@ -15,22 +9,22 @@ namespace ShopCenter.Application.Extensions
         {
             var subtime = DateTime.Now.Subtract(time).TotalMinutes;
 
-             
-            if (subtime<60)
+
+            if (subtime < 60)
             {
                 return $"{(int)subtime} دقیفه";
             }
-            else if(subtime is >= 60 and < 24*60)
+            else if (subtime is >= 60 and < 24 * 60)
             {
-                return $"{(int)subtime/60} ساعت";
+                return $"{(int)subtime / 60} ساعت";
             }
-            else if(subtime is >=24*60 and <24*60*365 )
+            else if (subtime is >= 24 * 60 and < 24 * 60 * 365)
             {
-                return $"{(int)subtime/  (24 * 60)} روز";
+                return $"{(int)subtime / (24 * 60)} روز";
             }
             else if (subtime >= 24 * 60 * 365)
             {
-                return $"{(int)subtime / (24 * 60*365)} سال";
+                return $"{(int)subtime / (24 * 60 * 365)} سال";
             }
             else
             {

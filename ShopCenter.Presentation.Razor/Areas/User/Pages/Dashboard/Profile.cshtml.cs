@@ -1,10 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-using ShopCenter.Application.InterfaceServices;
-using System.ComponentModel.DataAnnotations;
-
+﻿using Microsoft.AspNetCore.Mvc.RazorPages;
 using ShopCenter.Application.DTOs.User;
 using ShopCenter.Application.Extensions;
+using ShopCenter.Application.InterfaceServices;
+using System.ComponentModel.DataAnnotations;
 
 namespace ShopCenter.Presentation.Razor.Areas.User.Pages.Dashboard
 {
@@ -54,7 +52,7 @@ namespace ShopCenter.Presentation.Razor.Areas.User.Pages.Dashboard
 
 
 
-            var user=await _userService.GetUserAsync(new GetUserDTO()
+            var user = await _userService.GetUserAsync(new GetUserDTO()
             {
                 User = User
             });

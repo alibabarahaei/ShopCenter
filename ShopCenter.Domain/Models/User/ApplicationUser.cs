@@ -1,9 +1,8 @@
 ﻿
-using System.ComponentModel.DataAnnotations;
-
 using Microsoft.AspNetCore.Identity;
 using ShopCenter.Domain.Models.Contacts;
 using ShopCenter.Domain.Models.Store;
+using System.ComponentModel.DataAnnotations;
 
 namespace ShopCenter.Domain.Models.User
 {
@@ -22,7 +21,7 @@ namespace ShopCenter.Domain.Models.User
         [Display(Name = "تاریخ عضویت")]
         public DateTime CreationDate { get; set; } = DateTime.Now;
 
-        [Display(Name = "تصویر پروفایل")] 
+        [Display(Name = "تصویر پروفایل")]
         public string? PathProfileImage { get; set; }
 
         public char? Gender { get; set; } = GenderTypes.Unknown;
@@ -35,7 +34,7 @@ namespace ShopCenter.Domain.Models.User
 
         public ICollection<Ticket> Tickets { get; set; }
         public ICollection<TicketMessage> TicketMessages { get; set; }
-        public ICollection<Seller>  Sellers { get; set; }
+        public ICollection<Seller> Sellers { get; set; }
 
         #endregion
 

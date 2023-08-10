@@ -1,10 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
-using System;
-using System.IO;
 using System.Text.RegularExpressions;
-using Microsoft.AspNetCore.Http;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace ShopCenter.Application.Utilities
 {
@@ -71,7 +66,7 @@ namespace ShopCenter.Application.Utilities
             //  Try to instantiate new Bitmap, if .NET will throw exception
             //  we can assume that it's not a valid image
             //-------------------------------------------
-            
+
             try
             {
                 using (var bitmap = new System.Drawing.Bitmap(postedFile.OpenReadStream()))

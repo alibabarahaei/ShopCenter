@@ -2,9 +2,7 @@
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using ShopCenter.Application.DTOs.Products;
 using ShopCenter.Application.InterfaceServices;
-using ShopCenter.Domain.Models.Products;
 using System.ComponentModel.DataAnnotations;
-using System.Xml.Linq;
 
 namespace ShopCenter.Presentation.Razor.Areas.Seller.Pages.Panel.Product
 {
@@ -60,12 +58,12 @@ namespace ShopCenter.Presentation.Razor.Areas.Seller.Pages.Panel.Product
             ViewData["MainCategories"] = await _productService.GetAllActiveProductCategories();
 
             return Page();
-            
+
         }
 
 
 
-        public async Task<IActionResult> OnPost( IFormFile image)
+        public async Task<IActionResult> OnPost(IFormFile image)
         {
             if (ModelState.IsValid)
             {
@@ -79,9 +77,9 @@ namespace ShopCenter.Presentation.Razor.Areas.Seller.Pages.Panel.Product
                     ShortDescription = ShortDescription,
                     Title = Title,
                     SelectedCategories = SelectedCategories
-                    
+
                 };
-                var res = await _productService.CreateProduct(product, image,seller.Id);
+                var res = await _productService.CreateProduct(product, image, seller.Id);
 
 
 
@@ -99,7 +97,7 @@ namespace ShopCenter.Presentation.Razor.Areas.Seller.Pages.Panel.Product
                 }
             }
 
-            
+
 
 
             return Page();

@@ -2,7 +2,7 @@
 
 namespace ShopCenter.Presentation.Razor.Areas.User.ViewComponents.SiteViewComponents
 {
-    public class DashboardHeaderViewComponent:ViewComponent
+    public class DashboardHeaderViewComponent : ViewComponent
     {
         public async Task<IViewComponentResult> InvokeAsync()
         {

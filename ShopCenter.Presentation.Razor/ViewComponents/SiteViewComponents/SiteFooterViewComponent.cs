@@ -2,7 +2,7 @@
 
 namespace ShopCenter.Presentation.Razor.ViewComponents.SiteViewComponents
 {
-    public class SiteFooterViewComponent:ViewComponent
+    public class SiteFooterViewComponent : ViewComponent
     {
 
         public async Task<IViewComponentResult> InvokeAsync()

@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ShopCenter.Application.InterfaceServices;
 using ShopCenter.Domain.Models.Site;
-using ShopCenter.Infrastructure.EFCore.Migrations;
 
 namespace ShopCenter.Presentation.Razor.ViewComponents.SiteViewComponents
 {

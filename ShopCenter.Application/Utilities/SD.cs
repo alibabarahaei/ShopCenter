@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ShopCenter.Application.Utilities
+﻿namespace ShopCenter.Application.Utilities
 {
     public static class SD
     {
@@ -44,9 +38,9 @@ namespace ShopCenter.Application.Utilities
 
         public static string DefaultProfileman = "/images/defaults/man.png";
         public static string DefaultProfilewoman = "/images/defaults/woman.png";
-        
 
-        #endregion 
+
+        #endregion
 
 
         #region user avatar
@@ -69,7 +63,7 @@ namespace ShopCenter.Application.Utilities
         #region slider
         public static string SliderOrigin = "/images/slider-main/";
         #endregion
-        
+
 
         #endregion
 

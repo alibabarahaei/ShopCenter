@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Claims;
-using System.Security.Policy;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
 using ShopCenter.Application.DTOs.Account;
 using ShopCenter.Application.DTOs.User;
 using ShopCenter.Application.Extensions;
@@ -15,7 +8,7 @@ using ShopCenter.Domain.Models.User;
 
 namespace ShopCenter.Application.Services
 {
-    public class UserService:IUserService
+    public class UserService : IUserService
     {
 
 
@@ -42,7 +35,7 @@ namespace ShopCenter.Application.Services
 
         public async ValueTask DisposeAsync()
         {
-          //  await _userManager.DisposeAsync()
+            //  await _userManager.DisposeAsync()
         }
 
         #endregion
@@ -63,10 +56,10 @@ namespace ShopCenter.Application.Services
 
         public async Task<IdentityUser> IsUserNameInUseAsync(string userName)
         {
-         
-       
+
+
             return await _userManager.FindByNameAsync(userName);
-          
+
         }
 
         public async Task<IdentityUser> IsEmailInUseAsync(string email)
@@ -80,7 +73,7 @@ namespace ShopCenter.Application.Services
             return result;
         }
 
-      
+
 
 
         public async Task LogOutUserAsync()
@@ -94,20 +87,20 @@ namespace ShopCenter.Application.Services
             {
                 UserName = emailConfirmationDTO.UserName
             };
-           return  await _userManager.GenerateEmailConfirmationTokenAsync(user);
+            return await _userManager.GenerateEmailConfirmationTokenAsync(user);
         }
 
         public async Task<IdentityResult> EditProfileAsync(EditProfileDTO editProfileDTO)
         {
             var currentUser = await _userManager.GetUserAsync(editProfileDTO.User);
-            currentUser.FirstName  = editProfileDTO.FirstName;
-            currentUser.LastName = editProfileDTO.LastName;    
-            currentUser.PhoneNumber= editProfileDTO.PhoneNumber;
+            currentUser.FirstName = editProfileDTO.FirstName;
+            currentUser.LastName = editProfileDTO.LastName;
+            currentUser.PhoneNumber = editProfileDTO.PhoneNumber;
 
 
             if (editProfileDTO.Gender != null)
             {
-            currentUser.Gender=editProfileDTO.Gender;
+                currentUser.Gender = editProfileDTO.Gender;
             }
             else
             {
@@ -140,13 +133,13 @@ namespace ShopCenter.Application.Services
         }
 
 
-       
+
 
 
         public async Task<IdentityResult> ChangePasswordAsync(ChangepasswordDTO changepasswordDTO)
         {
 
-            var user =await GetUserAsync(new GetUserDTO()
+            var user = await GetUserAsync(new GetUserDTO()
             {
                 User = changepasswordDTO.User,
             });
@@ -155,6 +148,6 @@ namespace ShopCenter.Application.Services
             return await _userManager.ChangePasswordAsync(user, changepasswordDTO.CurrentPassword, changepasswordDTO.NewPassword);
         }
 
-     
+
     }
 }

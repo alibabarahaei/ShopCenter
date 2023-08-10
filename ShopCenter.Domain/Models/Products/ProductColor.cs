@@ -1,5 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
-using ShopCenter.Domain.Models.Base;
+﻿using ShopCenter.Domain.Models.Base;
+using System.ComponentModel.DataAnnotations;
 
 namespace ShopCenter.Domain.Models.Products
 {

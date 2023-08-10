@@ -6,13 +6,13 @@ using ShopCenter.Domain.Models.Site;
 
 namespace ShopCenter.Application.Services
 {
-    public class SiteService:ISiteService
+    public class SiteService : ISiteService
     {
 
 
         #region constructor
 
-        
+
         private readonly IGenericRepository<Slider> _sliderRepository;
         private readonly IGenericRepository<Banner> _bannerRepository;
         public SiteService(IGenericRepository<Slider> sliderRepository, IGenericRepository<Banner> bannerRepository)

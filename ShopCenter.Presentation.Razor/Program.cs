@@ -1,19 +1,18 @@
+using GoogleReCaptcha.V3;
+using GoogleReCaptcha.V3.Interface;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using PersianTranslation.Identity;
 using ShopCenter.Application.InterfaceServices;
 using ShopCenter.Application.Services;
 using ShopCenter.Domain.InterfaceRepositories.Base;
+using ShopCenter.Domain.Models.User;
 using ShopCenter.Infrastructure.EFCore.Context;
 using ShopCenter.Infrastructure.EFCore.Repository.Base;
 using System.Text.Encodings.Web;
 using System.Text.Unicode;
-using GoogleReCaptcha.V3;
-using GoogleReCaptcha.V3.Interface;
-using Microsoft.AspNetCore.Authentication.Cookies;
-using Microsoft.AspNetCore.DataProtection;
-using Microsoft.Extensions.Options;
-using ShopCenter.Domain.Models.User;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -27,7 +26,7 @@ builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options =>
     {
         options.Password.RequireNonAlphanumeric = false;
         options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(15);
-        
+
 
     })
     .AddEntityFrameworkStores<ShopCenterDbContext>()

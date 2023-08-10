@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
+﻿using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace ShopCenter.Presentation.Razor.Pages
 {
@@ -15,7 +14,7 @@ namespace ShopCenter.Presentation.Razor.Pages
 
         public void OnGet()
         {
-            
+
         }
     }
 }

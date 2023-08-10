@@ -3,7 +3,7 @@ using ShopCenter.Application.InterfaceServices;
 
 namespace ShopCenter.Presentation.Razor.ViewComponents.SiteViewComponents
 {
-    public class HomeMainSliderViewComponent:ViewComponent
+    public class HomeMainSliderViewComponent : ViewComponent
     {
 
         #region constructor
@@ -15,7 +15,7 @@ namespace ShopCenter.Presentation.Razor.ViewComponents.SiteViewComponents
             _siteService = siteService;
         }
 
-        
+
 
         #endregion
 

@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using ShopCenter.Application.DTOs.Common;
 using ShopCenter.Application.DTOs.Products;
 using ShopCenter.Application.InterfaceServices;
-using ShopCenter.Application.Services;
 using ShopCenter.Presentation.Razor.Http;
 
 namespace ShopCenter.Presentation.Razor.Areas.Admin.Pages.Panel.ProductManagement
@@ -31,7 +30,7 @@ namespace ShopCenter.Presentation.Razor.Areas.Admin.Pages.Panel.ProductManagemen
 
 
 
-        public async Task<PageResult> OnGet(FilterProductDTO filter )
+        public async Task<PageResult> OnGet(FilterProductDTO filter)
         {
             ViewData["filterproduct"] = await _productService.FilterProductsAsync(filter);
 
@@ -96,4 +95,4 @@ namespace ShopCenter.Presentation.Razor.Areas.Admin.Pages.Panel.ProductManagemen
 
 
 
-    
+

@@ -1,9 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using ShopCenter.Domain.InterfaceRepositories.Base;
 using ShopCenter.Domain.Models.Base;
 using ShopCenter.Infrastructure.EFCore.Context;
@@ -28,7 +23,7 @@ namespace ShopCenter.Infrastructure.EFCore.Repository.Base
 
         public async Task AddEntity(TEntity entity)
         {
-           
+
             await _dbSet.AddAsync(entity);
         }
 
@@ -38,22 +33,22 @@ namespace ShopCenter.Infrastructure.EFCore.Repository.Base
             {
                 await AddEntity(entity);
             }
-        }    
+        }
 
         public async Task<TEntity> GetEntityById(long entityId)
         {
-            return await _dbSet.SingleOrDefaultAsync(t=>t.Id==entityId);
+            return await _dbSet.SingleOrDefaultAsync(t => t.Id == entityId);
         }
 
         public void EditEntity(TEntity entity)
         {
-            
+
             _dbSet.Update(entity);
         }
 
         public void DeleteEntity(TEntity entity)
         {
-            
+
             EditEntity(entity);
         }
 

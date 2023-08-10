@@ -1,16 +1,11 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Identity;
-using ShopCenter.Domain.Models.Site;
-using ShopCenter.Domain.Models.User;
-using ShopCenter.Domain.Models.Products;
-using ShopCenter.Domain.Models.Store;
 using ShopCenter.Domain.Models.Contacts;
+using ShopCenter.Domain.Models.Products;
+using ShopCenter.Domain.Models.Site;
+using ShopCenter.Domain.Models.Store;
+using ShopCenter.Domain.Models.User;
 
 namespace ShopCenter.Infrastructure.EFCore.Context
 {

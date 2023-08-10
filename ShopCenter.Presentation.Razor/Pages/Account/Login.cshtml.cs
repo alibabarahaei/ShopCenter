@@ -33,7 +33,7 @@ namespace ShopCenter.Presentation.Razor.Pages.Account
 
 
         #region constuctor
-        
+
         private readonly IUserService _userService;
         private readonly ICaptchaValidator _captchaValidator;
 
@@ -43,7 +43,7 @@ namespace ShopCenter.Presentation.Razor.Pages.Account
             _userService = userService;
             _captchaValidator = captchaValidator;
         }
-       
+
         #endregion
 
 

@@ -1,14 +1,12 @@
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Newtonsoft.Json.Linq;
 
 namespace ShopCenter.Presentation.Razor.Pages.Account
 {
     public class ConfirmEmailModel : PageModel
     {
 
-        
+
 
         public async Task<IActionResult> OnGetAsync(string userName, string token)
         {

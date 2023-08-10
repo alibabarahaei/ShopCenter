@@ -1,11 +1,10 @@
 ﻿
-using System.ComponentModel.DataAnnotations;
-
 using ShopCenter.Domain.Models.Base;
+using System.ComponentModel.DataAnnotations;
 
 namespace ShopCenter.Domain.Models.Site
 {
-    public class Banner:BaseEntity
+    public class Banner : BaseEntity
     {
 
         #region properties

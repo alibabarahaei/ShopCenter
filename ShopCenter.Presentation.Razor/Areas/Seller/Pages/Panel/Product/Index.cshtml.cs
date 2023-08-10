@@ -35,13 +35,13 @@ namespace ShopCenter.Presentation.Razor.Areas.Seller.Pages.Panel.Product
 
         #region list
 
-      
+
         public async Task<IActionResult> OnGet(FilterProductDTO filter)
         {
             var seller = await _storeService.GetLastActiveSellerByUserId(User);
             filter.SellerId = seller.Id;
             filter.FilterProductState = FilterProductState.All;
-            filter=await _productService.FilterProductsAsync(filter);
+            filter = await _productService.FilterProductsAsync(filter);
             Filter = filter;
             return Page();
         }

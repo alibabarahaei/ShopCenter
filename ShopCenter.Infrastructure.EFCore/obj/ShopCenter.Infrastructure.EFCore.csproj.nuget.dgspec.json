@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Amir\\Document_DesignWeb\\ShopCenter2\\ShopCenter\\ShopCenter.Infrastructure.EFCore\\ShopCenter.Infrastructure.EFCore.csproj": {}
+    "C:\\Amir\\Document_DesignWeb\\new\\ShopCenter\\ShopCenter.Infrastructure.EFCore\\ShopCenter.Infrastructure.EFCore.csproj": {}
   },
   "projects": {
-    "C:\\Amir\\Document_DesignWeb\\ShopCenter2\\ShopCenter\\ShopCenter.Domain\\ShopCenter.Domain.csproj": {
+    "C:\\Amir\\Document_DesignWeb\\new\\ShopCenter\\ShopCenter.Domain\\ShopCenter.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Amir\\Document_DesignWeb\\ShopCenter2\\ShopCenter\\ShopCenter.Domain\\ShopCenter.Domain.csproj",
+        "projectUniqueName": "C:\\Amir\\Document_DesignWeb\\new\\ShopCenter\\ShopCenter.Domain\\ShopCenter.Domain.csproj",
         "projectName": "ShopCenter.Domain",
-        "projectPath": "C:\\Amir\\Document_DesignWeb\\ShopCenter2\\ShopCenter\\ShopCenter.Domain\\ShopCenter.Domain.csproj",
+        "projectPath": "C:\\Amir\\Document_DesignWeb\\new\\ShopCenter\\ShopCenter.Domain\\ShopCenter.Domain.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Amir\\Document_DesignWeb\\ShopCenter2\\ShopCenter\\ShopCenter.Domain\\obj\\",
+        "outputPath": "C:\\Amir\\Document_DesignWeb\\new\\ShopCenter\\ShopCenter.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -69,14 +69,14 @@
         }
       }
     },
-    "C:\\Amir\\Document_DesignWeb\\ShopCenter2\\ShopCenter\\ShopCenter.Infrastructure.EFCore\\ShopCenter.Infrastructure.EFCore.csproj": {
+    "C:\\Amir\\Document_DesignWeb\\new\\ShopCenter\\ShopCenter.Infrastructure.EFCore\\ShopCenter.Infrastructure.EFCore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Amir\\Document_DesignWeb\\ShopCenter2\\ShopCenter\\ShopCenter.Infrastructure.EFCore\\ShopCenter.Infrastructure.EFCore.csproj",
+        "projectUniqueName": "C:\\Amir\\Document_DesignWeb\\new\\ShopCenter\\ShopCenter.Infrastructure.EFCore\\ShopCenter.Infrastructure.EFCore.csproj",
         "projectName": "ShopCenter.Infrastructure.EFCore",
-        "projectPath": "C:\\Amir\\Document_DesignWeb\\ShopCenter2\\ShopCenter\\ShopCenter.Infrastructure.EFCore\\ShopCenter.Infrastructure.EFCore.csproj",
+        "projectPath": "C:\\Amir\\Document_DesignWeb\\new\\ShopCenter\\ShopCenter.Infrastructure.EFCore\\ShopCenter.Infrastructure.EFCore.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Amir\\Document_DesignWeb\\ShopCenter2\\ShopCenter\\ShopCenter.Infrastructure.EFCore\\obj\\",
+        "outputPath": "C:\\Amir\\Document_DesignWeb\\new\\ShopCenter\\ShopCenter.Infrastructure.EFCore\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -97,8 +97,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Amir\\Document_DesignWeb\\ShopCenter2\\ShopCenter\\ShopCenter.Domain\\ShopCenter.Domain.csproj": {
-                "projectPath": "C:\\Amir\\Document_DesignWeb\\ShopCenter2\\ShopCenter\\ShopCenter.Domain\\ShopCenter.Domain.csproj"
+              "C:\\Amir\\Document_DesignWeb\\new\\ShopCenter\\ShopCenter.Domain\\ShopCenter.Domain.csproj": {
+                "projectPath": "C:\\Amir\\Document_DesignWeb\\new\\ShopCenter\\ShopCenter.Domain\\ShopCenter.Domain.csproj"
               }
             }
           }

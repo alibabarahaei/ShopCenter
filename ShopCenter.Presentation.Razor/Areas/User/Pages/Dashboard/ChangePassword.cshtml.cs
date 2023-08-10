@@ -1,9 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using ShopCenter.Application.DTOs.User;
 using ShopCenter.Application.InterfaceServices;
 using System.ComponentModel.DataAnnotations;
-using System.Xml.Linq;
-using ShopCenter.Application.DTOs.User;
 
 namespace ShopCenter.Presentation.Razor.Areas.User.Pages.Dashboard
 {
@@ -47,7 +46,7 @@ namespace ShopCenter.Presentation.Razor.Areas.User.Pages.Dashboard
             _userService = userService;
 
         }
-        
+
 
         #endregion
 
@@ -66,7 +65,7 @@ namespace ShopCenter.Presentation.Razor.Areas.User.Pages.Dashboard
                 return Page();
             }
 
-            var result =await _userService.ChangePasswordAsync(new ChangepasswordDTO()
+            var result = await _userService.ChangePasswordAsync(new ChangepasswordDTO()
             {
                 User = User,
                 CurrentPassword = CurrentPassword,

@@ -1,10 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using ShopCenter.Application.DTOs.Products;
+using ShopCenter.Application.DTOs.User;
 using ShopCenter.Application.InterfaceServices;
 using System.ComponentModel.DataAnnotations;
-using System.Xml.Linq;
-using ShopCenter.Application.DTOs.User;
 
 namespace ShopCenter.Presentation.Razor.Areas.Seller.Pages.Panel.Product
 {
@@ -41,15 +40,15 @@ namespace ShopCenter.Presentation.Razor.Areas.Seller.Pages.Panel.Product
 
         public string ImageName { get; set; }
 
-        
+
 
         public List<CreateProductColorDTO> ProductColors { get; set; }
 
 
         public List<long> SelectedCategories { get; set; }
 
-        
-#endregion
+
+        #endregion
 
 
 
@@ -70,7 +69,7 @@ namespace ShopCenter.Presentation.Razor.Areas.Seller.Pages.Panel.Product
         private readonly IProductService _productService;
         private readonly IStoreService _storeService;
 
-        public EditProductModel(IProductService productService, IStoreService storeService ,IUserService userService)
+        public EditProductModel(IProductService productService, IStoreService storeService, IUserService userService)
         {
             _productService = productService;
             _storeService = storeService;
@@ -98,10 +97,10 @@ namespace ShopCenter.Presentation.Razor.Areas.Seller.Pages.Panel.Product
             SelectedCategories = product.SelectedCategories;
             ImageName = product.ImageName;
             ProductColors = product.ProductColors;
-            Id=product.Id;
-            
-           // if (product == null) 
-                //return NotFound();
+            Id = product.Id;
+
+            // if (product == null) 
+            //return NotFound();
             ViewData["Categories"] = await _productService.GetAllActiveProductCategories();
             return Page();
         }
@@ -127,7 +126,7 @@ namespace ShopCenter.Presentation.Razor.Areas.Seller.Pages.Panel.Product
                     case EditProductResult.Success:
                         TempData["SuccessMessage"] = "عملیات با موفقیت انجام شد";
                         break;
-                        
+
                 }
             }
 

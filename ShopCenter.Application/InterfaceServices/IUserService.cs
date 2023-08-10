@@ -1,5 +1,4 @@
-﻿using System.Security.Claims;
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
 using ShopCenter.Application.DTOs.Account;
 using ShopCenter.Application.DTOs.User;
 using ShopCenter.Domain.Models.User;
@@ -17,8 +16,8 @@ namespace ShopCenter.Application.InterfaceServices
         Task<string> GenerateEmailConfirmationTokenAsync(EmailConfirmationDTO emailConfirmationDTO);
         Task<IdentityResult> EditProfileAsync(EditProfileDTO editProfileDTO);
         Task<ApplicationUser> GetUserAsync(GetUserDTO getuserDTO);
-       
+
         Task<IdentityResult> ChangePasswordAsync(ChangepasswordDTO changepasswordDTO);
-       
+
     }
 }

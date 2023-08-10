@@ -1,7 +1,6 @@
-﻿using System.Collections.Generic;
-using System.Security.Claims;
-using ShopCenter.Application.DTOs.Paging;
+﻿using ShopCenter.Application.DTOs.Paging;
 using ShopCenter.Domain.Models.Contacts;
+using System.Security.Claims;
 
 namespace ShopCenter.Application.DTOs.Contact
 {

@@ -1,6 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
-using ShopCenter.Domain.Models.Base;
+﻿using ShopCenter.Domain.Models.Base;
 using ShopCenter.Domain.Models.User;
+using System.ComponentModel.DataAnnotations;
 
 namespace ShopCenter.Domain.Models.Contacts
 {

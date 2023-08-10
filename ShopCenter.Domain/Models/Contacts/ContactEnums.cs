@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Linq;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace ShopCenter.Domain.Models.Contacts
 {
@@ -40,5 +34,5 @@ namespace ShopCenter.Domain.Models.Contacts
         Closed
     }
 
-  
+
 }

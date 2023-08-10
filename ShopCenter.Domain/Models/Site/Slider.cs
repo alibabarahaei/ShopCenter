@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using ShopCenter.Domain.Models.Base;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Linq;
-using ShopCenter.Domain.Models.Base;
 
 namespace ShopCenter.Domain.Models.Site
 {
-    public class Slider:BaseEntity
+    public class Slider : BaseEntity
     {
 
         #region properties

@@ -33,7 +33,7 @@ namespace ShopCenter.Presentation.Razor.Areas.Admin.Pages.Panel.SellerManagement
         public async Task OnGet(FilterSellerDTO filter)
         {
             filter.TakeEntity = 30;
-            
+
             FilterSeller = await _storeService.FilterSellersAsync(filter);
         }
 
@@ -63,18 +63,18 @@ namespace ShopCenter.Presentation.Razor.Areas.Admin.Pages.Panel.SellerManagement
         {
             if (ModelState.IsValid)
             {
-            var result = await _storeService.RejectSellerRequestAsync(reject);
+                var result = await _storeService.RejectSellerRequestAsync(reject);
 
-            if (result)
-            {
-                return JsonResponseStatus.SendStatus(
-                    JsonResponseStatusType.Success,
-                    "درخواست مورد نظر با موفقیت رد شد شد",
-                    reject);
-            }
+                if (result)
+                {
+                    return JsonResponseStatus.SendStatus(
+                        JsonResponseStatusType.Success,
+                        "درخواست مورد نظر با موفقیت رد شد شد",
+                        reject);
+                }
 
-            return JsonResponseStatus.SendStatus(JsonResponseStatusType.Danger,
-                "اطلاعاتی با این مشخصات یافت نشد", null);
+                return JsonResponseStatus.SendStatus(JsonResponseStatusType.Danger,
+                    "اطلاعاتی با این مشخصات یافت نشد", null);
 
             }
 
