@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "vahQ7Plcgm32SqsFMOMAAKq5GXi4n9oxYHQyBb2HOaLPixjiIfquuaJYkBW07jOrTpZu03ttgtbym9oGCCT4kA==",
+  "dgSpecHash": "TIzlSxet+GbO0p5OPNcvjvh4XIvSLND5QdQ6lo0gHk0oWmMAY7RQjCWTl2oRnqkb7mrjbQweaWLwOvyVv25Psw==",
   "success": true,
-  "projectFilePath": "C:\\Amir\\Document_DesignWeb\\new\\ShopCenter\\ShopCenter.Domain\\ShopCenter.Domain.csproj",
+  "projectFilePath": "C:\\Amir\\Document_DesignWeb\\new2\\ShopCenter\\ShopCenter.Domain\\ShopCenter.Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\6.0.8\\microsoft.aspnetcore.cryptography.internal.6.0.8.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\6.0.8\\microsoft.aspnetcore.cryptography.keyderivation.6.0.8.nupkg.sha512",

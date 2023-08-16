@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "HmDLxEw+EfA/g61M9J+GAYCRgq5vHys4SHB1/29YbReInrYKd/oDN8fh8rHyzFtHu//Ey6gOdWUR8F3cnfxg9A==",
+  "dgSpecHash": "v4uqhwy5EVNHsTTfHTnB5vg6ikj8zdMzfWr4AJ26XGQLKAQfy0qKLV/7xcAHLQTxgw/R4EEsJdy4GTu5l/6Jbg==",
   "success": true,
-  "projectFilePath": "C:\\Amir\\Document_DesignWeb\\new\\ShopCenter\\ShopCenter.Application\\ShopCenter.Application.csproj",
+  "projectFilePath": "C:\\Amir\\Document_DesignWeb\\new2\\ShopCenter\\ShopCenter.Application\\ShopCenter.Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user\\.nuget\\packages\\lazziya.taghelpers\\6.0.2\\lazziya.taghelpers.6.0.2.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",

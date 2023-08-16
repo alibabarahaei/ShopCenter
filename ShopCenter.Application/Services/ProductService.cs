@@ -280,19 +280,25 @@ namespace ShopCenter.Application.Services
 
         public async Task AddProductSelectedColors(long productId, List<CreateProductColorDTO> colors)
         {
-            var productSelectedColors = new List<ProductColor>();
-
-            foreach (var productColor in colors)
+            if (colors != null && colors.Any())
             {
-                productSelectedColors.Add(new ProductColor
-                {
-                    ColorName = productColor.ColorName,
-                    Price = productColor.Price,
-                    ProductId = productId
-                });
-            }
+                var productSelectedColors = new List<ProductColor>();
 
-            await _productColorRepository.AddRangeEntities(productSelectedColors);
+                foreach (var productColor in colors)
+                {
+                    if (!productSelectedColors.Any(s => s.ColorName == productColor.ColorName))
+                    {
+                        productSelectedColors.Add(new ProductColor
+                        {
+                            ColorName = productColor.ColorName,
+                            Price = productColor.Price,
+                            ProductId = productId
+                        });
+                    }
+                }
+
+                await _productColorRepository.AddRangeEntities(productSelectedColors);
+            }
         }
 
         public async Task AddProductSelectedCategories(long productId, List<long> selectedCategories)

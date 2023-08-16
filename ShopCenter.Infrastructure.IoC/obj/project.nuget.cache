@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "89tGo9+fbE78TdYymAvWchpkZ+6BydNnJ7bw4teZMNqEvFZUJ1+PjO+Y+dB0cJCRHvqL6Xdl4l/ysj/5CwsfQg==",
+  "dgSpecHash": "dqHf0sjBo/+T2zVdZ+/pDNjVFoOp4DXBOxD1hWqdmK4KX9dkE604Jty0SSTasRrH/gkr0piwxJR0IdFTZRolmg==",
   "success": true,
-  "projectFilePath": "C:\\Amir\\Document_DesignWeb\\new\\ShopCenter\\ShopCenter.Infrastructure.IoC\\ShopCenter.Infrastructure.IoC.csproj",
+  "projectFilePath": "C:\\Amir\\Document_DesignWeb\\new2\\ShopCenter\\ShopCenter.Infrastructure.IoC\\ShopCenter.Infrastructure.IoC.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.8\\microsoft.entityframeworkcore.6.0.8.nupkg.sha512",
