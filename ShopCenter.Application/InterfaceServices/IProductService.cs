@@ -24,6 +24,18 @@ namespace ShopCenter.Application.InterfaceServices
         #endregion
 
 
+        #region product gallery
+
+        Task<List<ProductGallery>> GetAllProductGalleries(long productId);
+
+        Task<List<ProductGallery>> GetAllProductGalleriesInSellerPanel(long productId, long userId);
+
+
+        #endregion
+
+
+
+
         Task<bool> AcceptSellerProduct(long productId);
         Task<bool> RejectSellerProduct(RejectItemDTO reject);
         Task<EditProductDTO> GetProductForEdit(long productId);
