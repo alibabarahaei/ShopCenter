@@ -47,7 +47,8 @@ namespace ShopCenter.Domain.Models.Products
         #region relations
 
         public ICollection<ProductSelectedCategory> ProductSelectedCategories { get; set; }
-
+        public ICollection<ProductColor> ProductColors { get; set; }
+        public ICollection<ProductGallery> ProductGalleries { get; set; }
         public Seller Seller { get; set; }
 
         #endregion

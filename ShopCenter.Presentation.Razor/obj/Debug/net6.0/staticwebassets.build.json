@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "rA22s4w9rHjHLyFE+GterKfl9Aexh5tqyM4NH/y+giI=",
+  "Hash": "UVyrdsfiCMDWsjH5Aag2OBd/YdLWH4esdIAlGoVVF6E=",
   "Source": "ShopCenter.Presentation.Razor",
   "BasePath": "_content/ShopCenter.Presentation.Razor",
   "Mode": "Default",
@@ -5797,6 +5797,23 @@
       "OriginalItemSpec": "wwwroot\\Auth\\key-2da748da-b229-4a2a-857d-690ca56b9232.xml"
     },
     {
+      "Identity": "C:\\Amir\\Document_DesignWeb\\new2\\ShopCenter\\ShopCenter.Presentation.Razor\\wwwroot\\Auth\\key-ed46fad8-e679-475d-b489-aa5f9e0e0875.xml",
+      "SourceId": "ShopCenter.Presentation.Razor",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Amir\\Document_DesignWeb\\new2\\ShopCenter\\ShopCenter.Presentation.Razor\\wwwroot\\",
+      "BasePath": "_content/ShopCenter.Presentation.Razor",
+      "RelativePath": "Auth/key-ed46fad8-e679-475d-b489-aa5f9e0e0875.xml",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Auth\\key-ed46fad8-e679-475d-b489-aa5f9e0e0875.xml"
+    },
+    {
       "Identity": "C:\\Amir\\Document_DesignWeb\\new2\\ShopCenter\\ShopCenter.Presentation.Razor\\wwwroot\\content\\images\\product\\origin\\0064f56bb5704aa6aa48e07c475c3ea1.png",
       "SourceId": "ShopCenter.Presentation.Razor",
       "SourceType": "Discovered",
@@ -5948,6 +5965,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\content\\images\\product\\origin\\8a763269d709407e87b07dec4d5a04c9.png"
+    },
+    {
+      "Identity": "C:\\Amir\\Document_DesignWeb\\new2\\ShopCenter\\ShopCenter.Presentation.Razor\\wwwroot\\content\\images\\product\\origin\\ac1e4040337c43bd966f15d0834206f0.png",
+      "SourceId": "ShopCenter.Presentation.Razor",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Amir\\Document_DesignWeb\\new2\\ShopCenter\\ShopCenter.Presentation.Razor\\wwwroot\\",
+      "BasePath": "_content/ShopCenter.Presentation.Razor",
+      "RelativePath": "content/images/product/origin/ac1e4040337c43bd966f15d0834206f0.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\content\\images\\product\\origin\\ac1e4040337c43bd966f15d0834206f0.png"
     },
     {
       "Identity": "C:\\Amir\\Document_DesignWeb\\new2\\ShopCenter\\ShopCenter.Presentation.Razor\\wwwroot\\content\\images\\product\\origin\\c29a6aad962048ef9c49d2c0d8e5145e.png",
@@ -6152,6 +6186,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\content\\images\\product\\thumb\\8a763269d709407e87b07dec4d5a04c9.png"
+    },
+    {
+      "Identity": "C:\\Amir\\Document_DesignWeb\\new2\\ShopCenter\\ShopCenter.Presentation.Razor\\wwwroot\\content\\images\\product\\thumb\\ac1e4040337c43bd966f15d0834206f0.png",
+      "SourceId": "ShopCenter.Presentation.Razor",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Amir\\Document_DesignWeb\\new2\\ShopCenter\\ShopCenter.Presentation.Razor\\wwwroot\\",
+      "BasePath": "_content/ShopCenter.Presentation.Razor",
+      "RelativePath": "content/images/product/thumb/ac1e4040337c43bd966f15d0834206f0.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\content\\images\\product\\thumb\\ac1e4040337c43bd966f15d0834206f0.png"
     },
     {
       "Identity": "C:\\Amir\\Document_DesignWeb\\new2\\ShopCenter\\ShopCenter.Presentation.Razor\\wwwroot\\content\\images\\product\\thumb\\c29a6aad962048ef9c49d2c0d8e5145e.png",

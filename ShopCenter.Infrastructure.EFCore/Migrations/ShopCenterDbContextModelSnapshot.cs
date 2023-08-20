@@ -374,6 +374,41 @@ namespace ShopCenter.Infrastructure.EFCore.Migrations
                     b.ToTable("ProductColors");
                 });
 
+            modelBuilder.Entity("ShopCenter.Domain.Models.Products.ProductGallery", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"), 1L, 1);
+
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("DisplayPriority")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ImageName")
+                        .IsRequired()
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.Property<bool>("IsDelete")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("LastUpdateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<long>("ProductId")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("ProductGallerys");
+                });
+
             modelBuilder.Entity("ShopCenter.Domain.Models.Products.ProductSelectedCategory", b =>
                 {
                     b.Property<long>("Id")
@@ -728,7 +763,18 @@ namespace ShopCenter.Infrastructure.EFCore.Migrations
             modelBuilder.Entity("ShopCenter.Domain.Models.Products.ProductColor", b =>
                 {
                     b.HasOne("ShopCenter.Domain.Models.Products.Product", "Product")
-                        .WithMany()
+                        .WithMany("ProductColors")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Product");
+                });
+
+            modelBuilder.Entity("ShopCenter.Domain.Models.Products.ProductGallery", b =>
+                {
+                    b.HasOne("ShopCenter.Domain.Models.Products.Product", "Product")
+                        .WithMany("ProductGalleries")
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
@@ -773,6 +819,10 @@ namespace ShopCenter.Infrastructure.EFCore.Migrations
 
             modelBuilder.Entity("ShopCenter.Domain.Models.Products.Product", b =>
                 {
+                    b.Navigation("ProductColors");
+
+                    b.Navigation("ProductGalleries");
+
                     b.Navigation("ProductSelectedCategories");
                 });
 

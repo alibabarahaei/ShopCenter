@@ -40,6 +40,8 @@ namespace ShopCenter.Infrastructure.EFCore.Context
 
         public DbSet<ProductColor> ProductColors { get; set; }
 
+        public DbSet<ProductGallery> ProductGallerys { get; set; }
+
         public DbSet<ProductSelectedCategory> ProductSelectedCategories { get; set; }
 
         #endregion
