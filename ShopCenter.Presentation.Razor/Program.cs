@@ -53,6 +53,33 @@ builder.Services.ConfigureApplicationCookie(options =>
 builder.Services.AddSingleton<HtmlEncoder>(HtmlEncoder.Create(allowedRanges: new[] { UnicodeRanges.BasicLatin, UnicodeRanges.Arabic }));
 
 
+
+
+
+//////////////   For .Net7
+
+//#region Rate Limiting
+//builder.Services.AddRateLimiter(options =>
+//{
+//    options.AddPolicy("fixed-by-ip", httpContext =>
+//        RateLimitPartition.GetFixedWindowLimiter(
+//            partitionKey: httpContext.Connection.RemoteIpAddress?.ToString(),
+//            factory: _ => new FixedWindowRateLimiterOptions
+//            {
+//                PermitLimit = 10,
+//                Window = TimeSpan.FromMinutes(1)
+//            }));
+//});
+
+//#endregion
+
+
+
+
+
+
+
+
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IMessageSender, MessageSender>();
