@@ -168,7 +168,7 @@ namespace ShopCenter.Application.Services
         }
 
 
-        public async Task<Product> GetProductBySellerOwnerId(long productId, long userId)
+        public async Task<Product> GetProductBySellerOwnerId(long productId, string userId)
         {
             return await _productRepository.GetQuery()
                 .Include(s => s.Seller)
