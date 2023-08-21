@@ -176,11 +176,11 @@ namespace ShopCenter.Application.Services
         }
 
 
-        public async Task<List<ProductGallery>> GetAllProductGalleriesInSellerPanel(long productId, long userId)
+        public async Task<List<ProductGallery>> GetAllProductGalleriesInSellerPanel(long productId, string userId)
         {
             return await _productGalleryRepository.GetQuery()
                 .Include(s => s.Product)
-                .Where(s => s.ProductId == productId && s.Product.SellerId == userId).ToListAsync();
+                .Where(s => s.ProductId == productId && s.Product.Seller.UserId == userId).ToListAsync();
         }
 
 

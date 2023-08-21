@@ -28,7 +28,7 @@ namespace ShopCenter.Application.InterfaceServices
 
         Task<List<ProductGallery>> GetAllProductGalleries(long productId);
         Task<Product> GetProductBySellerOwnerId(long productId, string userId);
-        Task<List<ProductGallery>> GetAllProductGalleriesInSellerPanel(long productId, long userId);
+        Task<List<ProductGallery>> GetAllProductGalleriesInSellerPanel(long productId, string userId);
 
 
         #endregion
