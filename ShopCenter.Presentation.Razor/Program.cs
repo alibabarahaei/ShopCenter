@@ -13,6 +13,7 @@ using ShopCenter.Infrastructure.EFCore.Context;
 using ShopCenter.Infrastructure.EFCore.Repository.Base;
 using System.Text.Encodings.Web;
 using System.Text.Unicode;
+using ShopCenter.Application.FacadePattern;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -77,7 +78,7 @@ builder.Services.AddSingleton<HtmlEncoder>(HtmlEncoder.Create(allowedRanges: new
 
 
 
-
+//builder.Services.AddSingleton<IFacadePattern, FacadePattern>();
 
 
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
